@@ -1,0 +1,370 @@
+{
+  "meta": {
+    "title": "Chiraz Kanoufi — Software Engineer & Automatisierungs-Spezialistin",
+    "description": "Informatik-Absolventin. Ich baue Automatisierungssysteme, Webanwendungen und KI-Integrationen. n8n, Python, JavaScript, Next.js, Google Apps Script.",
+    "ogAlt": "Portfolio von Chiraz Kanoufi, Software Engineer und Automatisierungs-Spezialistin"
+  },
+  "nav": {
+    "home": "Start",
+    "work": "Projekte",
+    "services": "Leistungen",
+    "about": "Über mich",
+    "contact": "Kontakt",
+    "cta": "Termin buchen",
+    "menu": "Menü öffnen",
+    "close": "Menü schließen"
+  },
+  "hero": {
+    "available": "Verfügbar für neue Projekte",
+    "greeting": "Hallo, ich bin",
+    "name": "Chiraz Kanoufi",
+    "roles": ["Software Engineer", "Automatisierungs-Spezialistin", "Informatik-Absolventin", "API- & Workflow-Architektin"],
+    "tagline": "Ich baue Systeme, die die Arbeit erledigen, die niemand von Hand machen sollte.",
+    "description": "Informatik-Absolventin mit Schwerpunkt Prozessautomatisierung, API-Integration und Full-Stack-Webentwicklung. Ich verwandle manuelle, fehleranfällige Abläufe in Pipelines, die von selbst laufen.",
+    "ctaPrimary": "Projekte ansehen",
+    "ctaSecondary": "KI-Assistenten fragen",
+    "downloadCv": "Lebenslauf herunterladen",
+    "downloadCvAria": "Lebenslauf als PDF auf Deutsch herunterladen",
+    "scrollHint": "Zum Entdecken scrollen",
+    "stats": {
+      "errorsReduced": "Manuelle Fehler beseitigt",
+      "languages": "Gesprochene Sprachen",
+      "yearsBuilding": "Jahre Software-Entwicklung"
+    }
+  },
+  "about": {
+    "title": "Über mich",
+    "eyebrow": "Kurz gefasst",
+    "lead": "Ich schreibe Code, der Arbeit abschafft, statt sie zu vermehren.",
+    "bio": "Ich habe Informatik an der Université Ferhat Abbas — Sétif 1 mit Schwerpunkt Software Engineering abgeschlossen. Seitdem arbeite ich an der Nahtstelle zwischen Betrieb und Technik: dort, wo ein Unternehmen mit Tabellen, Copy-and-paste und Hoffnung läuft und jemand das durch etwas ersetzen muss, das wirklich hält. Meine Arbeit umfasst Automatisierungs-Pipelines, E-Commerce-Integrationen und die Webanwendungen, die darauf aufsetzen.",
+    "educationTitle": "Ausbildung",
+    "experienceTitle": "Berufserfahrung",
+    "skillsTitle": "Technische Kenntnisse",
+    "languagesTitle": "Sprachen",
+    "present": "Heute",
+    "skillGroups": {
+      "languages": "Programmiersprachen",
+      "frameworks": "Frameworks & Web",
+      "automation": "Automatisierung & Workflows",
+      "data": "Daten & Cloud",
+      "design": "Design & Werkzeuge",
+      "platforms": "SaaS-Plattformen",
+      "systems": "Systeme & Sicherheit"
+    },
+    "proficiency": {
+      "native": "Muttersprache",
+      "fluent": "Fließend",
+      "advanced": "Fortgeschritten",
+      "basic": "Grundkenntnisse (B1 in Vorbereitung)"
+    },
+    "experienceItems": {
+      "ranli": {
+        "role": "Automatisierungs- und Datenmanagement-Ingenieurin",
+        "summary": "Entwurf und Umsetzung maßgeschneiderter Automatisierung zwischen Shopify, Ecomanager und Google Sheets. Neubau der ETL-Schicht, damit Daten ohne manuellen Eingriff fließen.",
+        "highlights": [
+          "Manuelle Datenfehler um 90 % reduziert, indem Copy-and-paste-Abläufe durch skriptgesteuerte, validierte Pipelines ersetzt wurden",
+          "Bidirektionale Synchronisation zwischen Shopify-Bestellungen und interner Sheets-Bestandsführung über Apps Script und Webhooks",
+          "Verantwortung für die Echtzeit-Störungsbehebung operativer Workflows"
+        ]
+      },
+      "daxshop": {
+        "role": "Webentwicklerin & Workflow-Spezialistin",
+        "summary": "Freiberufliches Mandat zur Prüfung, Umstrukturierung und Absicherung der Software-Tracking-Datenbanken des Unternehmens.",
+        "highlights": [
+          "Ein zerfasertes Sheets-Datenmodell geprüft und in ein validiertes Schema überführt",
+          "Automatische Konformitätsprüfungen ergänzt, die fehlerhafte Datensätze vor dem Reporting melden",
+          "Echtzeit-Reporting geliefert, das eine wöchentliche manuelle Zusammenstellung ersetzt"
+        ]
+      },
+      "consulting": {
+        "role": "Beraterin für Digital- und Medienstrategie",
+        "summary": "Freiberufliche Projekte mit deutschen KMU und Forever Living (USA) in der Golfregion.",
+        "highlights": [
+          "Zielgerichtete Kampagnen und Konversionsanalyse über die Snapchat Marketing API",
+          "CRM-Werkzeuge und automatisierte Kundenbetreuung für internationale Customer Journeys eingeführt"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "title": "Ausgewählte Projekte",
+    "eyebrow": "Fallstudien",
+    "subtitle": "Die Probleme, was ich dagegen getan habe, und was sich dadurch verändert hat.",
+    "filters": {
+      "all": "Alle",
+      "automation": "Automatisierung & Skripte",
+      "web": "Webentwicklung",
+      "ai-data": "KI & Daten",
+      "ecommerce": "E-Commerce"
+    },
+    "showing": "{count, plural, =0 {Keine Projekte} =1 {1 Projekt} other {# Projekte}}",
+    "problem": "Problem",
+    "solution": "Lösung",
+    "outcome": "Ergebnis",
+    "stack": "Technologien",
+    "viewCode": "Code ansehen",
+    "viewLive": "Live-Demo",
+    "liveDemoBadge": "Live-Demo",
+    "featured": "Hervorgehoben",
+    "empty": "Für diesen Filter gibt es noch keine Projekte.",
+    "metrics": {
+      "manualErrors": "weniger manuelle Fehler",
+      "hoursSaved": "zurückgewonnen",
+      "ordersSynced": "Bestellungen synchronisiert",
+      "routes": "kuratierte Routen",
+      "coldStart": "Kaltstart",
+      "recordsAudited": "geprüfte Datensätze",
+      "reportLatency": "schnelleres Reporting",
+      "responseTime": "Reaktionszeit auf Anfragen",
+      "uptime": "Verfügbarkeit",
+      "languages": "unterstützte Sprachen",
+      "ttfb": "bis zum ersten Token",
+      "markets": "Märkte",
+      "cpaReduction": "geringere Akquisitionskosten"
+    },
+    "items": {
+      "etl-shopify-sync": {
+        "title": "Shopify-↔-Sheets-ETL-Pipeline",
+        "problem": "Bestell-, Bestands- und Versanddaten lagen in drei Systemen, die nicht miteinander sprachen. Mitarbeitende glichen sie täglich von Hand ab, und die Fehler summierten sich zu falschen Beständen und verpassten Lieferungen.",
+        "solution": "Eine geplante und per Webhook ausgelöste Pipeline in Google Apps Script: Extraktion aus der Shopify-Admin-API und aus Ecomanager, Validierung und Normalisierung jedes Datensatzes gegen ein striktes Schema, dann Laden in den operativen Sheets-Bestand. Fehlerhafte Datensätze werden in Quarantäne gestellt und gemeldet, statt still geschrieben zu werden.",
+        "outcome": "Manuelle Bearbeitungsfehler sanken um 90 %, rund fünfzehn Stunden Abgleich pro Woche entfielen, und die Bestandszahlen wurden wieder belastbar genug für Entscheidungen."
+      },
+      "gotrek": {
+        "title": "GoTrek — App zur Reiseorientierung",
+        "problem": "Reisende hatten keine einzige verlässliche Quelle für Routen, Zeiten und lokale Orientierungsdaten — die Informationen lagen verstreut in Foren und waren veraltet.",
+        "solution": "Architektur und Umsetzung einer mobilen App auf einem REST-Backend, mit normalisiertem PostgreSQL-Schema für Routen und Points of Interest, offlinefähigem Caching und einer in Figma entworfenen Oberfläche für die einhändige Nutzung im Freien.",
+        "outcome": "Eine funktionierende Orientierungs-App mit über vierzig kuratierten Routen und einem Kaltstart unter 1,2 Sekunden auf Mittelklasse-Hardware."
+      },
+      "data-integrity-audit": {
+        "title": "Datenintegritäts-Audit & automatisiertes Reporting",
+        "problem": "Ein Unternehmen führte sein Software-Tracking in Tabellen, denen niemand traute. Doppelte Zeilen, uneinheitliche Formate und stilles Überschreiben machten vor jeder Entscheidung eine manuelle Prüfung nötig.",
+        "solution": "Prüfung des bestehenden Modells, Entwurf eines validierten Schemas mit typisierten Spalten und referenziellen Checks, plus Automatisierung, die Konformitätsregeln bei jedem Schreibvorgang anwendet. Verstöße lösen eine Meldung mit der betroffenen Zeile aus, statt still zu scheitern.",
+        "outcome": "Über dreißigtausend Datensätze geprüft und normalisiert; ein Reporting, das früher einen wöchentlichen manuellen Durchgang brauchte, läuft heute nahezu in Echtzeit."
+      },
+      "n8n-lead-router": {
+        "title": "n8n-Lead-Routing & Benachrichtigungen",
+        "problem": "Anfragen kamen per E-Mail und blieben stundenlang ungelesen. Keine Triage, keine Deduplizierung, keine Nachvollziehbarkeit, was mit einem Lead danach geschah.",
+        "solution": "Ein n8n-Workflow empfängt einen signierten Webhook, validiert die Nutzdaten, dedupliziert gegen frühere Einsendungen, schreibt eine Audit-Zeile nach Supabase und verteilt anschließend eine sofortige Telegram-Benachrichtigung sowie eine Bestätigungs-E-Mail aus Vorlage.",
+        "outcome": "Die mediane Reaktionszeit fiel von Stunden auf unter dreißig Sekunden — mit dauerhaftem Prüfpfad für jede Anfrage."
+      },
+      "cv-ai-agent": {
+        "title": "Mehrsprachiger, faktengebundener Lebenslauf-Agent",
+        "problem": "Recruiter stellen immer dieselben zwölf Fragen und lesen selten über den ersten Bildschirm eines Lebenslaufs hinaus. Ein generischer Chatbot würde sie beantworten — und dabei selbstbewusst Qualifikationen erfinden, was schlimmer ist als Schweigen.",
+        "solution": "Ein Streaming-Agent auf dem Vercel AI SDK, dessen gesamte Wissensbasis aus einer einzigen typisierten Profildatei erzeugt wird. Der System-Prompt verbietet Extrapolation, benennt den Abschlussgrad ausdrücklich, um Aufwertung zu verhindern, und gibt dem Modell einen klaren Ausweg, wenn es etwas nicht weiß.",
+        "outcome": "Antworten in vier Sprachen, erstes Token nach rund 400 ms, und keine Möglichkeit, eine Qualifikation zu behaupten, die nicht in der Quelldatei steht."
+      },
+      "campaign-analytics": {
+        "title": "Marktübergreifende Kampagnen-Analytik",
+        "problem": "Kampagnen liefen in drei Märkten ohne gemeinsame Sicht darauf, was eine Konversion tatsächlich kostete — Budgetentscheidungen fielen nach Bauchgefühl.",
+        "solution": "Kampagnen über die Snapchat Marketing API instrumentiert, eine einheitliche Konversionsmetrik über alle Märkte definiert und CRM-Automatisierung angebunden, damit qualifizierte Kontakte ohne manuelle Übergabe nachverfolgt wurden.",
+        "outcome": "Eine vergleichbare Sicht über drei Märkte und spürbar geringere Akquisitionskosten, sobald das Budget den Daten folgte."
+      }
+    }
+  },
+  "github": {
+    "title": "Live von GitHub",
+    "subtitle": "Aktivität öffentlicher Repositories, stündlich aktualisiert.",
+    "repos": "Repositories",
+    "followers": "Follower",
+    "stars": "Erhaltene Sterne",
+    "topLanguages": "Meistgenutzte Sprachen",
+    "activity": "Aktivität im letzten Jahr",
+    "unavailable": "GitHub-Statistiken sind derzeit nicht verfügbar.",
+    "viewProfile": "Profil ansehen",
+    "less": "Weniger",
+    "more": "Mehr"
+  },
+  "services": {
+    "title": "Wie ich helfen kann",
+    "eyebrow": "Leistungen",
+    "subtitle": "Vier Arten, wie ich üblicherweise mit Kunden arbeite.",
+    "items": {
+      "automation": {
+        "title": "Maßgeschneiderte Automatisierung",
+        "description": "Der manuelle Prozess, den Sie schon lange beheben wollten — ersetzt durch eine Pipeline, die von selbst läuft und meldet, wenn etwas bricht.",
+        "features": ["n8n-Workflow-Design", "Google Apps Script", "Zeitpläne & Webhook-Trigger", "Fehlerbehandlung und Alarmierung"]
+      },
+      "web": {
+        "title": "Web- & Software-Engineering",
+        "description": "Schnelle, barrierefreie, typisierte Anwendungen auf Next.js — von der Marketing-Site, die rankt, bis zum internen Werkzeug, das Ihr Team gerne benutzt.",
+        "features": ["Next.js & React", "TypeScript durchgängig", "Core-Web-Vitals-Budget", "Responsiv & barrierefrei"]
+      },
+      "api": {
+        "title": "API- & Systemintegration",
+        "description": "Zwei Systeme, die nie füreinander gedacht waren, zuverlässig Daten austauschen lassen — mit Validierung an jeder Grenze.",
+        "features": ["REST-Integration", "Shopify- & E-Commerce-APIs", "Datenmodellierung & ETL", "PostgreSQL / Supabase"]
+      },
+      "audit": {
+        "title": "Technische Audits",
+        "description": "Eine ehrliche Einschätzung des Bestands: wo das Datenmodell leckt, wie es um die Sicherheit wirklich steht und was zuerst zu beheben ist.",
+        "features": ["Prüfung der Datenintegrität", "Performance-Audit", "Sicherheits- & WAF-Review", "Priorisierter Maßnahmenplan"]
+      }
+    }
+  },
+  "estimator": {
+    "title": "Projekt kalkulieren",
+    "eyebrow": "Interaktiver Rechner",
+    "subtitle": "Wählen Sie aus, was Sie brauchen. Die Schätzung aktualisiert sich live — ganz ohne E-Mail-Adresse.",
+    "groups": {
+      "projectType": {
+        "title": "Was bauen wir?",
+        "options": {
+          "type-automation": "Automatisierung / Workflow-System",
+          "type-website": "Marketing-Website",
+          "type-webapp": "Vollständige Webanwendung",
+          "type-audit": "Nur technisches Audit"
+        }
+      },
+      "integrations": {
+        "title": "Integrationen",
+        "options": {
+          "int-shopify": "Shopify / E-Commerce-Plattform",
+          "int-sheets": "Google Sheets / Workspace",
+          "int-n8n": "n8n-Workflow-Engine",
+          "int-payments": "Zahlungen (Stripe)",
+          "int-crm": "CRM oder Helpdesk"
+        }
+      },
+      "features": {
+        "title": "Funktionen",
+        "options": {
+          "feat-ai": "KI-Assistent / LLM-Integration",
+          "feat-dashboard": "Analyse-Dashboard",
+          "feat-auth": "Authentifizierung & Benutzerkonten",
+          "feat-i18n": "Mehrsprachig (mit RTL)",
+          "feat-cms": "Content-Management"
+        }
+      },
+      "support": {
+        "title": "Support nach dem Launch",
+        "options": {
+          "support-none": "Keiner — Übergabe und fertig",
+          "support-1m": "1 Monat",
+          "support-3m": "3 Monate"
+        }
+      }
+    },
+    "rush": {
+      "label": "Express-Lieferung",
+      "hint": "Verkürzter Zeitplan, bevorzugte Einplanung"
+    },
+    "summary": "Ihre Schätzung",
+    "estimatedRange": "Geschätzte Spanne",
+    "timeline": "Geschätzte Dauer",
+    "days": "{count, plural, =1 {1 Arbeitstag} other {# Arbeitstage}}",
+    "selected": "{count, plural, =0 {Nichts ausgewählt} =1 {1 Element ausgewählt} other {# Elemente ausgewählt}}",
+    "cta": "Termin buchen und Umfang klären",
+    "reset": "Zurücksetzen",
+    "disclaimer": "Eine Richtspanne auf Basis typischer Projektumfänge, kein Angebot. Die endgültige Zahl folgt einem kurzen Gespräch über Ihren tatsächlichen Bedarf."
+  },
+  "booking": {
+    "title": "Lassen Sie uns sprechen",
+    "eyebrow": "Termin buchen",
+    "subtitle": "Dreißig Minuten, kein Verkaufsgespräch. Bringen Sie das Problem mit, und wir finden heraus, ob ich die Richtige dafür bin.",
+    "cta": "Zeit auswählen",
+    "loading": "Kalender wird geladen…",
+    "fallback": "Kalender lädt nicht? Schreiben Sie mir direkt."
+  },
+  "contact": {
+    "title": "Kontakt aufnehmen",
+    "eyebrow": "Kontakt",
+    "subtitle": "Erzählen Sie mir, was Sie bauen wollen. Ich antworte innerhalb von 24 Stunden.",
+    "fields": {
+      "name": "Ihr Name",
+      "namePlaceholder": "Amina Belkacem",
+      "email": "E-Mail",
+      "emailPlaceholder": "sie@firma.de",
+      "company": "Unternehmen",
+      "companyPlaceholder": "Optional",
+      "budget": "Budgetrahmen",
+      "budgetPlaceholder": "Bitte wählen",
+      "message": "Was brauchen Sie?",
+      "messagePlaceholder": "Der Prozess, den Sie automatisieren wollen, die App, die Sie brauchen, oder das, was gerade kaputt ist…"
+    },
+    "budgets": {
+      "under-500": "Unter 500 $",
+      "500-1500": "500 – 1.500 $",
+      "1500-5000": "1.500 – 5.000 $",
+      "5000-plus": "Über 5.000 $",
+      "not-sure": "Noch unklar"
+    },
+    "optional": "optional",
+    "submit": "Nachricht senden",
+    "sending": "Wird gesendet…",
+    "successTitle": "Nachricht gesendet",
+    "successBody": "Danke — sie ist angekommen. Ich melde mich innerhalb von 24 Stunden.",
+    "sendAnother": "Weitere Nachricht senden",
+    "errorTitle": "Das hat nicht geklappt",
+    "errors": {
+      "rate_limited": "Zu viele Einsendungen. Bitte versuchen Sie es in ein paar Minuten erneut.",
+      "captcha_failed": "Die Bot-Prüfung ist fehlgeschlagen. Bitte laden Sie die Seite neu und versuchen Sie es erneut.",
+      "validation_failed": "Bitte prüfen Sie die markierten Felder.",
+      "delivery_failed": "Auf meiner Seite ist etwas schiefgegangen. Bitte schreiben Sie mir direkt eine E-Mail.",
+      "delivery_unavailable": "Der Kontaktkanal ist vorübergehend nicht verfügbar. Bitte schreiben Sie mir direkt.",
+      "network": "Der Server war nicht erreichbar. Bitte Verbindung prüfen und erneut versuchen."
+    },
+    "validation": {
+      "nameShort": "Bitte mindestens 2 Zeichen eingeben.",
+      "nameLong": "Dieser Name ist zu lang.",
+      "emailInvalid": "Bitte eine gültige E-Mail-Adresse eingeben.",
+      "messageShort": "Bitte mindestens 20 Zeichen schreiben.",
+      "messageLong": "Bitte unter 2000 Zeichen bleiben.",
+      "captchaRequired": "Bitte die Bot-Prüfung abschließen."
+    },
+    "directEmail": "Oder direkt per E-Mail",
+    "protectedBy": "Geschützt durch Cloudflare Turnstile"
+  },
+  "chat": {
+    "title": "Chiraz KI-Assistent",
+    "subtitle": "Fragen Sie nach Erfahrung, Technologien oder Verfügbarkeit",
+    "open": "KI-Assistenten öffnen",
+    "close": "Assistenten schließen",
+    "placeholder": "Fragen Sie mich alles über Chiraz…",
+    "send": "Senden",
+    "stop": "Stopp",
+    "clear": "Neues Gespräch",
+    "thinking": "Denkt nach…",
+    "suggestions": {
+      "experience": "Was hat sie tatsächlich gebaut?",
+      "automation": "Erzählen Sie mir von ihrer Automatisierungsarbeit",
+      "stack": "Welche Technologien nutzt sie?",
+      "hire": "Ist sie für ein Projekt verfügbar?"
+    },
+    "error": "Etwas ist schiefgegangen. Bitte erneut versuchen.",
+    "rateLimited": "Das sind viele Fragen auf einmal — bitte eine Minute warten und erneut versuchen.",
+    "retry": "Erneut versuchen",
+    "disclaimer": "KI-generiert aus Chiraz' geprüftem Lebenslauf. Der Assistent sagt es, wenn er etwas nicht weiß.",
+    "poweredBy": "Auf ein geprüftes Profil gestützt"
+  },
+  "theme": {
+    "toggle": "Design wechseln",
+    "light": "Hell",
+    "dark": "Dunkel",
+    "system": "System"
+  },
+  "language": {
+    "label": "Sprache",
+    "switch": "Sprache wechseln",
+    "current": "Aktuelle Sprache: {language}"
+  },
+  "footer": {
+    "tagline": "Gebaut in Sétif. Weltweit im Einsatz.",
+    "rights": "© {year} Chiraz Kanoufi. Alle Rechte vorbehalten.",
+    "builtWith": "Next.js, TypeScript und Tailwind CSS",
+    "sourceCode": "Quellcode",
+    "backToTop": "Nach oben"
+  },
+  "common": {
+    "loading": "Wird geladen…",
+    "error": "Etwas ist schiefgegangen",
+    "close": "Schließen",
+    "copy": "Kopieren",
+    "copied": "Kopiert",
+    "skipToContent": "Zum Inhalt springen"
+  },
+  "notFound": {
+    "title": "Seite nicht gefunden",
+    "description": "Diese Seite gibt es nicht — oder sie wurde verschoben. Zurück auf bekanntes Terrain.",
+    "cta": "Zurück zur Startseite"
+  }
+}

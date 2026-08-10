@@ -1,0 +1,260 @@
+@import 'tailwindcss';
+
+/* ==========================================================================
+   DARK MODE
+   Class-based rather than media-based, because the theme toggle has to be able
+   to override the OS preference. `next-themes` writes `.dark` onto <html>.
+   ========================================================================== */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ==========================================================================
+   DESIGN TOKENS  (Mauve & Ink Palette)
+   ========================================================================== */
+@theme {
+  /* Brand ramp: Mauve / Dusty Rose */
+  --color-brand-50: #fbf5f7;
+  --color-brand-100: #f6eaef;
+  --color-brand-200: #eed6e1;
+  --color-brand-300: #e0b8cb;
+  --color-brand-400: #cc91ad;
+  --color-brand-500: #b06b8f; /* Base Mauve Accent */
+  --color-brand-600: #a76385; /* Main Accent */
+  --color-brand-700: #8b4f6d;
+  --color-brand-800: #74435b;
+  --color-brand-900: #623b4e;
+  --color-brand-950: #3a1f2d;
+
+  /* Secondary Accent: Gold / Brass */
+  --color-brass: #d4af6e;
+  --color-brass-light: #e5cb98;
+
+  /* Typography */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-arabic: 'Noto Kufi Arabic', 'Segoe UI', Tahoma, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* Motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-shimmer: shimmer 2.2s linear infinite;
+  --animate-blink: blink 1s step-end infinite;
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+/* ==========================================================================
+   SEMANTIC SURFACE VARIABLES
+   ========================================================================== */
+@layer base {
+  :root {
+    /* Light Background */
+    --surface: #fcfcfd;
+    --surface-raised: #ffffff;
+    --surface-sunken: #f4f4f6;
+    --border-subtle: #e4e4e7;
+    
+    /* Text Colors */
+    --text-primary: #1b191f;
+    --text-secondary: #524f5a;
+    --text-muted: #787582;
+    
+    /* Mauve Accent & Gold Secondary */
+    --accent: #a76385;
+    --accent-contrast: #ffffff;
+    --secondary-accent: var(--color-brass);
+    --glow: color-mix(in srgb, #a76385 22%, transparent);
+  }
+
+  .dark {
+    /* Ink Dark Background */
+    --surface: #1b191f;
+    --surface-raised: #242129;
+    --surface-sunken: #141318;
+    --border-subtle: #332f3b;
+    
+    /* Light Text */
+    --text-primary: #f5f4f7;
+    --text-secondary: #c0bdc7;
+    --text-muted: #8e8a96;
+    
+    /* Mauve Accent in Dark Mode */
+    --accent: #b06b8f;
+    --accent-contrast: #ffffff;
+    --secondary-accent: var(--color-brass-light);
+    --glow: color-mix(in srgb, #b06b8f 26%, transparent);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--surface);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  :lang(ar) body,
+  [dir='rtl'] body {
+    font-family: var(--font-arabic);
+    line-height: 1.9;
+  }
+
+  [dir='rtl'] .numeric {
+    direction: ltr;
+    display: inline-block;
+    unicode-bidi: isolate;
+  }
+
+  ::selection {
+    background-color: var(--glow);
+    color: var(--text-primary);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* ==========================================================================
+   COMPONENT UTILITIES
+   ========================================================================== */
+@layer components {
+  .surface-card {
+    background-color: var(--surface-raised);
+    border: 1px solid var(--border-subtle);
+  }
+
+  /* Gradient text using Mauve to Brass transition */
+  .text-gradient {
+    background-image: linear-gradient(
+      120deg,
+      var(--accent),
+      var(--secondary-accent) 55%,
+      var(--accent)
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .glass {
+    background-color: color-mix(in srgb, var(--surface-raised) 75%, transparent);
+    backdrop-filter: blur(14px) saturate(160%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
+    border: 1px solid color-mix(in srgb, var(--border-subtle) 70%, transparent);
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity 0.7s var(--ease-out-expo),
+      transform 0.7s var(--ease-out-expo);
+  }
+  .reveal[data-visible='true'] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .grid-backdrop {
+    background-image:
+      linear-gradient(to right, var(--border-subtle) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--border-subtle) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 70% 55% at 50% 0%, #000 55%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 55% at 50% 0%, #000 55%, transparent 100%);
+  }
+
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      var(--surface-sunken) 25%,
+      color-mix(in srgb, var(--surface-sunken) 60%, var(--border-subtle)) 37%,
+      var(--surface-sunken) 63%
+    );
+    background-size: 400% 100%;
+    animation: var(--animate-shimmer);
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   KEYFRAMES
+   ========================================================================== */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 100% 50%;
+  }
+  to {
+    background-position: 0 50%;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+/* Automation & Tech Icons Glow Effects */
+.tech-icon:hover {
+  box-shadow: 0 0 12px var(--accent, #00f3ff);
+}
+
+.featured-automation .tech-icon {
+  animation: nodePulse 2.5s infinite alternate;
+}
+
+@keyframes nodePulse {
+  0% { box-shadow: 0 0 2px var(--accent, #00f3ff); }
+  100% { box-shadow: 0 0 10px var(--accent, #00f3ff); }
+}

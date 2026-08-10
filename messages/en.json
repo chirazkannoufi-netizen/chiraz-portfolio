@@ -1,0 +1,370 @@
+{
+  "meta": {
+    "title": "Chiraz Kanoufi — Software Engineer & Automation Specialist",
+    "description": "Computer Science graduate building automation systems, web applications and AI integrations. n8n, Python, JavaScript, Next.js, Google Apps Script.",
+    "ogAlt": "Portfolio of Chiraz Kanoufi, Software Engineer and Automation Specialist"
+  },
+  "nav": {
+    "home": "Home",
+    "work": "Work",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact",
+    "cta": "Book a call",
+    "menu": "Open menu",
+    "close": "Close menu"
+  },
+  "hero": {
+    "available": "Available for new projects",
+    "greeting": "Hi, I'm",
+    "name": "Chiraz Kanoufi",
+    "roles": ["Software Engineer", "Automation Specialist", "Computer Science Graduate", "API & Workflow Architect"],
+    "tagline": "I build systems that do the work nobody should be doing by hand.",
+    "description": "Computer Science graduate specialising in workflow automation, API integration and full-stack web engineering. I turn manual, error-prone processes into pipelines that run themselves.",
+    "ctaPrimary": "See my work",
+    "ctaSecondary": "Ask my AI assistant",
+    "downloadCv": "Download CV",
+    "downloadCvAria": "Download CV as PDF in English",
+    "scrollHint": "Scroll to explore",
+    "stats": {
+      "errorsReduced": "Manual errors eliminated",
+      "languages": "Languages spoken",
+      "yearsBuilding": "Years building software"
+    }
+  },
+  "about": {
+    "title": "About",
+    "eyebrow": "The short version",
+    "lead": "I write code that removes work rather than adding it.",
+    "bio": "I graduated in Computer Science from Université Ferhat Abbas — Sétif 1, specialising in software engineering. Since then I've worked at the seam between operations and engineering: the place where a business runs on spreadsheets, copy-paste and hope, and someone needs to replace that with something that actually holds. My work spans automation pipelines, e-commerce integrations, and the web applications that sit on top of them.",
+    "educationTitle": "Education",
+    "experienceTitle": "Experience",
+    "skillsTitle": "Technical skills",
+    "languagesTitle": "Languages",
+    "present": "Present",
+    "skillGroups": {
+      "languages": "Programming languages",
+      "frameworks": "Frameworks & web",
+      "automation": "Automation & workflows",
+      "data": "Data & cloud",
+      "design": "Design & tooling",
+      "platforms": "SaaS platforms",
+      "systems": "Systems & security"
+    },
+    "proficiency": {
+      "native": "Native",
+      "fluent": "Fluent",
+      "advanced": "Advanced",
+      "basic": "Basic (B1 in progress)"
+    },
+    "experienceItems": {
+      "ranli": {
+        "role": "Automation & Data Management Engineer",
+        "summary": "Designed and shipped custom automation connecting Shopify, Ecomanager and Google Sheets. Rebuilt the ETL layer so data moves without a human in the loop.",
+        "highlights": [
+          "Cut manual data-handling errors by 90% by replacing copy-paste workflows with scripted, validated pipelines",
+          "Built bidirectional sync between Shopify orders and internal Sheets-based inventory using the Apps Script runtime and webhooks",
+          "Owned live incident response for operational workflows"
+        ]
+      },
+      "daxshop": {
+        "role": "Web Developer & Workflow Specialist",
+        "summary": "Freelance engagement auditing, restructuring and securing the software-tracking databases the business ran on.",
+        "highlights": [
+          "Audited and normalised a sprawling Sheets-based data model into a validated schema",
+          "Added automated conformity checks that flag bad records before they reach reporting",
+          "Delivered real-time reporting that replaced a weekly manual compilation"
+        ]
+      },
+      "consulting": {
+        "role": "Digital & Media Strategy Consultant",
+        "summary": "Freelance work with German SMEs and Forever Living (USA) across the Gulf region.",
+        "highlights": [
+          "Ran targeted campaigns and conversion analysis against the Snapchat Marketing API",
+          "Implemented CRM tooling and automated customer assistance for international user journeys"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "title": "Selected work",
+    "eyebrow": "Case studies",
+    "subtitle": "Problems, what I did about them, and what changed as a result.",
+    "filters": {
+      "all": "All",
+      "automation": "Automation & scripts",
+      "web": "Web development",
+      "ai-data": "AI & data",
+      "ecommerce": "E-commerce"
+    },
+    "showing": "{count, plural, =0 {No projects} =1 {1 project} other {# projects}}",
+    "problem": "Problem",
+    "solution": "Solution",
+    "outcome": "Outcome",
+    "stack": "Stack",
+    "viewCode": "View code",
+    "viewLive": "Live demo",
+    "liveDemoBadge": "Live demo",
+    "featured": "Featured",
+    "empty": "No projects match this filter yet.",
+    "metrics": {
+      "manualErrors": "fewer manual errors",
+      "hoursSaved": "reclaimed",
+      "ordersSynced": "orders synced",
+      "routes": "curated routes",
+      "coldStart": "cold start",
+      "recordsAudited": "records audited",
+      "reportLatency": "faster reporting",
+      "responseTime": "lead response time",
+      "uptime": "uptime",
+      "languages": "languages supported",
+      "ttfb": "time to first token",
+      "markets": "markets",
+      "cpaReduction": "lower cost per acquisition"
+    },
+    "items": {
+      "etl-shopify-sync": {
+        "title": "Shopify ↔ Sheets ETL pipeline",
+        "problem": "Order, stock and fulfilment data lived in three systems that didn't talk. Staff reconciled them by hand every day, and the errors compounded downstream into wrong stock counts and missed shipments.",
+        "solution": "Built a scheduled and webhook-triggered pipeline in Google Apps Script that extracts from the Shopify Admin API and Ecomanager, validates and normalises every record against a strict schema, then loads into the Sheets-based operational store. Bad records are quarantined and reported instead of silently written.",
+        "outcome": "Manual handling errors dropped by 90%, roughly fifteen hours a week of reconciliation disappeared, and stock figures became trustworthy enough to make decisions on."
+      },
+      "gotrek": {
+        "title": "GoTrek — tourism guidance app",
+        "problem": "Travellers exploring the region had no single, reliable source for routes, timing and local orientation data — the information was scattered across forums and out of date.",
+        "solution": "Architected and built a mobile application over a REST backend, with a normalised PostgreSQL schema for routes and points of interest, offline-capable caching, and a UI designed in Figma around one-handed use outdoors.",
+        "outcome": "A working guidance app covering forty-plus curated routes with a sub-1.2-second cold start on mid-range hardware."
+      },
+      "data-integrity-audit": {
+        "title": "Data integrity audit & automated reporting",
+        "problem": "A business ran its software tracking on spreadsheets nobody trusted. Duplicate rows, inconsistent formats and silent overwrites meant every report needed manual verification before anyone would act on it.",
+        "solution": "Audited the existing model, designed a validated schema with typed columns and referential checks, and wrote automation that runs conformity rules on every write. Violations trigger an alert with the offending row rather than failing quietly.",
+        "outcome": "Over thirty thousand records audited and normalised, and reporting that used to take a manual weekly pass now lands in near real time."
+      },
+      "n8n-lead-router": {
+        "title": "n8n lead routing & notification system",
+        "problem": "Inbound enquiries arrived by email and sat unread for hours. There was no triage, no deduplication, and no record of what happened to a lead after it arrived.",
+        "solution": "Built an n8n workflow that receives a signed webhook, validates the payload, deduplicates against previous submissions, writes an audit row to Supabase, and fans out an instant Telegram notification plus a templated acknowledgement email.",
+        "outcome": "Median response time fell from hours to under thirty seconds, with a durable audit trail for every enquiry."
+      },
+      "cv-ai-agent": {
+        "title": "Grounded multilingual CV agent",
+        "problem": "Recruiters ask the same dozen questions and rarely read past the first screen of a CV. A generic chatbot would answer them — and would also confidently invent qualifications, which is worse than saying nothing.",
+        "solution": "Built a streaming agent on the Vercel AI SDK whose entire knowledge base is generated from a single typed profile file. The system prompt forbids extrapolation, names the exact degree level to prevent inflation, and gives the model an explicit fallback so it always has a compliant move when it doesn't know.",
+        "outcome": "Answers in four languages, streams the first token in around 400 ms, and cannot claim a credential that isn't in the source file."
+      },
+      "campaign-analytics": {
+        "title": "Cross-market campaign analytics",
+        "problem": "Campaigns ran across three markets with no shared view of what conversion actually cost, so budget decisions were made on gut feel.",
+        "solution": "Instrumented campaigns against the Snapchat Marketing API, built a consistent conversion-metric definition across markets, and wired CRM automation so qualified contacts were followed up without manual handoff.",
+        "outcome": "A comparable view across three markets and a materially lower cost per acquisition once spend followed the data."
+      }
+    }
+  },
+  "github": {
+    "title": "Live from GitHub",
+    "subtitle": "Public repository activity, refreshed hourly.",
+    "repos": "Repositories",
+    "followers": "Followers",
+    "stars": "Stars earned",
+    "topLanguages": "Most-used languages",
+    "activity": "Activity over the last year",
+    "unavailable": "GitHub stats are unavailable right now.",
+    "viewProfile": "View profile",
+    "less": "Less",
+    "more": "More"
+  },
+  "services": {
+    "title": "How I can help",
+    "eyebrow": "Services",
+    "subtitle": "Four ways I typically work with clients.",
+    "items": {
+      "automation": {
+        "title": "Custom automation systems",
+        "description": "The manual process you've been meaning to fix, replaced with a pipeline that runs itself and tells you when something breaks.",
+        "features": ["n8n workflow design", "Google Apps Script", "Scheduled & webhook triggers", "Error handling and alerting"]
+      },
+      "web": {
+        "title": "Web & software engineering",
+        "description": "Fast, accessible, typed applications built on Next.js — from a marketing site that ranks to an internal tool your team actually likes using.",
+        "features": ["Next.js & React", "TypeScript end to end", "Core Web Vitals budget", "Responsive & accessible"]
+      },
+      "api": {
+        "title": "API & systems integration",
+        "description": "Making two systems that were never designed to talk to each other exchange data reliably, with validation at every boundary.",
+        "features": ["REST integration", "Shopify & e-commerce APIs", "Data modelling & ETL", "PostgreSQL / Supabase"]
+      },
+      "audit": {
+        "title": "Technical audits",
+        "description": "An honest read on what you have: where the data model leaks, what the security posture actually is, and what to fix first.",
+        "features": ["Data integrity review", "Performance audit", "Security & WAF review", "Prioritised action plan"]
+      }
+    }
+  },
+  "estimator": {
+    "title": "Estimate your project",
+    "eyebrow": "Interactive calculator",
+    "subtitle": "Pick what you need. The estimate updates as you go — no email required.",
+    "groups": {
+      "projectType": {
+        "title": "What are we building?",
+        "options": {
+          "type-automation": "Automation / workflow system",
+          "type-website": "Marketing website",
+          "type-webapp": "Full web application",
+          "type-audit": "Technical audit only"
+        }
+      },
+      "integrations": {
+        "title": "Integrations",
+        "options": {
+          "int-shopify": "Shopify / e-commerce platform",
+          "int-sheets": "Google Sheets / Workspace",
+          "int-n8n": "n8n workflow engine",
+          "int-payments": "Payments (Stripe)",
+          "int-crm": "CRM or helpdesk"
+        }
+      },
+      "features": {
+        "title": "Features",
+        "options": {
+          "feat-ai": "AI assistant / LLM integration",
+          "feat-dashboard": "Analytics dashboard",
+          "feat-auth": "Authentication & user accounts",
+          "feat-i18n": "Multilingual (with RTL)",
+          "feat-cms": "Content management"
+        }
+      },
+      "support": {
+        "title": "Post-launch support",
+        "options": {
+          "support-none": "None — hand over and go",
+          "support-1m": "1 month",
+          "support-3m": "3 months"
+        }
+      }
+    },
+    "rush": {
+      "label": "Rush delivery",
+      "hint": "Compressed timeline, priority scheduling"
+    },
+    "summary": "Your estimate",
+    "estimatedRange": "Estimated range",
+    "timeline": "Estimated timeline",
+    "days": "{count, plural, =1 {1 working day} other {# working days}}",
+    "selected": "{count, plural, =0 {Nothing selected} =1 {1 item selected} other {# items selected}}",
+    "cta": "Book a call to confirm scope",
+    "reset": "Reset",
+    "disclaimer": "This is an indicative range based on typical scope, not a quote. The final figure follows a short conversation about what you actually need."
+  },
+  "booking": {
+    "title": "Let's talk it through",
+    "eyebrow": "Book a call",
+    "subtitle": "Thirty minutes, no pitch. Bring the problem and we'll work out whether I'm the right person for it.",
+    "cta": "Pick a time",
+    "loading": "Loading calendar…",
+    "fallback": "Calendar not loading? Email me directly."
+  },
+  "contact": {
+    "title": "Get in touch",
+    "eyebrow": "Contact",
+    "subtitle": "Tell me what you're trying to build. I reply within 24 hours.",
+    "fields": {
+      "name": "Your name",
+      "namePlaceholder": "Amina Belkacem",
+      "email": "Email",
+      "emailPlaceholder": "you@company.com",
+      "company": "Company",
+      "companyPlaceholder": "Optional",
+      "budget": "Budget range",
+      "budgetPlaceholder": "Select a range",
+      "message": "What do you need?",
+      "messagePlaceholder": "The process you want automated, the app you need built, or the thing that's currently broken…"
+    },
+    "budgets": {
+      "under-500": "Under $500",
+      "500-1500": "$500 – $1,500",
+      "1500-5000": "$1,500 – $5,000",
+      "5000-plus": "$5,000+",
+      "not-sure": "Not sure yet"
+    },
+    "optional": "optional",
+    "submit": "Send message",
+    "sending": "Sending…",
+    "successTitle": "Message sent",
+    "successBody": "Thanks — it landed. I'll get back to you within 24 hours.",
+    "sendAnother": "Send another",
+    "errorTitle": "That didn't go through",
+    "errors": {
+      "rate_limited": "Too many submissions. Please try again in a few minutes.",
+      "captcha_failed": "The anti-bot check didn't pass. Please refresh and try again.",
+      "validation_failed": "Please check the highlighted fields.",
+      "delivery_failed": "Something broke on my side. Please email me directly.",
+      "delivery_unavailable": "The contact channel is temporarily unavailable. Please email me directly.",
+      "network": "Couldn't reach the server. Check your connection and try again."
+    },
+    "validation": {
+      "nameShort": "Please enter at least 2 characters.",
+      "nameLong": "That name is too long.",
+      "emailInvalid": "Please enter a valid email address.",
+      "messageShort": "Please give me at least 20 characters to work with.",
+      "messageLong": "Please keep it under 2000 characters.",
+      "captchaRequired": "Please complete the anti-bot check."
+    },
+    "directEmail": "Or email directly",
+    "protectedBy": "Protected by Cloudflare Turnstile"
+  },
+  "chat": {
+    "title": "Chiraz AI Assistant",
+    "subtitle": "Ask about her experience, stack or availability",
+    "open": "Open AI assistant",
+    "close": "Close assistant",
+    "placeholder": "Ask me anything about Chiraz…",
+    "send": "Send",
+    "stop": "Stop",
+    "clear": "New conversation",
+    "thinking": "Thinking…",
+    "suggestions": {
+      "experience": "What has she actually built?",
+      "automation": "Tell me about her automation work",
+      "stack": "What's her technical stack?",
+      "hire": "Is she available for a project?"
+    },
+    "error": "Something went wrong. Please try again.",
+    "rateLimited": "That's a lot of questions at once — give it a minute and try again.",
+    "retry": "Retry",
+    "disclaimer": "AI-generated from Chiraz's verified CV. It will tell you when it doesn't know.",
+    "poweredBy": "Grounded in a verified profile"
+  },
+  "theme": {
+    "toggle": "Toggle theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "language": {
+    "label": "Language",
+    "switch": "Change language",
+    "current": "Current language: {language}"
+  },
+  "footer": {
+    "tagline": "Built in Sétif. Working everywhere.",
+    "rights": "© {year} Chiraz Kanoufi. All rights reserved.",
+    "builtWith": "Next.js, TypeScript and Tailwind CSS",
+    "sourceCode": "Source code",
+    "backToTop": "Back to top"
+  },
+  "common": {
+    "loading": "Loading…",
+    "error": "Something went wrong",
+    "close": "Close",
+    "copy": "Copy",
+    "copied": "Copied",
+    "skipToContent": "Skip to content"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "That page doesn't exist — or it moved. Let's get you back.",
+    "cta": "Back to home"
+  }
+}
