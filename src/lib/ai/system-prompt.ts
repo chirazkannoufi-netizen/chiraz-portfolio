@@ -36,6 +36,10 @@ function buildKnowledgeBase(): string {
     .map((e) => `- ${e.degree} — ${e.institution} (${e.start}–${e.end})`)
     .join('\n');
 
+  const certs = profile.certificates
+    .map((c) => `- ${c.degree} — ${c.institution} (${c.start}–${c.end})`)
+    .join('\n');
+
   const exp = profile.experience
     .map((e) => {
       const end = e.end ?? 'present';
@@ -76,6 +80,9 @@ Availability: ${profile.availability.status}, ~${profile.availability.weeklyHour
 
 EDUCATION (exact — do not upgrade or paraphrase the level)
 ${edu}
+
+CERTIFICATES
+${certs}
 
 PROFESSIONAL EXPERIENCE
 ${exp}

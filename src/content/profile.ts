@@ -40,6 +40,7 @@ export const profile = {
   /**
    * ⚠️ VERIFIED CREDENTIAL — do not inflate.
    * The CV states a Licence (Bac+3 / B.Sc.), NOT a Master's degree.
+   * Academic degrees only — professional certificates live in `certificates`.
    */
   education: [
     {
@@ -58,6 +59,19 @@ export const profile = {
       ],
     },
     {
+      id: 'bac',
+      degree: 'Baccalauréat — Experimental Sciences (×2, both "Mention Bien")',
+      specialisation: 'Experimental Sciences',
+      institution: 'Algeria',
+      start: '2021',
+      end: '2022',
+      coursework: [],
+    },
+  ],
+
+  /** Professional certificates — distinct from the academic `education` above. */
+  certificates: [
+    {
       id: 'huawei-ai',
       degree: 'Huawei Talent Certificate — Search & Artificial Intelligence',
       specialisation: 'CRA Training Program',
@@ -69,15 +83,6 @@ export const profile = {
         'Machine learning fundamentals',
         'Decision-oriented data processing',
       ],
-    },
-    {
-      id: 'bac',
-      degree: 'Baccalauréat — Experimental Sciences (×2, both "Mention Bien")',
-      specialisation: 'Experimental Sciences',
-      institution: 'Algeria',
-      start: '2021',
-      end: '2022',
-      coursework: [],
     },
   ],
 
