@@ -1,9 +1,10 @@
 import { useTranslations } from 'next-intl';
-import { GraduationCap, Briefcase } from 'lucide-react';
+import { GraduationCap, Award, Briefcase } from 'lucide-react';
 
 import { profile } from '@/content/profile';
 import { localeMeta, type Locale } from '@/i18n/routing';
 import { Reveal } from '@/components/ui/Reveal';
+import { TechIcon } from '@/components/about/TechIcon';
 
 /**
  * About — education, experience timeline, skills matrix, spoken languages.
@@ -62,7 +63,7 @@ export function About() {
                     {highlights.map((highlight) => (
                       <li
                         key={highlight}
-                        className="relative ps-4 text-sm leading-relaxed text-[var(--text-secondary)] before:absolute before:start-0 before:top-2.5 before:size-1 before:rounded-full before:bg-[var(--accent)]"
+                        className="text-sm leading-relaxed text-[var(--text-secondary)]"
                       >
                         {highlight}
                       </li>
@@ -110,47 +111,56 @@ export function About() {
           </ul>
         </Reveal>
 
+        <Reveal delay={90}>
+          <h3 className="flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-[var(--text-muted)]">
+            <Award className="size-4" aria-hidden="true" />
+            {t('certificatesTitle')}
+          </h3>
+
+          <ul className="mt-4 space-y-4">
+            {profile.certificates.map((entry) => (
+              <li key={entry.id} className="surface-card rounded-xl p-4">
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  <h4 className="text-sm font-semibold">{entry.degree}</h4>
+                  <span className="numeric shrink-0 text-xs text-[var(--accent)]">
+                    {entry.start === entry.end ? entry.start : `${entry.start}–${entry.end}`}
+                  </span>
+                </div>
+                <p className="mt-1 text-xs text-[var(--text-muted)]">{entry.institution}</p>
+              </li>
+            ))}
+          </ul>
+        </Reveal>
+
         <Reveal delay={120}>
           <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--text-muted)]">
             {t('skillsTitle')}
           </h3>
 
-          <div className="skills-wrapper mt-6">
-  <div className="skills-grid grid grid-cols-1 sm:grid-cols-2 gap-4">
-    {Object.entries(profile.skills).map(([group, items]) => (
-      <div key={group} className="skill-card p-4 rounded-xl border border-[var(--border)] bg-[var(--surface-raised)] transition-all duration-300">
-        <span className="category-title block text-xs font-semibold text-[var(--text-muted)] uppercase tracking-wider mb-3">
-          {t(`skillGroups.${group}`)}
-        </span>
-        <div className="logo-group flex flex-wrap gap-3 items-center">
-         {(items as readonly string[]).map((skill) => {
-  const iconName = skill.toLowerCase().replace(/[^a-z0-9]/g, '');
-  const iconUrl = `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${iconName}/${iconName}-original.svg`;
-
-  return (
-    <div
-      key={skill}
-      className="tech-icon relative w-10 h-10 p-2 rounded-lg bg-[var(--surface-sunken)] border border-[var(--border)] flex items-center justify-center transition-all duration-200 hover:scale-110 hover:border-[var(--accent)] group cursor-pointer"
-    >
-      <img
-        src={iconUrl}
-        alt={skill}
-        className="w-full h-full object-contain"
-        onError={(e) => {
-          (e.currentTarget as HTMLElement).style.display = 'none';
-        }}
-      />
-      <span className="absolute -bottom-7 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-[var(--text-primary)] text-[var(--surface)] text-[10px] font-semibold px-2 py-0.5 rounded whitespace-nowrap pointer-events-none z-10">
-        {skill}
-      </span>
-    </div>
-  );
-})}
-        </div>
-      </div>
-    ))}
-  </div>
-</div>
+          <div className="mt-4 space-y-4">
+            {Object.entries(profile.skills).map(([group, items]) => (
+              <div
+                key={group}
+                className={group === 'automation' ? 'featured-automation' : undefined}
+              >
+                <p className="mb-1.5 text-xs font-medium text-[var(--text-secondary)]">
+                  {t(`skillGroups.${group}`)}
+                </p>
+                <ul className="flex flex-wrap gap-1.5">
+                  {(items as readonly string[]).map((skill) => (
+                    <li
+                      key={skill}
+                      dir="ltr"
+                      className="flex items-center gap-1.5 rounded-md bg-[var(--surface-sunken)] px-2 py-1 font-mono text-[11px] text-[var(--text-secondary)]"
+                    >
+                      <TechIcon skill={skill} />
+                      {skill}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </Reveal>
 
         <Reveal delay={180}>
