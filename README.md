@@ -25,7 +25,7 @@ Runs with zero API keys. Each feature switches on as you add its key.
 | `npm run dev` | Dev server |
 | `npm run build` | Production build (pre-renders all 4 locales) |
 | `npm run typecheck` | `tsc --noEmit` |
-| `npm run i18n:check` | Fails if any locale drifts from `en.json` — **wire this into CI** |
+| `npm run i18n:check` | Fails if any locale drifts from `en.json` — enforced in CI on every PR |
 | `npm run lint` | ESLint |
 
 ## What's where
