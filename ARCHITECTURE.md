@@ -122,7 +122,7 @@ Proper nouns (`Next.js`, `n8n`, `PostgreSQL`) carry `dir="ltr"` so they read cor
 
 ### Translation integrity
 
-`scripts/check-i18n.mjs` compares all four dictionaries against `en.json` as reference and fails on a missing key, an unexpected key, or a type mismatch (string vs array vs object). Wire it into CI — four languages drift silently, and a missing key renders as a raw key path in production, in the one language you don't read.
+`scripts/check-i18n.mjs` compares all four dictionaries against `en.json` as reference and fails on a missing key, an unexpected key, or a type mismatch (string vs array vs object). Enforced in CI (`.github/workflows/i18n-check.yml`) on every PR — four languages drift silently otherwise, and a missing key renders as a raw key path in production, in the one language you don't read.
 
 ```
 $ node scripts/check-i18n.mjs
