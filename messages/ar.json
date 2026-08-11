@@ -10,7 +10,6 @@
     "services": "الخدمات",
     "about": "نبذة",
     "contact": "تواصل",
-    "cta": "احجز مكالمة",
     "menu": "فتح القائمة",
     "close": "إغلاق القائمة"
   },
@@ -41,7 +40,6 @@
     "certificatesTitle": "الشهادات",
     "experienceTitle": "الخبرة",
     "skillsTitle": "المهارات التقنية",
-    "languagesTitle": "اللغات",
     "present": "حتى الآن",
     "skillGroups": {
       "languages": "لغات البرمجة",
@@ -51,12 +49,6 @@
       "design": "التصميم والأدوات",
       "platforms": "منصات SaaS",
       "systems": "الأنظمة والأمن"
-    },
-    "proficiency": {
-      "native": "لغة أم",
-      "fluent": "طلاقة",
-      "advanced": "متقدم",
-      "basic": "أساسيات (B1 قيد الإعداد)"
     },
     "experienceItems": {
       "ranli": {
@@ -163,7 +155,6 @@
     }
   },
   "github": {
-    "title": "مباشرة من GitHub",
     "subtitle": "نشاط المستودعات العامة، يُحدَّث كل ساعة.",
     "repos": "المستودعات",
     "followers": "المتابعون",
