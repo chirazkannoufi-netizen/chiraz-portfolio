@@ -1,4 +1,4 @@
-import { Suspense, use } from 'react';
+import { use } from 'react';
 import { useTranslations } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 
@@ -6,7 +6,6 @@ import { Hero } from '@/components/hero/Hero';
 import { About } from '@/components/about/About';
 import { Section } from '@/components/ui/Section';
 import { ProjectShowcase } from '@/components/projects/ProjectShowcase';
-import { GithubStats } from '@/components/projects/GithubStats';
 import { ServicesGrid } from '@/components/services/ServicesGrid';
 import { CostEstimator } from '@/components/services/CostEstimator';
 import { BookingEmbed } from '@/components/services/BookingEmbed';
@@ -74,14 +73,6 @@ export default function HomePage({ params }: { params: Promise<{ locale: string 
         subtitle={t('projects.subtitle')}
       >
         <ProjectShowcase />
-
-        <div className="mt-12">
-          {/* Suspense boundary: a slow GitHub delays this panel only, never
-              the rest of the page. */}
-          <Suspense fallback={<div className="skeleton h-40 rounded-2xl" />}>
-            <GithubStats />
-          </Suspense>
-        </div>
       </Section>
 
       <Section

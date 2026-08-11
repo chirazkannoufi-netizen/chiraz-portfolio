@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { GraduationCap, Award, Briefcase } from 'lucide-react';
 
@@ -19,8 +20,33 @@ export function About() {
   return (
     <div className="space-y-16">
       <Reveal>
-        <p className="max-w-3xl text-xl font-medium leading-snug text-balance">{t('lead')}</p>
-        <p className="mt-4 max-w-3xl leading-relaxed text-[var(--text-secondary)]">{t('bio')}</p>
+        <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center">
+          {/* Portrait frame: a soft gradient glow behind a hard neon-bordered
+              square reads as "stylised" without fighting the header's plain
+              circular logo for the same visual language. */}
+          <div className="relative shrink-0">
+            <div
+              aria-hidden="true"
+              className="absolute -inset-2 rounded-[1.75rem] bg-gradient-to-br from-[var(--circuit-strong)] via-[var(--accent)] to-[var(--circuit-strong)] opacity-70 blur-lg"
+            />
+            <Image
+              src="/ME.png"
+              alt={profile.name}
+              width={128}
+              height={128}
+              className="relative size-32 rounded-2xl border-2 border-[var(--circuit-strong)] object-cover shadow-[0_0_24px_var(--circuit)]"
+            />
+          </div>
+
+          <div>
+            <p className="max-w-3xl text-xl font-medium leading-snug text-balance">
+              {t('lead')}
+            </p>
+            <p className="mt-4 max-w-3xl leading-relaxed text-[var(--text-secondary)]">
+              {t('bio')}
+            </p>
+          </div>
+        </div>
       </Reveal>
 
       {/* ── Experience ───────────────────────────────────────────── */}
@@ -102,7 +128,7 @@ export function About() {
           {t('educationTitle')}
         </h3>
 
-        <ul className="mt-4 grid max-w-3xl gap-4 sm:grid-cols-2">
+        <ul className="mt-4 max-w-3xl space-y-4">
           {profile.education.map((entry) => (
             <li key={entry.id} className="surface-card rounded-xl p-4">
               <div className="flex flex-wrap items-baseline justify-between gap-2">

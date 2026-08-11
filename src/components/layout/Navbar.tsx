@@ -84,7 +84,7 @@ export function Navbar() {
         <Link
           href="/"
           className="group flex items-center gap-2 font-semibold tracking-tight"
-          aria-label="Chiraz Kanoufi — home"
+          aria-label="Chiraz Lina Kannoufi — home"
         >
           <Image
             src="/ME.png"

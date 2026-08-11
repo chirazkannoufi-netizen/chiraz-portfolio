@@ -1,7 +1,7 @@
 # Architecture & System Setup
 
 **Project:** Interactive Digital Portfolio & AI Engine
-**For:** Kanoufi Chiraz Lina — Software Engineer & Automation Specialist
+**For:** Chiraz Lina Kannoufi — Software Engineer & Automation Specialist
 **Stack:** Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS v4 · next-intl v4 · Vercel AI SDK v7
 
 ---
@@ -32,7 +32,7 @@ chiraz-portfolio/
 ├── scripts/
 │   └── check-i18n.mjs            # fails the build if a locale drifts
 ├── public/
-│   └── cv/chiraz-kanoufi-{en,fr,ar,de}.pdf
+│   └── cv/chiraz-lina-kannoufi-{en,fr,ar,de}.pdf
 └── src/
     ├── proxy.ts                  # Next 16 middleware → locale negotiation
     ├── i18n/
@@ -48,7 +48,6 @@ chiraz-portfolio/
     │   ├── schemas.ts            # Zod — shared client + server
     │   ├── rate-limit.ts         # fixed-window, in-process
     │   ├── turnstile.ts          # server-side CAPTCHA verification
-    │   ├── github.ts             # cached GitHub REST
     │   └── utils.ts
     ├── types/index.ts
     ├── app/
@@ -60,8 +59,7 @@ chiraz-portfolio/
     │   ├── not-found.tsx         # global 404 (outside any locale)
     │   ├── api/
     │   │   ├── chat/route.ts     # streaming AI agent
-    │   │   ├── contact/route.ts  # validated + CAPTCHA'd lead intake
-    │   │   └── github/route.ts
+    │   │   └── contact/route.ts  # validated + CAPTCHA'd lead intake
     │   ├── sitemap.ts            # per-locale + hreflang
     │   └── robots.ts
     └── components/
@@ -71,13 +69,13 @@ chiraz-portfolio/
         ├── i18n/      LanguageSwitcher
         ├── hero/      Hero · RoleTyper · ResumeDownload
         ├── about/     About
-        ├── projects/  ProjectShowcase · ProjectCard · GithubStats
+        ├── projects/  ProjectShowcase · ProjectCard
         ├── services/  ServicesGrid · CostEstimator · BookingEmbed
         ├── contact/   ContactForm · Turnstile
         └── chat/      ChatWidget · OpenChatButton · chat-store
 ```
 
-**Rule of thumb:** `'use client'` appears in 11 files out of 50. Everything else — all four languages of copy, the whole services section, the entire About timeline — is HTML by the time it reaches the browser.
+**Rule of thumb:** `'use client'` appears in 18 files out of 39 — up from the original 11/50 as the interactive background and skills canvas landed, both of which need real client-side work (cursor tracking, measured layout) that CSS/server-rendering can't do. Everything else — all four languages of copy, the whole services section, the entire About timeline text — is still HTML by the time it reaches the browser.
 
 ---
 
@@ -169,7 +167,7 @@ Every rejection happens before the only step that costs money. `temperature: 0.3
 |---|---|
 | Contact spam | Honeypot → Zod → Cloudflare Turnstile (verified server-side) → rate limit |
 | API abuse | Fixed-window rate limiting per IP on `/api/chat` and `/api/contact` |
-| Secrets | `OPENAI_API_KEY`, `GITHUB_TOKEN`, `TURNSTILE_SECRET_KEY`, `N8N_WEBHOOK_SECRET` are server-only — never prefixed `NEXT_PUBLIC_` |
+| Secrets | `OPENAI_API_KEY`, `TURNSTILE_SECRET_KEY`, `N8N_WEBHOOK_SECRET` are server-only — never prefixed `NEXT_PUBLIC_` |
 | Webhook forgery | `x-portfolio-signature` shared secret, verified inside the n8n workflow |
 | Headers | HSTS, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`, `X-Frame-Options` |
 | Prompt injection | System prompt refuses persona changes and instruction disclosure |
@@ -189,9 +187,7 @@ Two decisions worth calling out:
 | Hero background is pure CSS | Zero image requests, zero CLS, can never 404 |
 | Project covers are generated gradients | Same reasoning — no image pipeline, no broken thumbnails |
 | Cal.com loads on click | Its bundle is heavier than the rest of the page combined, and most visitors never scroll that far |
-| GitHub cached 1 h server-side | One upstream call per hour shared across all visitors, not one per page view |
 | Typewriter has a fixed `min-height` | Otherwise each role change reflows the page — a classic CLS source |
-| `<Suspense>` around GitHub stats | A slow third party delays one panel, never the page |
 
 ---
 
@@ -204,7 +200,7 @@ npm run i18n:check             # verify translation parity
 npm run dev                    # → http://localhost:3000/en
 ```
 
-The site runs with **no keys at all** — the chat returns a clean 503, GitHub stats show an honest "unavailable" state, and the contact form reports a delivery error. Add keys to switch each feature on independently.
+The site runs with **no keys at all** — the chat returns a clean 503, and the contact form reports a delivery error. Add keys to switch each feature on independently.
 
 ### Environment variables
 
@@ -212,7 +208,6 @@ The site runs with **no keys at all** — the chat returns a clean 503, GitHub s
 |---|---|---|
 | `OPENAI_API_KEY` | AI chatbot | Server-only |
 | `AI_MODEL` | AI chatbot | Defaults to `gpt-4o-mini` |
-| `GITHUB_USERNAME` / `GITHUB_TOKEN` | Live repo stats | PAT needs `public_repo` only |
 | `NEXT_PUBLIC_TURNSTILE_SITE_KEY` / `TURNSTILE_SECRET_KEY` | Contact form | Both required — form rejects without them |
 | `N8N_WEBHOOK_URL` / `N8N_WEBHOOK_SECRET` | Lead delivery | Verify the signature inside n8n |
 | `NEXT_PUBLIC_CAL_LINK` | Booking | e.g. `chiraz/30min` |
@@ -220,7 +215,7 @@ The site runs with **no keys at all** — the chat returns a clean 503, GitHub s
 
 ### Before first deploy
 
-1. Drop four CV PDFs into `public/cv/` as `chiraz-kanoufi-{en,fr,ar,de}.pdf`
+1. Drop four CV PDFs into `public/cv/` as `chiraz-lina-kannoufi-{en,fr,ar,de}.pdf`
 2. Add `public/og.png` (1200×630)
 3. Replace the placeholder GitHub/LinkedIn URLs in `src/content/profile.ts`
 4. Add real `githubUrl` / `liveUrl` values in `src/content/projects.ts`
@@ -262,6 +257,5 @@ Webhook (POST)
 Stated plainly so nobody discovers them later:
 
 1. **Rate limiting is per-instance.** Serverless instances don't share memory, so the effective limit is `limit × instances`. Acceptable for a portfolio. Swap the body of `rateLimit()` for `@upstash/ratelimit` if traffic ever justifies it — the signature is deliberately identical.
-2. **The GitHub activity heatmap is approximated** from repository `pushed_at` dates. The real contribution graph is only available through GitHub's GraphQL API. Documented in-code so it isn't mistaken for exact commit counts.
-3. **Chat history is per-session.** No persistence layer. Add Supabase if you want analytics on what recruiters actually ask — which would be genuinely useful signal.
-4. **The estimator prices client-side for display.** `calculateQuote()` is a pure function precisely so the server can re-price before a quote is ever attached to a booking. Do that if you wire quotes into Cal.com.
+2. **Chat history is per-session.** No persistence layer. Add Supabase if you want analytics on what recruiters actually ask — which would be genuinely useful signal.
+3. **The estimator prices client-side for display.** `calculateQuote()` is a pure function precisely so the server can re-price before a quote is ever attached to a booking. Do that if you wire quotes into Cal.com.

@@ -70,20 +70,6 @@ export interface Quote {
   days: number;
 }
 
-/** ── GitHub ─────────────────────────────────────────────────────── */
-
-export interface GithubStats {
-  username: string;
-  publicRepos: number;
-  followers: number;
-  totalStars: number;
-  /** Languages by byte count across public repos, descending. */
-  topLanguages: { name: string; percentage: number }[];
-  /** 52-week contribution-style heatmap, oldest → newest. */
-  contributions: { date: string; count: number }[];
-  fetchedAt: string;
-}
-
 /** ── Contact ────────────────────────────────────────────────────── */
 
 export interface ContactPayload {
