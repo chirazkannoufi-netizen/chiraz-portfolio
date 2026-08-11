@@ -76,9 +76,6 @@ export default function HomePage({ params }: { params: Promise<{ locale: string 
         <ProjectShowcase />
 
         <div className="mt-12">
-          <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-[var(--text-muted)]">
-            {t('github.title')}
-          </h3>
           {/* Suspense boundary: a slow GitHub delays this panel only, never
               the rest of the page. */}
           <Suspense fallback={<div className="skeleton h-40 rounded-2xl" />}>

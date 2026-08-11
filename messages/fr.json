@@ -10,7 +10,6 @@
     "services": "Services",
     "about": "À propos",
     "contact": "Contact",
-    "cta": "Réserver un appel",
     "menu": "Ouvrir le menu",
     "close": "Fermer le menu"
   },
@@ -41,7 +40,6 @@
     "certificatesTitle": "Certifications",
     "experienceTitle": "Expérience",
     "skillsTitle": "Compétences techniques",
-    "languagesTitle": "Langues",
     "present": "Aujourd'hui",
     "skillGroups": {
       "languages": "Langages de programmation",
@@ -51,12 +49,6 @@
       "design": "Design & outils",
       "platforms": "Plateformes SaaS",
       "systems": "Systèmes & sécurité"
-    },
-    "proficiency": {
-      "native": "Langue maternelle",
-      "fluent": "Courant",
-      "advanced": "Avancé",
-      "basic": "Notions (B1 en cours)"
     },
     "experienceItems": {
       "ranli": {
@@ -163,7 +155,6 @@
     }
   },
   "github": {
-    "title": "En direct de GitHub",
     "subtitle": "Activité des dépôts publics, actualisée toutes les heures.",
     "repos": "Dépôts",
     "followers": "Abonnés",

@@ -25,8 +25,7 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28">
-      {/* Ambient background: pure CSS, zero image requests, no CLS. */}
-      <div className="pointer-events-none absolute inset-0 -z-10 grid-backdrop opacity-60" />
+      {/* Local accent on top of the global CyberBackground (layout.tsx). */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -top-40 start-1/2 -z-10 size-[38rem] -translate-x-1/2 rounded-full bg-[var(--glow)] blur-3xl rtl:translate-x-1/2"

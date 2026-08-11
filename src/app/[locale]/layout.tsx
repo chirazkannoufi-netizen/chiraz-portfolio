@@ -9,6 +9,7 @@ import { ThemeProvider } from '@/components/theme/ThemeProvider';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { ChatWidget } from '@/components/chat/ChatWidget';
+import { CyberBackground } from '@/components/ui/CyberBackground';
 
 import '../globals.css';
 
@@ -96,6 +97,7 @@ export default async function LocaleLayout({
       suppressHydrationWarning
     >
       <body className="min-h-dvh antialiased">
+        <CyberBackground />
         <ThemeProvider>
           <NextIntlClientProvider>
             {/* Keyboard users land here first. */}

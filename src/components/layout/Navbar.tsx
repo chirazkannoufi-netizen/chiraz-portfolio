@@ -1,8 +1,10 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
+import { Menu, X, Calendar } from 'lucide-react';
 
 import { Link } from '@/i18n/navigation';
 import { LanguageSwitcher } from '@/components/i18n/LanguageSwitcher';
@@ -18,6 +20,7 @@ const SECTIONS = [
 
 export function Navbar() {
   const t = useTranslations('nav');
+  const reduceMotion = useReducedMotion();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -80,12 +83,17 @@ export function Navbar() {
       >
         <Link
           href="/"
-          className="flex items-center gap-2 font-semibold tracking-tight"
+          className="group flex items-center gap-2 font-semibold tracking-tight"
           aria-label="Chiraz Kanoufi — home"
         >
-          <span className="grid size-8 place-items-center rounded-lg bg-[var(--accent)] text-sm font-bold text-[var(--accent-contrast)]">
-            C
-          </span>
+          <Image
+            src="/ME.png"
+            alt=""
+            width={32}
+            height={32}
+            priority
+            className="size-8 rounded-full object-cover ring-1 ring-[var(--border-subtle)] transition-shadow group-hover:shadow-[0_0_14px_var(--circuit)] group-hover:ring-[var(--circuit-strong)]"
+          />
           <span className="hidden text-sm sm:inline">chiraz.dev</span>
         </Link>
 
@@ -114,10 +122,12 @@ export function Navbar() {
           <ThemeToggle />
 
           <a
-            href="#booking"
-            className="hidden h-9 items-center rounded-lg bg-[var(--accent)] px-4 text-sm font-semibold text-[var(--accent-contrast)] transition-transform hover:scale-[1.03] active:scale-[0.98] sm:inline-flex"
+            href="#contact"
+            aria-label={t('contact')}
+            title={t('contact')}
+            className="hidden size-9 items-center justify-center rounded-lg border border-[var(--border-subtle)] bg-[var(--surface-raised)] text-[var(--text-secondary)] transition-all hover:border-[var(--circuit-strong)] hover:text-[var(--accent)] hover:shadow-[0_0_12px_var(--circuit)] active:scale-[0.96] sm:inline-flex"
           >
-            {t('cta')}
+            <Calendar className="size-4" aria-hidden="true" />
           </a>
 
           <button
@@ -138,35 +148,32 @@ export function Navbar() {
       </nav>
 
       {/* Mobile sheet */}
-      {mobileOpen && (
-        <div
-          id="mobile-menu"
-          className="glass mx-4 mt-2 rounded-2xl p-3 md:hidden sm:mx-8"
-        >
-          <ul className="flex flex-col gap-1">
-            {SECTIONS.map((section) => (
-              <li key={section.id}>
-                <a
-                  href={`#${section.id}`}
-                  onClick={() => setMobileOpen(false)}
-                  className="block rounded-lg px-4 py-3 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--surface-sunken)]"
-                >
-                  {t(section.key)}
-                </a>
-              </li>
-            ))}
-            <li>
-              <a
-                href="#booking"
-                onClick={() => setMobileOpen(false)}
-                className="mt-1 block rounded-lg bg-[var(--accent)] px-4 py-3 text-center text-sm font-semibold text-[var(--accent-contrast)]"
-              >
-                {t('cta')}
-              </a>
-            </li>
-          </ul>
-        </div>
-      )}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            id="mobile-menu"
+            initial={reduceMotion ? false : { opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={reduceMotion ? undefined : { opacity: 0, y: -8 }}
+            transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="glass mx-4 mt-2 rounded-2xl p-3 md:hidden sm:mx-8"
+          >
+            <ul className="flex flex-col gap-1">
+              {SECTIONS.map((section) => (
+                <li key={section.id}>
+                  <a
+                    href={`#${section.id}`}
+                    onClick={() => setMobileOpen(false)}
+                    className="block rounded-lg px-4 py-3 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:bg-[var(--surface-sunken)]"
+                  >
+                    {t(section.key)}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

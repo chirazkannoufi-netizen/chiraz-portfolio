@@ -64,6 +64,11 @@
     --accent-contrast: #ffffff;
     --secondary-accent: var(--color-brass);
     --glow: color-mix(in srgb, #a76385 22%, transparent);
+
+    /* Circuit/neon motif — soft in light mode, full neon in dark (below). */
+    --circuit: color-mix(in srgb, var(--accent) 30%, transparent);
+    --circuit-strong: color-mix(in srgb, var(--accent) 55%, transparent);
+    --circuit-grid-opacity: 0.3;
   }
 
   .dark {
@@ -83,6 +88,11 @@
     --accent-contrast: #ffffff;
     --secondary-accent: var(--color-brass-light);
     --glow: color-mix(in srgb, #b06b8f 26%, transparent);
+
+    /* Full neon in dark mode — cyan circuit traces against the ink surface. */
+    --circuit: color-mix(in srgb, #00f3ff 45%, transparent);
+    --circuit-strong: #00f3ff;
+    --circuit-grid-opacity: 0.55;
   }
 
   html {
@@ -176,15 +186,6 @@
     transform: none;
   }
 
-  .grid-backdrop {
-    background-image:
-      linear-gradient(to right, var(--border-subtle) 1px, transparent 1px),
-      linear-gradient(to bottom, var(--border-subtle) 1px, transparent 1px);
-    background-size: 56px 56px;
-    mask-image: radial-gradient(ellipse 70% 55% at 50% 0%, #000 55%, transparent 100%);
-    -webkit-mask-image: radial-gradient(ellipse 70% 55% at 50% 0%, #000 55%, transparent 100%);
-  }
-
   .skeleton {
     background: linear-gradient(
       90deg,
@@ -250,11 +251,84 @@
   box-shadow: 0 0 12px var(--accent, #00f3ff);
 }
 
-.featured-automation .tech-icon {
-  animation: nodePulse 2.5s infinite alternate;
-}
-
 @keyframes nodePulse {
   0% { box-shadow: 0 0 2px var(--accent, #00f3ff); }
   100% { box-shadow: 0 0 10px var(--accent, #00f3ff); }
+}
+
+/* ==========================================================================
+   AUTOMATION FLOW CANVAS — About > Technical skills
+   ========================================================================== */
+@layer components {
+  .flow-node {
+    position: relative;
+  }
+  .flow-node:hover {
+    border-color: var(--circuit-strong);
+    box-shadow: 0 0 18px var(--circuit);
+  }
+  .flow-node--featured {
+    animation: nodePulse 2.5s infinite alternate;
+    border-color: var(--circuit);
+  }
+
+  .flow-line {
+    stroke: var(--circuit);
+    stroke-width: 2;
+    stroke-dasharray: 5 8;
+    fill: none;
+    opacity: 0.8;
+    animation: circuitFlow 3.2s linear infinite;
+  }
+}
+
+/* ==========================================================================
+   CYBER BACKGROUND — fixed, site-wide AI/automation motif
+   A perspective circuit grid + a drifting node network. Pure CSS/SVG so it
+   costs nothing beyond first paint; prefers-reduced-motion (above) already
+   freezes every animation in here.
+   ========================================================================== */
+@layer components {
+  .cyber-grid {
+    position: absolute;
+    inset: -10% -20% auto -20%;
+    height: 65%;
+    background-image:
+      linear-gradient(var(--circuit) 1px, transparent 1px),
+      linear-gradient(90deg, var(--circuit) 1px, transparent 1px);
+    background-size: 44px 44px;
+    transform: perspective(600px) rotateX(60deg);
+    transform-origin: top center;
+    opacity: var(--circuit-grid-opacity);
+    mask-image: linear-gradient(to bottom, transparent, #000 35%, transparent 90%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 35%, transparent 90%);
+    animation: circuitDrift 16s linear infinite;
+  }
+
+  .cyber-line {
+    stroke: var(--circuit);
+    stroke-width: 1.5;
+    fill: none;
+    stroke-dasharray: 6 10;
+    animation: circuitFlow 6s linear infinite;
+  }
+
+  .cyber-node {
+    fill: var(--circuit-strong);
+    animation: circuitPulse 3.4s ease-in-out infinite;
+  }
+}
+
+@keyframes circuitDrift {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 0 44px, 44px 0; }
+}
+
+@keyframes circuitFlow {
+  to { stroke-dashoffset: -32; }
+}
+
+@keyframes circuitPulse {
+  0%, 100% { opacity: 0.45; r: 4; }
+  50% { opacity: 1; r: 6; }
 }

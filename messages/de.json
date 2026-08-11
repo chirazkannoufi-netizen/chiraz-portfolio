@@ -10,7 +10,6 @@
     "services": "Leistungen",
     "about": "Über mich",
     "contact": "Kontakt",
-    "cta": "Termin buchen",
     "menu": "Menü öffnen",
     "close": "Menü schließen"
   },
@@ -41,7 +40,6 @@
     "certificatesTitle": "Zertifikate",
     "experienceTitle": "Berufserfahrung",
     "skillsTitle": "Technische Kenntnisse",
-    "languagesTitle": "Sprachen",
     "present": "Heute",
     "skillGroups": {
       "languages": "Programmiersprachen",
@@ -51,12 +49,6 @@
       "design": "Design & Werkzeuge",
       "platforms": "SaaS-Plattformen",
       "systems": "Systeme & Sicherheit"
-    },
-    "proficiency": {
-      "native": "Muttersprache",
-      "fluent": "Fließend",
-      "advanced": "Fortgeschritten",
-      "basic": "Grundkenntnisse (B1 in Vorbereitung)"
     },
     "experienceItems": {
       "ranli": {
@@ -163,7 +155,6 @@
     }
   },
   "github": {
-    "title": "Live von GitHub",
     "subtitle": "Aktivität öffentlicher Repositories, stündlich aktualisiert.",
     "repos": "Repositories",
     "followers": "Follower",
