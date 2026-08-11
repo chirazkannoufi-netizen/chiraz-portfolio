@@ -68,7 +68,6 @@
     /* Circuit/neon motif — soft in light mode, full neon in dark (below). */
     --circuit: color-mix(in srgb, var(--accent) 30%, transparent);
     --circuit-strong: color-mix(in srgb, var(--accent) 55%, transparent);
-    --circuit-grid-opacity: 0.3;
   }
 
   .dark {
@@ -92,7 +91,6 @@
     /* Full neon in dark mode — cyan circuit traces against the ink surface. */
     --circuit: color-mix(in srgb, #00f3ff 45%, transparent);
     --circuit-strong: #00f3ff;
-    --circuit-grid-opacity: 0.55;
   }
 
   html {
@@ -282,53 +280,11 @@
   }
 }
 
-/* ==========================================================================
-   CYBER BACKGROUND — fixed, site-wide AI/automation motif
-   A perspective circuit grid + a drifting node network. Pure CSS/SVG so it
-   costs nothing beyond first paint; prefers-reduced-motion (above) already
-   freezes every animation in here.
-   ========================================================================== */
-@layer components {
-  .cyber-grid {
-    position: absolute;
-    inset: -10% -20% auto -20%;
-    height: 65%;
-    background-image:
-      linear-gradient(var(--circuit) 1px, transparent 1px),
-      linear-gradient(90deg, var(--circuit) 1px, transparent 1px);
-    background-size: 44px 44px;
-    transform: perspective(600px) rotateX(60deg);
-    transform-origin: top center;
-    opacity: var(--circuit-grid-opacity);
-    mask-image: linear-gradient(to bottom, transparent, #000 35%, transparent 90%);
-    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 35%, transparent 90%);
-    animation: circuitDrift 16s linear infinite;
-  }
-
-  .cyber-line {
-    stroke: var(--circuit);
-    stroke-width: 1.5;
-    fill: none;
-    stroke-dasharray: 6 10;
-    animation: circuitFlow 6s linear infinite;
-  }
-
-  .cyber-node {
-    fill: var(--circuit-strong);
-    animation: circuitPulse 3.4s ease-in-out infinite;
-  }
-}
-
-@keyframes circuitDrift {
-  from { background-position: 0 0, 0 0; }
-  to { background-position: 0 44px, 44px 0; }
-}
+/* CyberBackground (src/components/ui/CyberBackground.tsx) paints itself
+   directly on a <canvas> — the node field reacts to the cursor, which a
+   CSS/SVG-only version couldn't do. --circuit / --circuit-strong (above)
+   are read from there via getComputedStyle. */
 
 @keyframes circuitFlow {
   to { stroke-dashoffset: -32; }
-}
-
-@keyframes circuitPulse {
-  0%, 100% { opacity: 0.45; r: 4; }
-  50% { opacity: 1; r: 6; }
 }

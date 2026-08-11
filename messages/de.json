@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "Chiraz Kanoufi — Software Engineer & Automatisierungs-Spezialistin",
+    "title": "Chiraz Lina Kannoufi — Software Engineer & Automatisierungs-Spezialistin",
     "description": "Informatik-Absolventin. Ich baue Automatisierungssysteme, Webanwendungen und KI-Integrationen. n8n, Python, JavaScript, Next.js, Google Apps Script.",
-    "ogAlt": "Portfolio von Chiraz Kanoufi, Software Engineer und Automatisierungs-Spezialistin"
+    "ogAlt": "Portfolio von Chiraz Lina Kannoufi, Software Engineer und Automatisierungs-Spezialistin"
   },
   "nav": {
     "home": "Start",
@@ -16,7 +16,7 @@
   "hero": {
     "available": "Verfügbar für neue Projekte",
     "greeting": "Hallo, ich bin",
-    "name": "Chiraz Kanoufi",
+    "name": "Chiraz Lina Kannoufi",
     "roles": ["Software Engineer", "Automatisierungs-Spezialistin", "Informatik-Absolventin", "API- & Workflow-Architektin"],
     "tagline": "Ich baue Systeme, die die Arbeit erledigen, die niemand von Hand machen sollte.",
     "description": "Informatik-Absolventin mit Schwerpunkt Prozessautomatisierung, API-Integration und Full-Stack-Webentwicklung. Ich verwandle manuelle, fehleranfällige Abläufe in Pipelines, die von selbst laufen.",
@@ -154,18 +154,6 @@
       }
     }
   },
-  "github": {
-    "subtitle": "Aktivität öffentlicher Repositories, stündlich aktualisiert.",
-    "repos": "Repositories",
-    "followers": "Follower",
-    "stars": "Erhaltene Sterne",
-    "topLanguages": "Meistgenutzte Sprachen",
-    "activity": "Aktivität im letzten Jahr",
-    "unavailable": "GitHub-Statistiken sind derzeit nicht verfügbar.",
-    "viewProfile": "Profil ansehen",
-    "less": "Weniger",
-    "more": "Mehr"
-  },
   "services": {
     "title": "Wie ich helfen kann",
     "eyebrow": "Leistungen",
@@ -245,13 +233,13 @@
     "timeline": "Geschätzte Dauer",
     "days": "{count, plural, =1 {1 Arbeitstag} other {# Arbeitstage}}",
     "selected": "{count, plural, =0 {Nichts ausgewählt} =1 {1 Element ausgewählt} other {# Elemente ausgewählt}}",
-    "cta": "Termin buchen und Umfang klären",
+    "cta": "Termin vereinbaren und Umfang klären",
     "reset": "Zurücksetzen",
     "disclaimer": "Eine Richtspanne auf Basis typischer Projektumfänge, kein Angebot. Die endgültige Zahl folgt einem kurzen Gespräch über Ihren tatsächlichen Bedarf."
   },
   "booking": {
     "title": "Lassen Sie uns sprechen",
-    "eyebrow": "Termin buchen",
+    "eyebrow": "Terminplanung",
     "subtitle": "Dreißig Minuten, kein Verkaufsgespräch. Bringen Sie das Problem mit, und wir finden heraus, ob ich die Richtige dafür bin.",
     "cta": "Zeit auswählen",
     "loading": "Kalender wird geladen…",
@@ -341,7 +329,7 @@
   },
   "footer": {
     "tagline": "Gebaut in Sétif. Weltweit im Einsatz.",
-    "rights": "© {year} Chiraz Kanoufi. Alle Rechte vorbehalten.",
+    "rights": "© {year} Chiraz Lina Kannoufi. Alle Rechte vorbehalten.",
     "builtWith": "Next.js, TypeScript und Tailwind CSS",
     "sourceCode": "Quellcode",
     "backToTop": "Nach oben"

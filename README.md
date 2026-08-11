@@ -1,9 +1,9 @@
-# Chiraz Kanoufi — Interactive Portfolio & AI Engine
+# Chiraz Lina Kannoufi — Interactive Portfolio & AI Engine
 
 A four-language (EN · FR · AR · DE, with full RTL) portfolio that behaves like a
 product: a grounded AI agent that answers recruiter questions from a verified CV,
-filterable engineering case studies, live GitHub stats, an interactive cost
-estimator, and a hardened contact pipeline.
+filterable engineering case studies, an interactive cost estimator, and a
+hardened contact pipeline.
 
 **Read [`ARCHITECTURE.md`](./ARCHITECTURE.md) first** — it explains why the code is
 shaped the way it is.

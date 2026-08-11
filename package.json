@@ -2,7 +2,7 @@
   "name": "chiraz-portfolio",
   "version": "1.0.0",
   "private": true,
-  "description": "Interactive digital portfolio & AI engine \u2014 Kanoufi Chiraz Lina",
+  "description": "Interactive digital portfolio & AI engine \u2014 Chiraz Lina Kannoufi",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

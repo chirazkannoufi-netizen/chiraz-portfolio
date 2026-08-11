@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "Chiraz Kanoufi — Software Engineer & Automation Specialist",
+    "title": "Chiraz Lina Kannoufi — Software Engineer & Automation Specialist",
     "description": "Computer Science graduate building automation systems, web applications and AI integrations. n8n, Python, JavaScript, Next.js, Google Apps Script.",
-    "ogAlt": "Portfolio of Chiraz Kanoufi, Software Engineer and Automation Specialist"
+    "ogAlt": "Portfolio of Chiraz Lina Kannoufi, Software Engineer and Automation Specialist"
   },
   "nav": {
     "home": "Home",
@@ -16,7 +16,7 @@
   "hero": {
     "available": "Available for new projects",
     "greeting": "Hi, I'm",
-    "name": "Chiraz Kanoufi",
+    "name": "Chiraz Lina Kannoufi",
     "roles": ["Software Engineer", "Automation Specialist", "Computer Science Graduate", "API & Workflow Architect"],
     "tagline": "I build systems that do the work nobody should be doing by hand.",
     "description": "Computer Science graduate specialising in workflow automation, API integration and full-stack web engineering. I turn manual, error-prone processes into pipelines that run themselves.",
@@ -154,18 +154,6 @@
       }
     }
   },
-  "github": {
-    "subtitle": "Public repository activity, refreshed hourly.",
-    "repos": "Repositories",
-    "followers": "Followers",
-    "stars": "Stars earned",
-    "topLanguages": "Most-used languages",
-    "activity": "Activity over the last year",
-    "unavailable": "GitHub stats are unavailable right now.",
-    "viewProfile": "View profile",
-    "less": "Less",
-    "more": "More"
-  },
   "services": {
     "title": "How I can help",
     "eyebrow": "Services",
@@ -245,13 +233,13 @@
     "timeline": "Estimated timeline",
     "days": "{count, plural, =1 {1 working day} other {# working days}}",
     "selected": "{count, plural, =0 {Nothing selected} =1 {1 item selected} other {# items selected}}",
-    "cta": "Book a call to confirm scope",
+    "cta": "Schedule a call to confirm scope",
     "reset": "Reset",
     "disclaimer": "This is an indicative range based on typical scope, not a quote. The final figure follows a short conversation about what you actually need."
   },
   "booking": {
     "title": "Let's talk it through",
-    "eyebrow": "Book a call",
+    "eyebrow": "Schedule",
     "subtitle": "Thirty minutes, no pitch. Bring the problem and we'll work out whether I'm the right person for it.",
     "cta": "Pick a time",
     "loading": "Loading calendar…",
@@ -341,7 +329,7 @@
   },
   "footer": {
     "tagline": "Built in Sétif. Working everywhere.",
-    "rights": "© {year} Chiraz Kanoufi. All rights reserved.",
+    "rights": "© {year} Chiraz Lina Kannoufi. All rights reserved.",
     "builtWith": "Next.js, TypeScript and Tailwind CSS",
     "sourceCode": "Source code",
     "backToTop": "Back to top"

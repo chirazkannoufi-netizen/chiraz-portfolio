@@ -16,10 +16,10 @@
  */
 
 export const profile = {
-  name: 'Kanoufi Chiraz Lina',
+  name: 'Chiraz Lina Kannoufi',
   shortName: 'Chiraz',
   /** Latin transliteration used for hreflang-independent structured data. */
-  arabicName: 'شيراز لينا كنوفي',
+  arabicName: 'شيراز لينا قنوفي',
 
   location: {
     city: 'Sétif',
