@@ -11,6 +11,14 @@
  *  it does not know. That is what prevents a recruiter-facing chatbot from
  *  hallucinating a credential. Never add an unverified fact here.
  *
+ *  ⚠️  No employer or client is ever named — here or anywhere else on the
+ *  site. Roles are described by what the work was, not who paid for it. The
+ *  one brand that does appear is FlowTech Automation, which is Chiraz's own.
+ *
+ *  ⚠️  No metric appears anywhere unless it is written in the CV or in a
+ *  project's own public README. Estimated, rounded and inferred numbers are
+ *  treated the same as invented ones.
+ *
  *  Locale-specific prose (bios, project narratives) lives in /messages/*.json.
  *  This file holds only language-neutral, factual data.
  */
@@ -21,9 +29,11 @@ export const profile = {
   /** Latin transliteration used for hreflang-independent structured data. */
   arabicName: 'شيراز لينا قنوفي',
 
+  /** Exactly as the CV states it. Used for meta, JSON-LD and the AI prompt. */
+  title: 'Web & Automation Developer',
+
   location: {
     city: 'Sétif',
-    postalCode: '19500',
     country: 'Algeria',
     countryCode: 'DZ',
     /** Remote-first: this is the market she sells into, not where she sits. */
@@ -32,36 +42,41 @@ export const profile = {
 
   contact: {
     email: 'Chirazkannoufi@gmail.com',
-    phone: '+213 796 31 45 63',
-    github: 'https://github.com/chirazlina',
+    github: 'https://github.com/chirazkannoufi-netizen',
     linkedin: 'https://www.linkedin.com/in/chiraz-kanoufi',
+    /** Her own automation brand — the only brand name allowed on the site. */
+    store: 'https://payhip.com/FlowTechAutomation',
   },
 
   /**
    * ⚠️ VERIFIED CREDENTIAL — do not inflate.
-   * The CV states a Licence (Bac+3 / B.Sc.), NOT a Master's degree.
+   * The CV states a Licence (Bac+3 / B.Sc.) in Computer Systems, NOT a
+   * Master's, and NOT software engineering as the specialisation.
    * Academic degrees only — professional certificates live in `certificates`.
    */
   education: [
     {
       id: 'licence-cs',
-      degree: 'Licence en Informatique — B.Sc. Computer Science',
-      specialisation: 'Software Engineering',
+      degree: 'Licence en Informatique — spécialité Systèmes Informatiques',
       institution: 'Université Ferhat Abbas — Sétif 1',
       start: '2022',
       end: '2025',
       coursework: [
-        'Algorithms & Data Structures',
-        'Object-Oriented Programming',
-        'Software Engineering',
-        'Relational Databases (SQL)',
-        'Computer Networks',
+        'Human–Computer Interaction (HCI/IHM)',
+        'Web development',
+        'Algorithms & data structures',
+        'Computer architecture',
+        'Operating systems',
+        'Computer networks',
+        'Databases (SQL)',
+        'Object-oriented programming',
+        'Software engineering',
+        'Cybersecurity',
       ],
     },
     {
       id: 'bac',
-      degree: 'Baccalauréat — Experimental Sciences (×2, both "Mention Bien")',
-      specialisation: 'Experimental Sciences',
+      degree: 'Baccalauréat — Sciences Expérimentales (Mention Bien, both sessions)',
       institution: 'Algeria',
       start: '2021',
       end: '2022',
@@ -74,65 +89,79 @@ export const profile = {
     {
       id: 'huawei-ai',
       degree: 'Huawei Talent Certificate — Search & Artificial Intelligence',
-      specialisation: 'CRA Training Program',
-      institution: 'Huawei',
+      institution: 'Huawei — CRA Training Program',
       start: '2025',
       end: '2025',
-      coursework: [
-        'Information retrieval algorithms',
-        'Machine learning fundamentals',
-        'Decision-oriented data processing',
-      ],
+      coursework: [],
     },
   ],
 
   /**
-   * Reverse-chronological. `metricKey` points at a translation key so the
-   * headline number can be phrased naturally in each of the four languages.
+   * Reverse-chronological by start date. Employers and clients are never
+   * named — see the file header. The two current roles genuinely run in
+   * parallel; that is not a data error.
    */
   experience: [
     {
-      id: 'ranli',
-      company: 'Ranli',
-      location: 'El Eulma, Algeria',
-      start: '2026-03',
+      id: 'flowtech',
+      start: '2026-08',
       end: null, // null = current
-      stack: ['Google Apps Script', 'JavaScript', 'Python', 'REST APIs', 'Webhooks', 'Shopify'],
-      /** Headline impact metric, rendered as a stat tile. */
-      metric: { value: 90, unit: '%', direction: 'down' as const },
+      stack: ['n8n', 'Google Apps Script', 'Figma', 'Payhip'],
+      /**
+       * Language-neutral summary for the AI agent's knowledge base. The
+       * visitor-facing wording lives in messages/*.json; this exists so the
+       * agent still has the facts once employer names are stripped out.
+       */
+      summary:
+        'Runs FlowTech Automation, her own venture: designs and distributes automation scripts and digital tools for creators and e-commerce sellers, and handles the brand design, storefront UI/UX and product documentation herself.',
     },
     {
-      id: 'daxshop',
-      company: 'Dax.shop',
-      location: 'El Eulma, Algeria',
+      id: 'ecommerce-automation',
+      start: '2026-03',
+      end: null,
+      stack: ['Google Apps Script', 'JavaScript', 'REST APIs', 'Google Sheets automation'],
+      summary:
+        'E-commerce and automation work: builds automation scripts with Google Apps Script and REST APIs that sync inventory between an e-commerce platform, an order-management tool and Google Sheets, removing repetitive manual data tasks.',
+    },
+    {
+      id: 'freelance-web',
       start: '2025-08',
-      end: '2025-12',
-      stack: ['JavaScript', 'Google Sheets API', 'Data Modelling', 'Automation'],
-      metric: null,
+      end: '2025-08',
+      stack: ['JavaScript', 'Google Sheets automation', 'Google Apps Script'],
+      summary:
+        'Freelance web development and integration for an e-commerce client: structured and organised Google Sheets tracking databases, and built automated verification and monitoring scripts.',
     },
     {
-      id: 'consulting',
-      company: 'German SMEs & Forever Living (USA)',
-      location: 'Gulf region — remote',
+      id: 'digital-consulting',
       start: '2023-07',
       end: '2024-02',
-      stack: ['Snapchat Marketing API', 'CRM Automation', 'Analytics'],
-      metric: null,
+      stack: ['Content marketing', 'Graphic design', 'Canva'],
+      summary:
+        'Freelance digital consulting and outreach: visual content creation and social-media prospecting for an affiliate marketing and distribution project, plus direct client relationship management.',
     },
   ],
 
   /**
-   * Grouped for the skills matrix. Order = descending confidence, which is
-   * also the order the AI agent will mention them in.
+   * ⚠️ WHITELIST ONLY. Every entry below is either written in the CV or
+   * demonstrably used in one of the four published projects. Nothing is
+   * listed because it is adjacent, likely, or "obviously true".
    */
   skills: {
-    languages: ['Python', 'JavaScript', 'TypeScript', 'SQL', 'HTML5 / CSS3'],
-    frameworks: ['Next.js', 'React', 'Node.js', 'REST APIs'],
-    automation: ['n8n', 'Google Apps Script', 'Webhooks', 'API Integration', 'ETL pipelines'],
-    data: ['PostgreSQL', 'Supabase', 'Google Cloud Suite', 'Serverless'],
-    design: ['Figma', 'Canva', 'Git / GitHub', 'VS Code'],
-    platforms: ['Shopify', 'Meta Business Suite', 'Ecomanager'],
-    systems: ['Troubleshooting', 'System maintenance', 'Web security (WAF)'],
+    languages: ['JavaScript', 'Python', 'Dart', 'HTML5 / CSS3'],
+    frameworks: ['Next.js', 'Tailwind CSS', 'Framer Motion', 'Flutter', 'FastAPI', 'pytest'],
+    automation: [
+      'n8n',
+      'Google Apps Script',
+      'Webhooks',
+      'REST APIs',
+      'Google Sheets automation',
+      'Telegram Bot API',
+      'SMTP automation',
+    ],
+    ai: ['Anthropic Claude API', 'OpenAI API'],
+    data: ['PostgreSQL', 'Supabase', 'SQLite'],
+    design: ['Figma', 'Canva', 'Graphic design', 'Identity branding', 'HCI / UX principles'],
+    commerce: ['Shopify', 'Payhip', 'Digital product sales', 'Content marketing', 'Meta Ads'],
   },
 
   /** CEFR-style self-assessment, straight from the CV. */
@@ -140,14 +169,11 @@ export const profile = {
     { code: 'ar', level: 'native' as const },
     { code: 'fr', level: 'fluent' as const },
     { code: 'en', level: 'advanced' as const },
-    { code: 'de', level: 'basic' as const }, // B1 preparation
+    { code: 'de', level: 'basic' as const }, // B1, in preparation
   ],
 
   availability: {
     status: 'open' as const,
-    /** Drives the "Available for work" pulse dot in the navbar. */
-    weeklyHours: 20,
-    responseTimeHours: 24,
   },
 } as const;
 

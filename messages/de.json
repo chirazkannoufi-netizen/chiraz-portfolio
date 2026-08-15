@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "Chiraz Lina Kannoufi — Software Engineer & Automatisierungs-Spezialistin",
-    "description": "Informatik-Absolventin. Ich baue Automatisierungssysteme, Webanwendungen und KI-Integrationen. n8n, Python, JavaScript, Next.js, Google Apps Script.",
-    "ogAlt": "Portfolio von Chiraz Lina Kannoufi, Software Engineer und Automatisierungs-Spezialistin"
+    "title": "Chiraz Lina Kannoufi — Web- & Automatisierungsentwicklerin",
+    "description": "Informatik-Absolventin (Computersysteme). Ich baue Automatisierungs-Workflows, KI-Integrationen und die Weboberflächen darum herum — n8n, Google Apps Script, Python, Next.js.",
+    "ogAlt": "Portfolio von Chiraz Lina Kannoufi, Web- & Automatisierungsentwicklerin"
   },
   "nav": {
     "home": "Start",
@@ -17,25 +17,30 @@
     "available": "Verfügbar für neue Projekte",
     "greeting": "Hallo, ich bin",
     "name": "Chiraz Lina Kannoufi",
-    "roles": ["Software Engineer", "Automatisierungs-Spezialistin", "Informatik-Absolventin", "API- & Workflow-Architektin"],
+    "roles": [
+      "Web- & Automatisierungsentwicklerin",
+      "Informatik-Absolventin",
+      "UI/UX-Designerin",
+      "n8n-Workflow-Entwicklerin"
+    ],
     "tagline": "Ich baue Systeme, die die Arbeit erledigen, die niemand von Hand machen sollte.",
-    "description": "Informatik-Absolventin mit Schwerpunkt Prozessautomatisierung, API-Integration und Full-Stack-Webentwicklung. Ich verwandle manuelle, fehleranfällige Abläufe in Pipelines, die von selbst laufen.",
+    "description": "Informatik-Absolventin mit Schwerpunkt Computersysteme. Ich baue Automatisierungs-Workflows, KI-Integrationen und die Weboberflächen darum herum — und mache aus manuellen, wiederkehrenden Abläufen solche, die von selbst laufen.",
     "ctaPrimary": "Projekte ansehen",
     "ctaSecondary": "KI-Assistenten fragen",
     "downloadCv": "Lebenslauf herunterladen",
     "downloadCvAria": "Lebenslauf als PDF auf Deutsch herunterladen",
     "scrollHint": "Zum Entdecken scrollen",
     "stats": {
-      "errorsReduced": "Manuelle Fehler beseitigt",
-      "languages": "Gesprochene Sprachen",
-      "yearsBuilding": "Jahre Software-Entwicklung"
+      "degree": "Computersysteme — Sétif 1",
+      "certification": "Talent-Zertifikat — Search & AI",
+      "languages": "Gesprochene Sprachen"
     }
   },
   "about": {
     "title": "Über mich",
     "eyebrow": "Kurz gefasst",
     "lead": "Ich schreibe Code, der Arbeit abschafft, statt sie zu vermehren.",
-    "bio": "Ich habe Informatik an der Université Ferhat Abbas — Sétif 1 mit Schwerpunkt Software Engineering abgeschlossen. Seitdem arbeite ich an der Nahtstelle zwischen Betrieb und Technik: dort, wo ein Unternehmen mit Tabellen, Copy-and-paste und Hoffnung läuft und jemand das durch etwas ersetzen muss, das wirklich hält. Meine Arbeit umfasst Automatisierungs-Pipelines, E-Commerce-Integrationen und die Webanwendungen, die darauf aufsetzen.",
+    "bio": "Ich habe Informatik an der Université Ferhat Abbas — Sétif 1 mit Schwerpunkt Computersysteme abgeschlossen. Seitdem arbeite ich an der Nahtstelle zwischen Betrieb und Technik: dort, wo ein Unternehmen mit Tabellen, Copy-and-paste und Hoffnung läuft und jemand das durch etwas ersetzen muss, das hält. Meine Arbeit umfasst Automatisierungs-Workflows, E-Commerce-Integrationen und die Weboberflächen, die darauf aufsetzen.",
     "educationTitle": "Ausbildung",
     "certificatesTitle": "Zertifikate",
     "experienceTitle": "Berufserfahrung",
@@ -45,36 +50,45 @@
       "languages": "Programmiersprachen",
       "frameworks": "Frameworks & Web",
       "automation": "Automatisierung & Workflows",
-      "data": "Daten & Cloud",
-      "design": "Design & Werkzeuge",
-      "platforms": "SaaS-Plattformen",
-      "systems": "Systeme & Sicherheit"
+      "ai": "KI-Integration",
+      "data": "Daten & Speicher",
+      "design": "Design & UI/UX",
+      "commerce": "E-Commerce & Digital"
     },
     "experienceItems": {
-      "ranli": {
-        "role": "Automatisierungs- und Datenmanagement-Ingenieurin",
-        "summary": "Entwurf und Umsetzung maßgeschneiderter Automatisierung zwischen Shopify, Ecomanager und Google Sheets. Neubau der ETL-Schicht, damit Daten ohne manuellen Eingriff fließen.",
+      "flowtech": {
+        "role": "Entwicklerin für Automatisierungslösungen — FlowTech Automation",
+        "summary": "Mein eigenes Vorhaben: Ich entwerfe und vertreibe Automatisierungsskripte und digitale Werkzeuge für Creator und E-Commerce-Verkäufer.",
         "highlights": [
-          "Manuelle Datenfehler um 90 % reduziert, indem Copy-and-paste-Abläufe durch skriptgesteuerte, validierte Pipelines ersetzt wurden",
-          "Bidirektionale Synchronisation zwischen Shopify-Bestellungen und interner Sheets-Bestandsführung über Apps Script und Webhooks",
-          "Verantwortung für die Echtzeit-Störungsbehebung operativer Workflows"
+          "Entwurf und Veröffentlichung importfertiger Automatisierungsvorlagen für Unternehmen, Creator und Online-Verkäufer",
+          "Markenidentität, Storefront-UI/UX und Produktdokumentation übernehme ich selbst",
+          "Verständliche Einrichtungsanleitungen, mit denen auch nicht-technische Käufer einen Workflow ohne Hilfe in Betrieb nehmen"
         ]
       },
-      "daxshop": {
-        "role": "Webentwicklerin & Workflow-Spezialistin",
-        "summary": "Freiberufliches Mandat zur Prüfung, Umstrukturierung und Absicherung der Software-Tracking-Datenbanken des Unternehmens.",
+      "ecommerce-automation": {
+        "role": "Entwicklerin E-Commerce & Automatisierung",
+        "summary": "Aufbau der Automatisierung, die Bestände zwischen einer E-Commerce-Plattform, einem Auftragsverwaltungswerkzeug und Google Sheets synchron hält.",
         "highlights": [
-          "Ein zerfasertes Sheets-Datenmodell geprüft und in ein validiertes Schema überführt",
-          "Automatische Konformitätsprüfungen ergänzt, die fehlerhafte Datensätze vor dem Reporting melden",
-          "Echtzeit-Reporting geliefert, das eine wöchentliche manuelle Zusammenstellung ersetzt"
+          "Google-Apps-Script- und REST-Integrationen, die Bestände zwischen Systemen synchronisieren, die nie füreinander gedacht waren",
+          "Wiederkehrende manuelle Datenarbeit durch skriptgesteuerte, validierte Abläufe ersetzt",
+          "E-Commerce-Datenflüsse optimiert, damit die operativen Zahlen belastbar bleiben"
         ]
       },
-      "consulting": {
-        "role": "Beraterin für Digital- und Medienstrategie",
-        "summary": "Freiberufliche Projekte mit deutschen KMU und Forever Living (USA) in der Golfregion.",
+      "freelance-web": {
+        "role": "Webentwicklerin & Integration (freiberuflich)",
+        "summary": "Freiberufliches Mandat für einen E-Commerce-Kunden: Umbau der Tabellen-Datenbanken, auf denen das Tracking des Betriebs lief.",
         "highlights": [
-          "Zielgerichtete Kampagnen und Konversionsanalyse über die Snapchat Marketing API",
-          "CRM-Werkzeuge und automatisierte Kundenbetreuung für internationale Customer Journeys eingeführt"
+          "Google-Sheets-Tracking-Datenbanken in eine konsistente, auswertbare Form gebracht",
+          "Automatische Prüfskripte gebaut, die fehlerhafte Datensätze melden, bevor jemand darauf reagiert",
+          "Datenbereinigung, Deduplizierung und dynamische Verarbeitung für Bestell- und Lieferdaten"
+        ]
+      },
+      "digital-consulting": {
+        "role": "Digital- und Akquise-Beraterin (freiberuflich)",
+        "summary": "Freiberufliche Beratung in einem Affiliate-Marketing- und Vertriebsprojekt: visuelle Inhalte und direkte Kundenbeziehung.",
+        "highlights": [
+          "Visuelle Inhalte erstellt und gezielte Akquise-Kampagnen in sozialen Medien betreut",
+          "Direkte Kundenbeziehung bis zur Produktauslieferung betreut"
         ]
       }
     }
@@ -101,56 +115,32 @@
     "featured": "Hervorgehoben",
     "empty": "Für diesen Filter gibt es noch keine Projekte.",
     "metrics": {
-      "manualErrors": "weniger manuelle Fehler",
-      "hoursSaved": "zurückgewonnen",
-      "ordersSynced": "Bestellungen synchronisiert",
-      "routes": "kuratierte Routen",
-      "coldStart": "Kaltstart",
-      "recordsAudited": "geprüfte Datensätze",
-      "reportLatency": "schnelleres Reporting",
-      "responseTime": "Reaktionszeit auf Anfragen",
-      "uptime": "Verfügbarkeit",
-      "languages": "unterstützte Sprachen",
-      "ttfb": "bis zum ersten Token",
-      "markets": "Märkte",
-      "cpaReduction": "geringere Akquisitionskosten"
+      "testsPassing": "bestandene Tests"
     },
     "items": {
-      "etl-shopify-sync": {
-        "title": "Shopify-↔-Sheets-ETL-Pipeline",
-        "problem": "Bestell-, Bestands- und Versanddaten lagen in drei Systemen, die nicht miteinander sprachen. Mitarbeitende glichen sie täglich von Hand ab, und die Fehler summierten sich zu falschen Beständen und verpassten Lieferungen.",
-        "solution": "Eine geplante und per Webhook ausgelöste Pipeline in Google Apps Script: Extraktion aus der Shopify-Admin-API und aus Ecomanager, Validierung und Normalisierung jedes Datensatzes gegen ein striktes Schema, dann Laden in den operativen Sheets-Bestand. Fehlerhafte Datensätze werden in Quarantäne gestellt und gemeldet, statt still geschrieben zu werden.",
-        "outcome": "Manuelle Bearbeitungsfehler sanken um 90 %, rund fünfzehn Stunden Abgleich pro Woche entfielen, und die Bestandszahlen wurden wieder belastbar genug für Entscheidungen."
+      "multi-agent-monitor": {
+        "title": "Multi-Agenten-Monitor für E-Commerce-Preise und Wettbewerb",
+        "problem": "Wettbewerbspreise von Hand zu verfolgen skaliert nicht, und die Werkzeuge, die das automatisieren, liefern eine Zahl ohne Rechenschaft darüber, wie sie zustande kam — eine Empfehlung, der man schwer trauen und über die man gar nicht streiten kann.",
+        "solution": "Vier autonome Agenten — Collector, Analyst, Strategist und Notifier — koordiniert von einem handgeschriebenen Orchestrator. Die Agenten rufen einander nie auf: Jeder liest und schreibt einen gemeinsamen Zyklus-Zustand, und allein der Orchestrator entscheidet, wer wann läuft. Das Sprachmodell nutzt nur der Strategist, wo das Abwägen eines Konkurrenzzugs gegen Marge und Bestand echtes Urteilsvermögen verlangt; die statistische Arbeit bleibt deterministisch.",
+        "outcome": "Jede Empfehlung trägt die auslösenden Ereignisse, die Wirtschaftlichkeit, gegen die sie abgewogen wurde, und die Angabe, ob ein Modell oder eine Regel-Engine sie erzeugt hat. Die Wettbewerbsdaten stammen aus einem simulierten Markt über einem fiktiven Katalog — eine bewusste Entscheidung statt echtes Scraping. Der Live-Modellpfad wurde noch nicht mit einem echten API-Schlüssel ausgeführt, daher ist die Demo-Ausgabe als heuristic gekennzeichnet, nicht als llm."
+      },
+      "ai-sales-assistant": {
+        "title": "AI Sales Assistant (Demo)",
+        "problem": "Ein Online-Handel nahm Bestellungen über Direktnachrichten entgegen, und jede Anfrage wiederholte dieselbe manuelle Abfolge: herausfinden, welches Produkt gemeint ist, Bestand prüfen, Preis nennen, bestätigen. Kundinnen und Kunden schreiben nicht wie eine Suchanfrage — Angaben kommen in beliebiger Sprache und Schreibweise, oft mehrere Produkte in einer Nachricht — und exakte Katalogtreffer scheitern ständig.",
+        "solution": "Ein n8n-Workflow, der das Sprachverständnis an einen KI-Agenten mit strukturiertem Output-Parser abgibt statt an Mustererkennung. Der Agent liefert striktes, validiertes JSON, sodass alles Nachgelagerte gewöhnliche deterministische Logik über typisierten Daten ist. Die Variantenzuordnung beherrscht exakte Werte ebenso wie numerische Bereiche gegen einen laufenden Tabellenkatalog.",
+        "outcome": "Verarbeitet mehrsprachige Nachrichten mit mehreren Produkten in einem Durchgang. Dieses Repository veröffentlicht einen Workflow mit 16 Knoten — die Engine für Gesprächsverständnis und Katalogabgleich — herausgelöst aus einem größeren System aus acht Workflows. Er wurde für ein reales E-Commerce-Kundenmandat gebaut und getestet, ist dort derzeit nicht im Einsatz und wird ausschließlich als technischer Kontext geteilt."
+      },
+      "ai-customer-reply-assistant": {
+        "title": "AI Customer Reply Assistant",
+        "problem": "Ein kleiner Betrieb ohne Support-Team kann einen Chat-Posteingang nicht rund um die Uhr beobachten, und eine unbeantwortete Nachricht ist ein wartender Kunde.",
+        "solution": "Ein n8n-Workflow mit 16 Knoten, der einen Telegram-Posteingang durchgehend beobachtet, die Absicht jeder Nachricht klassifiziert — Frage, Bestellung, Beschwerde, dringend oder sonstiges — und binnen Sekunden eine passende Antwort in der Sprache des Kunden sendet. Jede Konversation wird in einem Google Sheet protokolliert, und eine E-Mail-Warnung erreicht die Inhaberin nur bei Bestellungen oder dringenden Fällen.",
+        "outcome": "Gebaut, um bei Störungen weiterzulaufen: Der KI-Aufruf wird bis zu dreimal wiederholt, danach geht trotzdem eine höfliche Ersatzantwort raus und die Nachricht wird protokolliert, zur Prüfung markiert. Antwort, Protokoll und Warnung laufen unabhängig, sodass ein fehlschlagender Schritt die anderen nie blockiert. Die Einrichtung kommt ohne eigenen Code aus — Workflow importieren, vier Konten verbinden — und eine verständliche Anleitung liegt bei. Wird als Vorlage in meinem eigenen Shop verkauft."
       },
       "gotrek": {
-        "title": "GoTrek — App zur Reiseorientierung",
-        "problem": "Reisende hatten keine einzige verlässliche Quelle für Routen, Zeiten und lokale Orientierungsdaten — die Informationen lagen verstreut in Foren und waren veraltet.",
-        "solution": "Architektur und Umsetzung einer mobilen App auf einem REST-Backend, mit normalisiertem PostgreSQL-Schema für Routen und Points of Interest, offlinefähigem Caching und einer in Figma entworfenen Oberfläche für die einhändige Nutzung im Freien.",
-        "outcome": "Eine funktionierende Orientierungs-App mit über vierzig kuratierten Routen und einem Kaltstart unter 1,2 Sekunden auf Mittelklasse-Hardware."
-      },
-      "data-integrity-audit": {
-        "title": "Datenintegritäts-Audit & automatisiertes Reporting",
-        "problem": "Ein Unternehmen führte sein Software-Tracking in Tabellen, denen niemand traute. Doppelte Zeilen, uneinheitliche Formate und stilles Überschreiben machten vor jeder Entscheidung eine manuelle Prüfung nötig.",
-        "solution": "Prüfung des bestehenden Modells, Entwurf eines validierten Schemas mit typisierten Spalten und referenziellen Checks, plus Automatisierung, die Konformitätsregeln bei jedem Schreibvorgang anwendet. Verstöße lösen eine Meldung mit der betroffenen Zeile aus, statt still zu scheitern.",
-        "outcome": "Über dreißigtausend Datensätze geprüft und normalisiert; ein Reporting, das früher einen wöchentlichen manuellen Durchgang brauchte, läuft heute nahezu in Echtzeit."
-      },
-      "n8n-lead-router": {
-        "title": "n8n-Lead-Routing & Benachrichtigungen",
-        "problem": "Anfragen kamen per E-Mail und blieben stundenlang ungelesen. Keine Triage, keine Deduplizierung, keine Nachvollziehbarkeit, was mit einem Lead danach geschah.",
-        "solution": "Ein n8n-Workflow empfängt einen signierten Webhook, validiert die Nutzdaten, dedupliziert gegen frühere Einsendungen, schreibt eine Audit-Zeile nach Supabase und verteilt anschließend eine sofortige Telegram-Benachrichtigung sowie eine Bestätigungs-E-Mail aus Vorlage.",
-        "outcome": "Die mediane Reaktionszeit fiel von Stunden auf unter dreißig Sekunden — mit dauerhaftem Prüfpfad für jede Anfrage."
-      },
-      "cv-ai-agent": {
-        "title": "Mehrsprachiger, faktengebundener Lebenslauf-Agent",
-        "problem": "Recruiter stellen immer dieselben zwölf Fragen und lesen selten über den ersten Bildschirm eines Lebenslaufs hinaus. Ein generischer Chatbot würde sie beantworten — und dabei selbstbewusst Qualifikationen erfinden, was schlimmer ist als Schweigen.",
-        "solution": "Ein Streaming-Agent auf dem Vercel AI SDK, dessen gesamte Wissensbasis aus einer einzigen typisierten Profildatei erzeugt wird. Der System-Prompt verbietet Extrapolation, benennt den Abschlussgrad ausdrücklich, um Aufwertung zu verhindern, und gibt dem Modell einen klaren Ausweg, wenn es etwas nicht weiß.",
-        "outcome": "Antworten in vier Sprachen, erstes Token nach rund 400 ms, und keine Möglichkeit, eine Qualifikation zu behaupten, die nicht in der Quelldatei steht."
-      },
-      "campaign-analytics": {
-        "title": "Marktübergreifende Kampagnen-Analytik",
-        "problem": "Kampagnen liefen in drei Märkten ohne gemeinsame Sicht darauf, was eine Konversion tatsächlich kostete — Budgetentscheidungen fielen nach Bauchgefühl.",
-        "solution": "Kampagnen über die Snapchat Marketing API instrumentiert, eine einheitliche Konversionsmetrik über alle Märkte definiert und CRM-Automatisierung angebunden, damit qualifizierte Kontakte ohne manuelle Übergabe nachverfolgt wurden.",
-        "outcome": "Eine vergleichbare Sicht über drei Märkte und spürbar geringere Akquisitionskosten, sobald das Budget den Daten folgte."
+        "title": "GoTrek — Tourismus-App",
+        "problem": "Reisende hatten keinen einzigen verlässlichen Ort, um Unterkünfte, Sehenswürdigkeiten und Aktivitäten einer Stadt zusammen mit möglichen nächsten Reisen zu durchstöbern; die Informationen lagen verstreut und veraltet vor.",
+        "solution": "Eine Flutter-Anwendung, entstanden als Abschlussprojekt eines Viererteams, in dem ich für UI/UX-Design und die Frontend-Umsetzung verantwortlich war. Später wurde sie in eine Schichtenarchitektur überführt: fest verdrahtete Listen in Widgets wurden zu typisierten Modellen hinter einer Repository-Schicht, sodass eine echte API nur diese eine Schicht betrifft und die Oberfläche unberührt bleibt.",
+        "outcome": "Ein im Frontend vollständiger Prototyp: Browsen ohne Konto, Suche innerhalb der Stadt, sortierbare Unterkunftsliste, Buchungsstrecke mit aufgeschlüsselten Beträgen und Favoriten, die auf dem Gerät bestehen bleiben. Das Backend ist spezifiziert, aber nicht gebaut — die App liest einen lokal hinterlegten Katalog, und das Repository benennt ausdrücklich, was real ist und was nicht."
       }
     }
   },
@@ -162,22 +152,42 @@
       "automation": {
         "title": "Maßgeschneiderte Automatisierung",
         "description": "Der manuelle Prozess, den Sie schon lange beheben wollten — ersetzt durch eine Pipeline, die von selbst läuft und meldet, wenn etwas bricht.",
-        "features": ["n8n-Workflow-Design", "Google Apps Script", "Zeitpläne & Webhook-Trigger", "Fehlerbehandlung und Alarmierung"]
+        "features": [
+          "n8n-Workflow-Design",
+          "Google Apps Script",
+          "Zeitpläne & Webhook-Trigger",
+          "Fehlerbehandlung und Alarmierung"
+        ]
       },
       "web": {
         "title": "Web- & Software-Engineering",
         "description": "Schnelle, barrierefreie, typisierte Anwendungen auf Next.js — von der Marketing-Site, die rankt, bis zum internen Werkzeug, das Ihr Team gerne benutzt.",
-        "features": ["Next.js & React", "TypeScript durchgängig", "Core-Web-Vitals-Budget", "Responsiv & barrierefrei"]
+        "features": [
+          "Next.js (App Router)",
+          "Tailwind CSS & Framer Motion",
+          "Core-Web-Vitals-Budget",
+          "Responsiv & barrierearm"
+        ]
       },
       "api": {
         "title": "API- & Systemintegration",
         "description": "Zwei Systeme, die nie füreinander gedacht waren, zuverlässig Daten austauschen lassen — mit Validierung an jeder Grenze.",
-        "features": ["REST-Integration", "Shopify- & E-Commerce-APIs", "Datenmodellierung & ETL", "PostgreSQL / Supabase"]
+        "features": [
+          "REST-Integration",
+          "Shopify- & E-Commerce-APIs",
+          "Datenmodellierung & Synchronisation",
+          "PostgreSQL / Supabase"
+        ]
       },
       "audit": {
         "title": "Technische Audits",
-        "description": "Eine ehrliche Einschätzung des Bestands: wo das Datenmodell leckt, wie es um die Sicherheit wirklich steht und was zuerst zu beheben ist.",
-        "features": ["Prüfung der Datenintegrität", "Performance-Audit", "Sicherheits- & WAF-Review", "Priorisierter Maßnahmenplan"]
+        "description": "Eine ehrliche Einschätzung des Bestands: wo das Datenmodell leckt, wo sich Handarbeit versteckt und was zuerst zu beheben ist.",
+        "features": [
+          "Prüfung der Datenintegrität",
+          "Performance-Audit",
+          "Review von Automatisierung & Datenflüssen",
+          "Priorisierter Maßnahmenplan"
+        ]
       }
     }
   },
@@ -240,7 +250,7 @@
   "booking": {
     "title": "Lassen Sie uns sprechen",
     "eyebrow": "Terminplanung",
-    "subtitle": "Dreißig Minuten, kein Verkaufsgespräch. Bringen Sie das Problem mit, und wir finden heraus, ob ich die Richtige dafür bin.",
+    "subtitle": "Ein kurzes Gespräch, kein Pitch. Bringen Sie das Problem mit, und wir klären, ob ich die Richtige dafür bin.",
     "cta": "Zeit auswählen",
     "loading": "Kalender wird geladen…",
     "fallback": "Kalender lädt nicht? Schreiben Sie mir direkt."
@@ -248,7 +258,7 @@
   "contact": {
     "title": "Kontakt aufnehmen",
     "eyebrow": "Kontakt",
-    "subtitle": "Erzählen Sie mir, was Sie bauen wollen. Ich antworte innerhalb von 24 Stunden.",
+    "subtitle": "Sagen Sie mir, was Sie bauen wollen. Ich lese jede Nachricht selbst.",
     "fields": {
       "name": "Ihr Name",
       "namePlaceholder": "Amina Belkacem",
@@ -272,7 +282,7 @@
     "submit": "Nachricht senden",
     "sending": "Wird gesendet…",
     "successTitle": "Nachricht gesendet",
-    "successBody": "Danke — sie ist angekommen. Ich melde mich innerhalb von 24 Stunden.",
+    "successBody": "Danke — ist angekommen. Ich melde mich, sobald ich kann.",
     "sendAnother": "Weitere Nachricht senden",
     "errorTitle": "Das hat nicht geklappt",
     "errors": {
@@ -330,7 +340,7 @@
   "footer": {
     "tagline": "Gebaut in Sétif. Weltweit im Einsatz.",
     "rights": "© {year} Chiraz Lina Kannoufi. Alle Rechte vorbehalten.",
-    "builtWith": "Next.js, TypeScript und Tailwind CSS",
+    "builtWith": "Next.js und Tailwind CSS",
     "sourceCode": "Quellcode",
     "backToTop": "Nach oben"
   },

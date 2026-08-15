@@ -7,7 +7,11 @@ export const projectCategories = ['automation', 'web', 'ai-data', 'ecommerce'] a
 export type ProjectCategory = (typeof projectCategories)[number];
 
 /**
- * A quantified outcome shown on the project card.
+ * A quantified fact shown on the project card.
+ *
+ * ⚠️ A metric may only exist here if the number is stated in that project's
+ * own public README. No estimates, no rounding, no inferred figures.
+ *
  * `labelKey` resolves against `messages/*.json → projects.metrics.*` so the
  * unit and phrasing stay natural in EN / FR / AR / DE.
  */
@@ -32,7 +36,11 @@ export interface Project {
   /** Renders the "Live demo" affordance instead of a static screenshot. */
   hasLiveDemo?: boolean;
   featured: boolean;
-  year: number;
+  /**
+   * Optional: only set where the project itself states a year. The card hides
+   * the badge when absent rather than showing a guessed date.
+   */
+  year?: number;
   /** Tailwind gradient pair for the card's generated cover art. */
   accent: readonly [string, string];
 }

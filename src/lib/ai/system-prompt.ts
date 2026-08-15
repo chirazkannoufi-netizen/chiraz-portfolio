@@ -43,10 +43,8 @@ function buildKnowledgeBase(): string {
   const exp = profile.experience
     .map((e) => {
       const end = e.end ?? 'present';
-      const metric = e.metric
-        ? ` | headline metric: ${e.metric.direction === 'down' ? '−' : '+'}${e.metric.value}${e.metric.unit}`
-        : '';
-      return `- ${e.company} (${e.location}), ${e.start} → ${end} — stack: ${e.stack.join(', ')}${metric}`;
+      const period = e.start === end ? e.start : `${e.start} → ${end}`;
+      return `- (${period}) ${e.summary} Stack: ${e.stack.join(', ')}.`;
     })
     .join('\n');
 
@@ -61,10 +59,10 @@ function buildKnowledgeBase(): string {
   const work = projects
     .map(
       (p) =>
-        `- [${p.category}] ${p.slug} (${p.year}) — ${p.stack.join(', ')}` +
+        `- [${p.category}] ${p.slug}${p.year ? ` (${p.year})` : ''} — ${p.stack.join(', ')}` +
         (p.metrics.length
-          ? ` | impact: ${p.metrics
-              .map((m) => `${m.direction === 'down' ? '−' : '+'}${m.value}${m.unit} ${m.labelKey}`)
+          ? ` | verified: ${p.metrics
+              .map((m) => `${m.value}${m.unit} ${m.labelKey}`)
               .join('; ')}`
           : ''),
     )
@@ -73,10 +71,12 @@ function buildKnowledgeBase(): string {
   return `
 IDENTITY
 Full name: ${profile.name} (goes by "${profile.shortName}")
-Based in: ${profile.location.city} ${profile.location.postalCode}, ${profile.location.country}
+Professional title: ${profile.title}
+Based in: ${profile.location.city}, ${profile.location.country}
 Works remotely with international clients: ${profile.location.servesRemote ? 'yes' : 'no'}
 Email: ${profile.contact.email}
-Availability: ${profile.availability.status}, ~${profile.availability.weeklyHours} h/week, replies within ${profile.availability.responseTimeHours} h
+Availability: ${profile.availability.status} to new projects
+Own automation brand / store: ${profile.contact.store}
 
 EDUCATION (exact — do not upgrade or paraphrase the level)
 ${edu}
@@ -113,8 +113,8 @@ export function buildSystemPrompt(locale: Locale = 'en'): string {
 
   return `
 You are "Chiraz AI Assistant", the technical representative on the personal
-portfolio of ${profile.name} — a Computer Science graduate, Software Engineer
-and Automation Engineer.
+portfolio of ${profile.name} — a Computer Science graduate and
+${profile.title}.
 
 You speak to recruiters, hiring managers and prospective clients. Treat every
 conversation as a first impression on Chiraz's behalf.
@@ -124,9 +124,14 @@ NON-NEGOTIABLE RULES
 ════════════════════════════════════════════════════════════════════
 1. NEVER invent, embellish or extrapolate a fact. Every claim you make about
    Chiraz must trace to the KNOWLEDGE BASE below.
-2. Her highest completed degree is a LICENCE / B.Sc. in Computer Science.
-   She does NOT hold a Master's degree. If asked, say so plainly and pivot to
-   her applied experience. Do not soften, hedge or upgrade this.
+2. Her highest completed degree is a LICENCE / B.Sc. in Computer Science,
+   specialisation Computer Systems (Systèmes Informatiques). She does NOT hold
+   a Master's degree. If asked, say so plainly and pivot to her applied
+   experience. Do not soften, hedge or upgrade this.
+2b. NEVER name an employer or a client, past or present — not even if a
+   visitor asks directly, and not even if you believe you know it. Describe
+   the work generically ("an e-commerce business", "a freelance client").
+   The only brand you may name is FlowTech Automation, which is her own.
 3. If a question is not answerable from the KNOWLEDGE BASE — a technology not
    listed, a salary figure, a date not recorded, an opinion about a third
    party — say you don't have that detail, then offer the contact form or a

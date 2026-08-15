@@ -42,7 +42,7 @@ export default function HomePage({ params }: { params: Promise<{ locale: string 
             '@context': 'https://schema.org',
             '@type': 'Person',
             name: profile.name,
-            jobTitle: 'Software Engineer & Automation Specialist',
+            jobTitle: profile.title,
             email: `mailto:${profile.contact.email}`,
             address: {
               '@type': 'PostalAddress',

@@ -8,89 +8,55 @@ import type { Project } from '@/types';
  * `messages/{locale}.json → projects.items.{slug}` so all four languages stay
  * in lockstep with a single structural definition.
  *
- * Every project below maps to real work described in the CV. `githubUrl` and
- * `liveUrl` are placeholders to be filled in with the real repositories.
+ * ⚠️ Every project below is a real, published piece of work, and every field
+ * traces to that project's own public README (or, for the reply assistant,
+ * to the shipped n8n workflow JSON). No client is named. `metrics` holds only
+ * numbers those sources state outright — which is why most are empty, and
+ * why `year` is omitted wherever the project does not date itself.
  */
 export const projects: readonly Project[] = [
   {
-    slug: 'etl-shopify-sync',
-    category: 'automation',
-    stack: ['Google Apps Script', 'JavaScript', 'Shopify API', 'Ecomanager', 'Sheets API'],
-    metrics: [
-      { labelKey: 'manualErrors', value: 90, unit: '%', direction: 'down' },
-      { labelKey: 'hoursSaved', value: 15, unit: 'h', direction: 'up' },
-      { labelKey: 'ordersSynced', value: 12, unit: 'k+', direction: 'up' },
-    ],
-    hasLiveDemo: true,
-    featured: true,
-    year: 2026,
+    slug: 'multi-agent-monitor',
+    category: 'ai-data',
+    stack: ['Python', 'FastAPI', 'SQLite', 'pytest', 'Anthropic Claude API', 'n8n'],
+    // Stated in the repo's own README and test badge.
+    metrics: [{ labelKey: 'testsPassing', value: 57, unit: '', direction: 'up' }],
+    githubUrl: 'https://github.com/chirazkannoufi-netizen/multi-agent-ecommerce-monitor',
+    featured: false,
+    accent: ['from-violet-400', 'to-fuchsia-300'],
+  },
+  {
+    slug: 'ai-sales-assistant',
+    category: 'ecommerce',
+    stack: ['n8n', 'OpenAI API', 'Telegram Bot API', 'Google Sheets automation'],
+    metrics: [],
+    githubUrl: 'https://github.com/chirazkannoufi-netizen/ai-sales-assistant-demo',
+    featured: false,
     accent: ['from-sky-400', 'to-cyan-300'],
+  },
+  {
+    slug: 'ai-customer-reply-assistant',
+    category: 'automation',
+    stack: ['n8n', 'OpenAI API', 'Telegram Bot API', 'Google Sheets automation', 'SMTP automation'],
+    metrics: [],
+    // Sold as a template on her own store; the listing carries the price so
+    // this page never hardcodes a figure that can change.
+    liveUrl: 'https://payhip.com/FlowTechAutomation',
+    featured: false,
+    accent: ['from-amber-400', 'to-orange-300'],
   },
   {
     slug: 'gotrek',
     category: 'web',
-    stack: ['React Native', 'Node.js', 'REST APIs', 'PostgreSQL', 'Figma'],
-    metrics: [
-      { labelKey: 'routes', value: 40, unit: '+', direction: 'up' },
-      { labelKey: 'coldStart', value: 1.2, unit: 's', direction: 'down' },
-    ],
-    featured: true,
+    stack: ['Flutter', 'Dart'],
+    metrics: [],
+    githubUrl: 'https://github.com/chirazkannoufi-netizen/GoTrek',
+    featured: false,
+    // The only project that dates itself: the README states 2025.
     year: 2025,
     accent: ['from-emerald-400', 'to-teal-300'],
   },
-  {
-    slug: 'data-integrity-audit',
-    category: 'ai-data',
-    stack: ['JavaScript', 'Google Sheets API', 'Data Validation', 'Automated Reporting'],
-    metrics: [
-      { labelKey: 'recordsAudited', value: 30, unit: 'k+', direction: 'up' },
-      { labelKey: 'reportLatency', value: 95, unit: '%', direction: 'down' },
-    ],
-    featured: true,
-    year: 2025,
-    accent: ['from-violet-400', 'to-fuchsia-300'],
-  },
-  {
-    slug: 'n8n-lead-router',
-    category: 'automation',
-    stack: ['n8n', 'Webhooks', 'Telegram API', 'Supabase', 'Zod'],
-    metrics: [
-      { labelKey: 'responseTime', value: 30, unit: 's', direction: 'down' },
-      { labelKey: 'uptime', value: 99.9, unit: '%', direction: 'up' },
-    ],
-    hasLiveDemo: true,
-    featured: false,
-    year: 2026,
-    accent: ['from-amber-400', 'to-orange-300'],
-  },
-  {
-    slug: 'cv-ai-agent',
-    category: 'ai-data',
-    stack: ['Next.js', 'TypeScript', 'AI SDK', 'OpenAI', 'Edge Runtime'],
-    metrics: [
-      { labelKey: 'languages', value: 4, unit: '', direction: 'up' },
-      { labelKey: 'ttfb', value: 400, unit: 'ms', direction: 'down' },
-    ],
-    hasLiveDemo: true,
-    featured: true,
-    year: 2026,
-    accent: ['from-indigo-400', 'to-sky-300'],
-  },
-  {
-    slug: 'campaign-analytics',
-    category: 'ecommerce',
-    stack: ['Snapchat Marketing API', 'CRM Automation', 'Analytics', 'Meta Business Suite'],
-    metrics: [
-      { labelKey: 'markets', value: 3, unit: '', direction: 'up' },
-      { labelKey: 'cpaReduction', value: 35, unit: '%', direction: 'down' },
-    ],
-    featured: false,
-    year: 2024,
-    accent: ['from-rose-400', 'to-pink-300'],
-  },
 ] as const;
-
-export const featuredProjects = projects.filter((p) => p.featured);
 
 export function getProject(slug: string): Project | undefined {
   return projects.find((p) => p.slug === slug);

@@ -85,24 +85,25 @@ export function Hero() {
           <ResumeDownload locale={locale} label={t('downloadCv')} aria={t('downloadCvAria')} />
         </div>
 
-        {/* Stat strip */}
+        {/* Credentials strip.
+            This used to hold impact metrics ("90% manual errors eliminated",
+            "3+ years") that traced to nothing in the CV. Rather than swap in
+            softer invented numbers, the cards now carry verified credentials:
+            the degree, the certificate, and a language count that is simply
+            the length of the verified list. */}
         <dl className="mt-16 grid max-w-2xl grid-cols-2 gap-6 border-t border-[var(--border-subtle)] pt-8 sm:grid-cols-3">
           <div>
-            <dt className="text-sm text-[var(--text-muted)]">{t('stats.errorsReduced')}</dt>
-            <dd className="mt-1 text-3xl font-bold text-[var(--accent)]">
-              <span className="numeric">90%</span>
-            </dd>
+            <dt className="text-sm text-[var(--text-muted)]">{t('stats.degree')}</dt>
+            <dd className="mt-1 text-2xl font-bold text-[var(--accent)]">Licence</dd>
+          </div>
+          <div>
+            <dt className="text-sm text-[var(--text-muted)]">{t('stats.certification')}</dt>
+            <dd className="mt-1 text-2xl font-bold text-[var(--accent)]">Huawei</dd>
           </div>
           <div>
             <dt className="text-sm text-[var(--text-muted)]">{t('stats.languages')}</dt>
-            <dd className="mt-1 text-3xl font-bold text-[var(--accent)]">
+            <dd className="mt-1 text-2xl font-bold text-[var(--accent)]">
               <span className="numeric">{profile.spokenLanguages.length}</span>
-            </dd>
-          </div>
-          <div>
-            <dt className="text-sm text-[var(--text-muted)]">{t('stats.yearsBuilding')}</dt>
-            <dd className="mt-1 text-3xl font-bold text-[var(--accent)]">
-              <span className="numeric">3+</span>
             </dd>
           </div>
         </dl>

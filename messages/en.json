@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "Chiraz Lina Kannoufi — Software Engineer & Automation Specialist",
-    "description": "Computer Science graduate building automation systems, web applications and AI integrations. n8n, Python, JavaScript, Next.js, Google Apps Script.",
-    "ogAlt": "Portfolio of Chiraz Lina Kannoufi, Software Engineer and Automation Specialist"
+    "title": "Chiraz Lina Kannoufi — Web & Automation Developer",
+    "description": "Computer Science graduate (Computer Systems). I build automation workflows, AI integrations and the web interfaces around them — n8n, Google Apps Script, Python, Next.js.",
+    "ogAlt": "Portfolio of Chiraz Lina Kannoufi, Web & Automation Developer"
   },
   "nav": {
     "home": "Home",
@@ -17,25 +17,30 @@
     "available": "Available for new projects",
     "greeting": "Hi, I'm",
     "name": "Chiraz Lina Kannoufi",
-    "roles": ["Software Engineer", "Automation Specialist", "Computer Science Graduate", "API & Workflow Architect"],
+    "roles": [
+      "Web & Automation Developer",
+      "Computer Science Graduate",
+      "UI/UX Designer",
+      "n8n Automation Builder"
+    ],
     "tagline": "I build systems that do the work nobody should be doing by hand.",
-    "description": "Computer Science graduate specialising in workflow automation, API integration and full-stack web engineering. I turn manual, error-prone processes into pipelines that run themselves.",
+    "description": "Computer Science graduate, specialisation Computer Systems. I build automation workflows, AI integrations and the web interfaces around them — turning manual, repetitive processes into ones that run themselves.",
     "ctaPrimary": "See my work",
     "ctaSecondary": "Ask my AI assistant",
     "downloadCv": "Download CV",
     "downloadCvAria": "Download CV as PDF in English",
     "scrollHint": "Scroll to explore",
     "stats": {
-      "errorsReduced": "Manual errors eliminated",
-      "languages": "Languages spoken",
-      "yearsBuilding": "Years building software"
+      "degree": "Computer Systems — Sétif 1",
+      "certification": "Talent Certificate — Search & AI",
+      "languages": "Languages spoken"
     }
   },
   "about": {
     "title": "About",
     "eyebrow": "The short version",
     "lead": "I write code that removes work rather than adding it.",
-    "bio": "I graduated in Computer Science from Université Ferhat Abbas — Sétif 1, specialising in software engineering. Since then I've worked at the seam between operations and engineering: the place where a business runs on spreadsheets, copy-paste and hope, and someone needs to replace that with something that actually holds. My work spans automation pipelines, e-commerce integrations, and the web applications that sit on top of them.",
+    "bio": "I graduated in Computer Science from Université Ferhat Abbas — Sétif 1, specialising in Computer Systems. Since then I have worked at the seam between operations and engineering: the place where a business runs on spreadsheets, copy-paste and hope, and someone needs to replace that with something that holds. My work spans automation workflows, e-commerce integrations, and the web interfaces that sit on top of them.",
     "educationTitle": "Education",
     "certificatesTitle": "Certificates",
     "experienceTitle": "Experience",
@@ -45,36 +50,45 @@
       "languages": "Programming languages",
       "frameworks": "Frameworks & web",
       "automation": "Automation & workflows",
-      "data": "Data & cloud",
-      "design": "Design & tooling",
-      "platforms": "SaaS platforms",
-      "systems": "Systems & security"
+      "ai": "AI integration",
+      "data": "Data & storage",
+      "design": "Design & UI/UX",
+      "commerce": "E-commerce & digital"
     },
     "experienceItems": {
-      "ranli": {
-        "role": "Automation & Data Management Engineer",
-        "summary": "Designed and shipped custom automation connecting Shopify, Ecomanager and Google Sheets. Rebuilt the ETL layer so data moves without a human in the loop.",
+      "flowtech": {
+        "role": "Automation Solutions Developer — FlowTech Automation",
+        "summary": "My own venture: I design and distribute automation scripts and digital tools for creators and e-commerce sellers.",
         "highlights": [
-          "Cut manual data-handling errors by 90% by replacing copy-paste workflows with scripted, validated pipelines",
-          "Built bidirectional sync between Shopify orders and internal Sheets-based inventory using the Apps Script runtime and webhooks",
-          "Owned live incident response for operational workflows"
+          "Design and publish ready-to-import automation templates for businesses, creators and online sellers",
+          "Handle the brand identity, storefront UI/UX and product documentation myself",
+          "Write plain-language setup guides so a non-technical buyer can deploy a workflow without help"
         ]
       },
-      "daxshop": {
-        "role": "Web Developer & Workflow Specialist",
-        "summary": "Freelance engagement auditing, restructuring and securing the software-tracking databases the business ran on.",
+      "ecommerce-automation": {
+        "role": "E-commerce & Automation Developer",
+        "summary": "Building the automation that keeps inventory in sync across an e-commerce platform, an order-management tool and Google Sheets.",
         "highlights": [
-          "Audited and normalised a sprawling Sheets-based data model into a validated schema",
-          "Added automated conformity checks that flag bad records before they reach reporting",
-          "Delivered real-time reporting that replaced a weekly manual compilation"
+          "Write Google Apps Script and REST API integrations that synchronise inventory between systems never designed to talk to each other",
+          "Replace repetitive manual data handling with scripted, validated flows",
+          "Optimise e-commerce data flows so the operational numbers stay trustworthy"
         ]
       },
-      "consulting": {
-        "role": "Digital & Media Strategy Consultant",
-        "summary": "Freelance work with German SMEs and Forever Living (USA) across the Gulf region.",
+      "freelance-web": {
+        "role": "Web Developer & Integrator (freelance)",
+        "summary": "A freelance engagement for an e-commerce client, restructuring the spreadsheet databases the business ran its tracking on.",
         "highlights": [
-          "Ran targeted campaigns and conversion analysis against the Snapchat Marketing API",
-          "Implemented CRM tooling and automated customer assistance for international user journeys"
+          "Structured and organised Google Sheets tracking databases into a consistent, queryable shape",
+          "Built automated verification scripts that flag bad records before anyone acts on them",
+          "Handled data cleaning, deduplication and dynamic processing for order and delivery datasets"
+        ]
+      },
+      "digital-consulting": {
+        "role": "Digital & Prospecting Consultant (freelance)",
+        "summary": "Freelance consulting on an affiliate marketing and distribution project, covering visual content and direct client relationships.",
+        "highlights": [
+          "Created visual content and ran targeted prospecting campaigns on social media",
+          "Managed direct customer relationships through to product delivery"
         ]
       }
     }
@@ -101,56 +115,32 @@
     "featured": "Featured",
     "empty": "No projects match this filter yet.",
     "metrics": {
-      "manualErrors": "fewer manual errors",
-      "hoursSaved": "reclaimed",
-      "ordersSynced": "orders synced",
-      "routes": "curated routes",
-      "coldStart": "cold start",
-      "recordsAudited": "records audited",
-      "reportLatency": "faster reporting",
-      "responseTime": "lead response time",
-      "uptime": "uptime",
-      "languages": "languages supported",
-      "ttfb": "time to first token",
-      "markets": "markets",
-      "cpaReduction": "lower cost per acquisition"
+      "testsPassing": "passing tests"
     },
     "items": {
-      "etl-shopify-sync": {
-        "title": "Shopify ↔ Sheets ETL pipeline",
-        "problem": "Order, stock and fulfilment data lived in three systems that didn't talk. Staff reconciled them by hand every day, and the errors compounded downstream into wrong stock counts and missed shipments.",
-        "solution": "Built a scheduled and webhook-triggered pipeline in Google Apps Script that extracts from the Shopify Admin API and Ecomanager, validates and normalises every record against a strict schema, then loads into the Sheets-based operational store. Bad records are quarantined and reported instead of silently written.",
-        "outcome": "Manual handling errors dropped by 90%, roughly fifteen hours a week of reconciliation disappeared, and stock figures became trustworthy enough to make decisions on."
+      "multi-agent-monitor": {
+        "title": "Multi-Agent E-commerce Price & Competitor Monitor",
+        "problem": "Tracking competitor pricing by hand does not scale, and the tools that automate it hand you a number with no account of how they reached it — which makes the recommendation hard to trust and impossible to argue with.",
+        "solution": "Four autonomous agents — Collector, Analyst, Strategist and Notifier — coordinated by a hand-written orchestrator. The agents never call each other: each reads and writes one shared cycle state, and only the orchestrator decides who runs when. The language model is used solely by the Strategist, where weighing a rival’s move against margin and stock is a genuine judgement call; the statistical work stays deterministic.",
+        "outcome": "Every recommendation carries the events that triggered it, the economics it was weighed against, and whether a model or a rule engine produced it. Competitor data comes from a simulated market over a fictional catalogue — a deliberate choice rather than scraping real retailers. The live model path has not yet been exercised against a real API key, so the demo output is tagged heuristic, not llm."
+      },
+      "ai-sales-assistant": {
+        "title": "AI Sales Assistant (demo)",
+        "problem": "An online retail business took orders through direct messages, and every enquiry repeated the same manual sequence: work out which product the customer means, check stock, quote a price, confirm. Customers do not write like a search query — references arrive in whatever language and spelling they happen to use, often several products in one message — so exact-match lookup against a catalogue fails constantly.",
+        "solution": "An n8n workflow that delegates language understanding to an AI agent with a structured output parser rather than to pattern matching. The agent returns strict, validated JSON, so everything downstream is ordinary deterministic logic over typed data. Variant matching handles both exact values and numeric ranges against a live spreadsheet catalogue.",
+        "outcome": "Handles multi-product, multi-language messages in a single pass. This repository publishes one 16-node workflow — the conversation-understanding and catalogue-matching engine — extracted from a larger eight-workflow system. It was built and tested for a real e-commerce client engagement, is not currently deployed for that business, and is shared for engineering context only."
+      },
+      "ai-customer-reply-assistant": {
+        "title": "AI Customer Reply Assistant",
+        "problem": "A small business owner without a support team cannot watch a chat inbox around the clock, and an unanswered message is a customer left waiting.",
+        "solution": "A 16-node n8n workflow that watches a Telegram inbox continuously, classifies each message’s intent — question, order, complaint, urgent or other — and sends a context-aware reply in the customer’s own language within seconds. Every conversation is logged to a Google Sheet, and an email alert reaches the owner only when a message is an order or urgent.",
+        "outcome": "Built to keep working when something breaks: the AI call retries up to three times, then still sends a polite fallback reply and still logs the message, flagged for review. Reply, log and alert run independently, so one failing step never blocks the others. It deploys without custom code — import the workflow, connect four accounts — and ships with a plain-language setup guide. Sold as a template on my own store."
       },
       "gotrek": {
-        "title": "GoTrek — tourism guidance app",
-        "problem": "Travellers exploring the region had no single, reliable source for routes, timing and local orientation data — the information was scattered across forums and out of date.",
-        "solution": "Architected and built a mobile application over a REST backend, with a normalised PostgreSQL schema for routes and points of interest, offline-capable caching, and a UI designed in Figma around one-handed use outdoors.",
-        "outcome": "A working guidance app covering forty-plus curated routes with a sub-1.2-second cold start on mid-range hardware."
-      },
-      "data-integrity-audit": {
-        "title": "Data integrity audit & automated reporting",
-        "problem": "A business ran its software tracking on spreadsheets nobody trusted. Duplicate rows, inconsistent formats and silent overwrites meant every report needed manual verification before anyone would act on it.",
-        "solution": "Audited the existing model, designed a validated schema with typed columns and referential checks, and wrote automation that runs conformity rules on every write. Violations trigger an alert with the offending row rather than failing quietly.",
-        "outcome": "Over thirty thousand records audited and normalised, and reporting that used to take a manual weekly pass now lands in near real time."
-      },
-      "n8n-lead-router": {
-        "title": "n8n lead routing & notification system",
-        "problem": "Inbound enquiries arrived by email and sat unread for hours. There was no triage, no deduplication, and no record of what happened to a lead after it arrived.",
-        "solution": "Built an n8n workflow that receives a signed webhook, validates the payload, deduplicates against previous submissions, writes an audit row to Supabase, and fans out an instant Telegram notification plus a templated acknowledgement email.",
-        "outcome": "Median response time fell from hours to under thirty seconds, with a durable audit trail for every enquiry."
-      },
-      "cv-ai-agent": {
-        "title": "Grounded multilingual CV agent",
-        "problem": "Recruiters ask the same dozen questions and rarely read past the first screen of a CV. A generic chatbot would answer them — and would also confidently invent qualifications, which is worse than saying nothing.",
-        "solution": "Built a streaming agent on the Vercel AI SDK whose entire knowledge base is generated from a single typed profile file. The system prompt forbids extrapolation, names the exact degree level to prevent inflation, and gives the model an explicit fallback so it always has a compliant move when it doesn't know.",
-        "outcome": "Answers in four languages, streams the first token in around 400 ms, and cannot claim a credential that isn't in the source file."
-      },
-      "campaign-analytics": {
-        "title": "Cross-market campaign analytics",
-        "problem": "Campaigns ran across three markets with no shared view of what conversion actually cost, so budget decisions were made on gut feel.",
-        "solution": "Instrumented campaigns against the Snapchat Marketing API, built a consistent conversion-metric definition across markets, and wired CRM automation so qualified contacts were followed up without manual handoff.",
-        "outcome": "A comparable view across three markets and a materially lower cost per acquisition once spend followed the data."
+        "title": "GoTrek — tourism app",
+        "problem": "Travellers had no single reliable place to browse a city’s stays, landmarks and activities alongside the trips they might take next; the information was scattered and out of date.",
+        "solution": "A Flutter application built as a final-year project by a team of four, where I was responsible for the UI/UX design and the frontend implementation. It was later refactored into a layered architecture: hardcoded lists inside widgets became typed models behind a repository layer, so introducing a real API is a change confined to one layer and the UI is untouched.",
+        "outcome": "A frontend-complete prototype: guest browsing, in-city search, a sortable stays list, a booking flow with an itemised breakdown, and favourites that persist on the device. The backend is specified but not built — the app reads from a local seeded catalogue, and the repository is explicit about what is and is not real."
       }
     }
   },
@@ -162,22 +152,42 @@
       "automation": {
         "title": "Custom automation systems",
         "description": "The manual process you've been meaning to fix, replaced with a pipeline that runs itself and tells you when something breaks.",
-        "features": ["n8n workflow design", "Google Apps Script", "Scheduled & webhook triggers", "Error handling and alerting"]
+        "features": [
+          "n8n workflow design",
+          "Google Apps Script",
+          "Scheduled & webhook triggers",
+          "Error handling and alerting"
+        ]
       },
       "web": {
         "title": "Web & software engineering",
         "description": "Fast, accessible, typed applications built on Next.js — from a marketing site that ranks to an internal tool your team actually likes using.",
-        "features": ["Next.js & React", "TypeScript end to end", "Core Web Vitals budget", "Responsive & accessible"]
+        "features": [
+          "Next.js (App Router)",
+          "Tailwind CSS & Framer Motion",
+          "Core Web Vitals budget",
+          "Responsive & accessible"
+        ]
       },
       "api": {
         "title": "API & systems integration",
         "description": "Making two systems that were never designed to talk to each other exchange data reliably, with validation at every boundary.",
-        "features": ["REST integration", "Shopify & e-commerce APIs", "Data modelling & ETL", "PostgreSQL / Supabase"]
+        "features": [
+          "REST integration",
+          "Shopify & e-commerce APIs",
+          "Data modelling & sync",
+          "PostgreSQL / Supabase"
+        ]
       },
       "audit": {
         "title": "Technical audits",
-        "description": "An honest read on what you have: where the data model leaks, what the security posture actually is, and what to fix first.",
-        "features": ["Data integrity review", "Performance audit", "Security & WAF review", "Prioritised action plan"]
+        "description": "An honest read on what you have: where the data model leaks, where the manual work is hiding, and what to fix first.",
+        "features": [
+          "Data integrity review",
+          "Performance audit",
+          "Automation & data-flow review",
+          "Prioritised action plan"
+        ]
       }
     }
   },
@@ -240,7 +250,7 @@
   "booking": {
     "title": "Let's talk it through",
     "eyebrow": "Schedule",
-    "subtitle": "Thirty minutes, no pitch. Bring the problem and we'll work out whether I'm the right person for it.",
+    "subtitle": "A short call, no pitch. Bring the problem and we will work out whether I am the right person for it.",
     "cta": "Pick a time",
     "loading": "Loading calendar…",
     "fallback": "Calendar not loading? Email me directly."
@@ -248,7 +258,7 @@
   "contact": {
     "title": "Get in touch",
     "eyebrow": "Contact",
-    "subtitle": "Tell me what you're trying to build. I reply within 24 hours.",
+    "subtitle": "Tell me what you are trying to build. I read every message myself.",
     "fields": {
       "name": "Your name",
       "namePlaceholder": "Amina Belkacem",
@@ -272,7 +282,7 @@
     "submit": "Send message",
     "sending": "Sending…",
     "successTitle": "Message sent",
-    "successBody": "Thanks — it landed. I'll get back to you within 24 hours.",
+    "successBody": "Thanks — it landed. I'll get back to you as soon as I can.",
     "sendAnother": "Send another",
     "errorTitle": "That didn't go through",
     "errors": {
@@ -330,7 +340,7 @@
   "footer": {
     "tagline": "Built in Sétif. Working everywhere.",
     "rights": "© {year} Chiraz Lina Kannoufi. All rights reserved.",
-    "builtWith": "Next.js, TypeScript and Tailwind CSS",
+    "builtWith": "Next.js and Tailwind CSS",
     "sourceCode": "Source code",
     "backToTop": "Back to top"
   },

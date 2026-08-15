@@ -72,8 +72,12 @@ export function About() {
 
                 <div className="flex flex-wrap items-baseline gap-x-3">
                   <h4 className="font-semibold">{t(`${item}.role`)}</h4>
+                  {/* A single-month engagement collapses to one date rather
+                      than rendering "2025-08 — 2025-08". */}
                   <span className="numeric text-xs font-medium text-[var(--accent)]">
-                    {role.start} — {role.end ?? t('present')}
+                    {role.end === role.start
+                      ? role.start
+                      : `${role.start} — ${role.end ?? t('present')}`}
                   </span>
                 </div>
 

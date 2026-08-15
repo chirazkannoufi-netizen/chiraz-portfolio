@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "Chiraz Lina Kannoufi — Ingénieure Logiciel & Spécialiste Automatisation",
-    "description": "Diplômée en informatique, je conçois des systèmes d'automatisation, des applications web et des intégrations IA. n8n, Python, JavaScript, Next.js, Google Apps Script.",
-    "ogAlt": "Portfolio de Chiraz Lina Kannoufi, Ingénieure Logiciel et Spécialiste en Automatisation"
+    "title": "Chiraz Lina Kannoufi — Développeuse Web & Automatisation",
+    "description": "Diplômée en informatique (Systèmes Informatiques). Je conçois des workflows d'automatisation, des intégrations IA et les interfaces web autour — n8n, Google Apps Script, Python, Next.js.",
+    "ogAlt": "Portfolio de Chiraz Lina Kannoufi, Développeuse Web & Automatisation"
   },
   "nav": {
     "home": "Accueil",
@@ -17,25 +17,30 @@
     "available": "Disponible pour de nouveaux projets",
     "greeting": "Bonjour, je suis",
     "name": "Chiraz Lina Kannoufi",
-    "roles": ["Ingénieure Logiciel", "Spécialiste Automatisation", "Diplômée en Informatique", "Architecte API & Workflows"],
+    "roles": [
+      "Développeuse Web & Automatisation",
+      "Diplômée en Informatique",
+      "Designer UI/UX",
+      "Créatrice de workflows n8n"
+    ],
     "tagline": "Je construis des systèmes qui font le travail que personne ne devrait faire à la main.",
-    "description": "Diplômée en informatique, spécialisée en automatisation de processus, intégration d'API et développement web full-stack. Je transforme les tâches manuelles et sources d'erreurs en pipelines autonomes.",
+    "description": "Diplômée en informatique, spécialité Systèmes Informatiques. Je conçois des workflows d'automatisation, des intégrations IA et les interfaces web qui vont avec — je transforme les tâches manuelles et répétitives en processus autonomes.",
     "ctaPrimary": "Voir mes projets",
     "ctaSecondary": "Interroger mon assistant IA",
     "downloadCv": "Télécharger le CV",
     "downloadCvAria": "Télécharger le CV au format PDF en français",
     "scrollHint": "Faites défiler pour explorer",
     "stats": {
-      "errorsReduced": "Erreurs manuelles éliminées",
-      "languages": "Langues parlées",
-      "yearsBuilding": "Années de développement"
+      "degree": "Systèmes Informatiques — Sétif 1",
+      "certification": "Certificat Talent — Search & AI",
+      "languages": "Langues parlées"
     }
   },
   "about": {
     "title": "À propos",
     "eyebrow": "En bref",
     "lead": "J'écris du code qui supprime du travail au lieu d'en ajouter.",
-    "bio": "Diplômée en informatique de l'Université Ferhat Abbas — Sétif 1, spécialité génie logiciel. Depuis, je travaille à la jonction entre l'opérationnel et l'ingénierie : là où une entreprise fonctionne à coups de tableurs, de copier-coller et d'espoir, et où il faut remplacer tout cela par quelque chose qui tient réellement. Mon travail couvre les pipelines d'automatisation, les intégrations e-commerce et les applications web qui reposent dessus.",
+    "bio": "Diplômée en informatique de l'Université Ferhat Abbas — Sétif 1, spécialité Systèmes Informatiques. Depuis, je travaille à la jonction entre l'opérationnel et l'ingénierie : là où une entreprise fonctionne à coups de tableurs, de copier-coller et d'espoir, et où il faut remplacer tout cela par quelque chose qui tient. Mon travail couvre les workflows d'automatisation, les intégrations e-commerce et les interfaces web qui reposent dessus.",
     "educationTitle": "Formation",
     "certificatesTitle": "Certifications",
     "experienceTitle": "Expérience",
@@ -45,36 +50,45 @@
       "languages": "Langages de programmation",
       "frameworks": "Frameworks & web",
       "automation": "Automatisation & workflows",
-      "data": "Données & cloud",
-      "design": "Design & outils",
-      "platforms": "Plateformes SaaS",
-      "systems": "Systèmes & sécurité"
+      "ai": "Intégration IA",
+      "data": "Données & stockage",
+      "design": "Design & UI/UX",
+      "commerce": "E-commerce & digital"
     },
     "experienceItems": {
-      "ranli": {
-        "role": "Ingénieure Automatisation & Gestion des Données",
-        "summary": "Conception et déploiement d'automatisations sur-mesure reliant Shopify, Ecomanager et Google Sheets. Refonte de la couche ETL pour que les données circulent sans intervention humaine.",
+      "flowtech": {
+        "role": "Développeuse de solutions d'automatisation — FlowTech Automation",
+        "summary": "Ma propre activité : je conçois et distribue des scripts d'automatisation et des outils numériques pour les créateurs et les vendeurs e-commerce.",
         "highlights": [
-          "Réduction de 90 % des erreurs de manipulation de données en remplaçant les copier-coller par des pipelines scriptés et validés",
-          "Synchronisation bidirectionnelle entre les commandes Shopify et l'inventaire interne sous Sheets, via Apps Script et webhooks",
-          "Prise en charge de la résolution d'incidents en temps réel sur les flux opérationnels"
+          "Conception et publication de modèles d'automatisation prêts à importer pour les entreprises, créateurs et vendeurs en ligne",
+          "Prise en charge de l'identité de marque, de l'UI/UX de la boutique et de la documentation produit",
+          "Rédaction de guides d'installation en langage clair, utilisables par un acheteur non technique"
         ]
       },
-      "daxshop": {
-        "role": "Développeuse Web & Workflow Specialist",
-        "summary": "Mission freelance d'audit, de restructuration et de sécurisation des bases de suivi logiciel de l'entreprise.",
+      "ecommerce-automation": {
+        "role": "Développeuse E-commerce & Automatisation",
+        "summary": "Développement des automatisations qui maintiennent les stocks synchronisés entre une plateforme e-commerce, un outil de gestion des commandes et Google Sheets.",
         "highlights": [
-          "Audit et normalisation d'un modèle de données Sheets éclaté en un schéma validé",
-          "Mise en place de contrôles de conformité automatiques signalant les enregistrements erronés avant le reporting",
-          "Livraison d'un reporting temps réel remplaçant une compilation manuelle hebdomadaire"
+          "Écriture de scripts Google Apps Script et d'intégrations REST qui synchronisent les stocks entre des systèmes jamais conçus pour communiquer",
+          "Remplacement des manipulations manuelles répétitives par des flux scriptés et validés",
+          "Optimisation des flux de données e-commerce pour que les chiffres opérationnels restent fiables"
         ]
       },
-      "consulting": {
-        "role": "Consultante Digital & Media Strategy",
-        "summary": "Missions freelance auprès de PME allemandes et de Forever Living (USA) dans la région du Golfe.",
+      "freelance-web": {
+        "role": "Développeuse web & intégration (freelance)",
+        "summary": "Mission freelance pour un client e-commerce : restructuration des bases de suivi sur tableur dont dépendait l'activité.",
         "highlights": [
-          "Pilotage de campagnes ciblées et analyse de conversion via l'API Snapchat Marketing",
-          "Implémentation d'outils CRM et d'assistance client automatisée pour des parcours internationaux"
+          "Structuration des bases de suivi Google Sheets en un format cohérent et exploitable",
+          "Développement de scripts de vérification automatisés signalant les enregistrements erronés avant qu'ils ne servent à décider",
+          "Nettoyage, déduplication et traitement dynamique des données de commandes et de livraisons"
+        ]
+      },
+      "digital-consulting": {
+        "role": "Consultante digitale & prospection (freelance)",
+        "summary": "Mission freelance sur un projet de marketing d'affiliation et de distribution : contenu visuel et relation client directe.",
+        "highlights": [
+          "Création de contenus visuels et pilotage de campagnes de prospection ciblées sur les réseaux sociaux",
+          "Gestion directe de la relation client jusqu'à la livraison du produit"
         ]
       }
     }
@@ -101,56 +115,32 @@
     "featured": "En vedette",
     "empty": "Aucun projet ne correspond encore à ce filtre.",
     "metrics": {
-      "manualErrors": "d'erreurs manuelles en moins",
-      "hoursSaved": "récupérées",
-      "ordersSynced": "commandes synchronisées",
-      "routes": "itinéraires référencés",
-      "coldStart": "démarrage à froid",
-      "recordsAudited": "enregistrements audités",
-      "reportLatency": "de reporting plus rapide",
-      "responseTime": "de délai de réponse",
-      "uptime": "de disponibilité",
-      "languages": "langues prises en charge",
-      "ttfb": "avant le premier token",
-      "markets": "marchés",
-      "cpaReduction": "de coût par acquisition en moins"
+      "testsPassing": "tests au vert"
     },
     "items": {
-      "etl-shopify-sync": {
-        "title": "Pipeline ETL Shopify ↔ Sheets",
-        "problem": "Les données de commandes, de stock et de livraison vivaient dans trois systèmes qui ne communiquaient pas. Le personnel les réconciliait à la main chaque jour, et les erreurs se propageaient en stocks faux et expéditions manquées.",
-        "solution": "Développement d'un pipeline planifié et déclenché par webhooks en Google Apps Script : extraction depuis l'API Shopify Admin et Ecomanager, validation et normalisation de chaque enregistrement contre un schéma strict, puis chargement dans le référentiel opérationnel sous Sheets. Les enregistrements invalides sont mis en quarantaine et signalés au lieu d'être écrits silencieusement.",
-        "outcome": "Les erreurs de manipulation ont chuté de 90 %, une quinzaine d'heures de réconciliation par semaine ont disparu, et les chiffres de stock sont redevenus assez fiables pour décider."
+      "multi-agent-monitor": {
+        "title": "Moniteur multi-agents de prix et de concurrence e-commerce",
+        "problem": "Suivre les prix des concurrents à la main ne passe pas à l'échelle, et les outils qui l'automatisent livrent un chiffre sans expliquer comment ils y sont arrivés — une recommandation difficile à croire et impossible à discuter.",
+        "solution": "Quatre agents autonomes — Collector, Analyst, Strategist et Notifier — coordonnés par un orchestrateur écrit à la main. Les agents ne s'appellent jamais entre eux : chacun lit et écrit dans un état de cycle partagé, et seul l'orchestrateur décide qui s'exécute et quand. Le modèle de langage n'est sollicité que par le Strategist, là où arbitrer entre le mouvement d'un concurrent, la marge et le stock relève d'un vrai jugement ; le travail statistique reste déterministe.",
+        "outcome": "Chaque recommandation porte les événements qui l'ont déclenchée, l'économie face à laquelle elle a été pesée, et l'indication de sa provenance : modèle ou moteur de règles. Les données concurrentes viennent d'un marché simulé sur un catalogue fictif — un choix délibéré plutôt que d'aspirer de vrais sites marchands. Le chemin passant par le modèle n'a pas encore été exercé avec une vraie clé d'API : la sortie de démonstration est donc étiquetée heuristic, pas llm."
+      },
+      "ai-sales-assistant": {
+        "title": "AI Sales Assistant (démo)",
+        "problem": "Une activité de vente en ligne prenait ses commandes par messages directs, et chaque demande répétait la même séquence manuelle : identifier le produit, vérifier le stock, annoncer un prix, confirmer. Les clients n'écrivent pas comme une requête de recherche — les références arrivent dans la langue et l'orthographe du moment, souvent plusieurs produits dans un seul message — et la recherche par correspondance exacte échoue en permanence.",
+        "solution": "Un workflow n8n qui confie la compréhension du langage à un agent IA doté d'un parseur de sortie structurée plutôt qu'à des expressions régulières. L'agent renvoie un JSON strict et validé : tout l'aval redevient de la logique déterministe ordinaire sur des données typées. La correspondance des variantes gère aussi bien les valeurs exactes que les plages numériques face à un catalogue tenu sur tableur.",
+        "outcome": "Traite en une seule passe des messages multi-produits et multilingues. Ce dépôt publie un workflow de 16 nœuds — le moteur de compréhension et de correspondance catalogue — extrait d'un système plus large de huit workflows. Il a été construit et testé pour une mission réelle chez un client e-commerce, n'est pas déployé actuellement chez lui, et est partagé à titre de contexte technique uniquement."
+      },
+      "ai-customer-reply-assistant": {
+        "title": "AI Customer Reply Assistant",
+        "problem": "Un petit commerce sans équipe support ne peut pas surveiller une boîte de messages en continu, et un message sans réponse, c'est un client qui attend.",
+        "solution": "Un workflow n8n de 16 nœuds qui surveille en continu une boîte Telegram, classe l'intention de chaque message — question, commande, réclamation, urgence ou autre — et envoie en quelques secondes une réponse adaptée dans la langue du client. Chaque conversation est journalisée dans un Google Sheet, et une alerte e-mail n'arrive au gérant que s'il s'agit d'une commande ou d'une urgence.",
+        "outcome": "Conçu pour continuer de fonctionner en cas de panne : l'appel à l'IA est retenté jusqu'à trois fois, puis une réponse de repli polie part quand même et le message reste journalisé, signalé pour relecture. Réponse, journal et alerte s'exécutent indépendamment : une étape en échec n'en bloque aucune autre. Le déploiement ne demande aucun code — importer le workflow, connecter quatre comptes — et un guide d'installation en langage clair est fourni. Vendu comme modèle sur ma propre boutique."
       },
       "gotrek": {
-        "title": "GoTrek — application d'orientation touristique",
-        "problem": "Les voyageurs n'avaient aucune source unique et fiable pour les itinéraires, les horaires et les données d'orientation locales — l'information était éparpillée sur des forums et obsolète.",
-        "solution": "Architecture et développement d'une application mobile sur un backend REST, avec un schéma PostgreSQL normalisé pour les itinéraires et points d'intérêt, un cache utilisable hors ligne, et une interface conçue sous Figma pour un usage à une main en extérieur.",
-        "outcome": "Une application fonctionnelle couvrant plus de quarante itinéraires référencés, avec un démarrage à froid sous 1,2 seconde sur du matériel milieu de gamme."
-      },
-      "data-integrity-audit": {
-        "title": "Audit d'intégrité des données & reporting automatisé",
-        "problem": "Une entreprise pilotait son suivi logiciel sur des tableurs auxquels plus personne ne faisait confiance. Doublons, formats incohérents et écrasements silencieux imposaient une vérification manuelle avant toute décision.",
-        "solution": "Audit du modèle existant, conception d'un schéma validé avec colonnes typées et contrôles référentiels, et écriture d'automatisations appliquant les règles de conformité à chaque écriture. Toute violation déclenche une alerte avec la ligne fautive plutôt qu'un échec silencieux.",
-        "outcome": "Plus de trente mille enregistrements audités et normalisés, et un reporting autrefois hebdomadaire et manuel désormais quasi temps réel."
-      },
-      "n8n-lead-router": {
-        "title": "Routage de leads & notifications n8n",
-        "problem": "Les demandes entrantes arrivaient par e-mail et restaient non lues pendant des heures. Aucun tri, aucune déduplication, aucune trace de ce qu'était devenu un lead.",
-        "solution": "Workflow n8n recevant un webhook signé, validant la charge utile, dédupliquant contre les soumissions précédentes, écrivant une ligne d'audit dans Supabase, puis diffusant une notification Telegram instantanée et un accusé de réception par e-mail.",
-        "outcome": "Le délai médian de réponse est passé de plusieurs heures à moins de trente secondes, avec une piste d'audit durable pour chaque demande."
-      },
-      "cv-ai-agent": {
-        "title": "Agent CV multilingue ancré dans les faits",
-        "problem": "Les recruteurs posent toujours la même dizaine de questions et lisent rarement au-delà du premier écran d'un CV. Un chatbot générique y répondrait — et inventerait aussi des qualifications avec aplomb, ce qui est pire que le silence.",
-        "solution": "Agent en streaming sur le Vercel AI SDK, dont toute la base de connaissances est générée depuis un unique fichier de profil typé. Le prompt système interdit l'extrapolation, nomme explicitement le niveau de diplôme pour empêcher toute inflation, et donne au modèle une porte de sortie claire quand il ne sait pas.",
-        "outcome": "Des réponses en quatre langues, un premier token en environ 400 ms, et l'impossibilité d'annoncer un diplôme absent du fichier source."
-      },
-      "campaign-analytics": {
-        "title": "Analyse de campagnes multi-marchés",
-        "problem": "Des campagnes tournaient sur trois marchés sans vision partagée du coût réel d'une conversion : les arbitrages budgétaires se faisaient à l'intuition.",
-        "solution": "Instrumentation des campagnes via l'API Snapchat Marketing, définition d'une métrique de conversion cohérente entre marchés, et automatisation CRM pour relancer les contacts qualifiés sans transfert manuel.",
-        "outcome": "Une vision comparable sur trois marchés et un coût par acquisition nettement réduit une fois les budgets alignés sur les données."
+        "title": "GoTrek — application touristique",
+        "problem": "Les voyageurs n'avaient pas d'endroit unique et fiable pour parcourir les hébergements, les lieux et les activités d'une ville en même temps que les voyages suivants envisageables ; l'information était éparpillée et périmée.",
+        "solution": "Une application Flutter réalisée comme projet de fin d'études par une équipe de quatre, où j'étais responsable du design UI/UX et de l'implémentation frontend. Elle a ensuite été refactorisée en architecture par couches : les listes codées en dur dans les widgets sont devenues des modèles typés derrière une couche repository, si bien qu'introduire une vraie API se limite à cette couche, sans toucher à l'interface.",
+        "outcome": "Un prototype complet côté frontend : navigation sans compte, recherche dans la ville, liste d'hébergements triable, parcours de réservation avec détail des montants, et favoris persistés sur l'appareil. Le backend est spécifié mais pas construit — l'application lit un catalogue local pré-rempli, et le dépôt dit explicitement ce qui est réel et ce qui ne l'est pas."
       }
     }
   },
@@ -162,22 +152,42 @@
       "automation": {
         "title": "Systèmes d'automatisation sur-mesure",
         "description": "Le processus manuel que vous repoussez depuis des mois, remplacé par un pipeline autonome qui vous prévient quand quelque chose casse.",
-        "features": ["Conception de workflows n8n", "Google Apps Script", "Déclencheurs planifiés & webhooks", "Gestion d'erreurs et alertes"]
+        "features": [
+          "Conception de workflows n8n",
+          "Google Apps Script",
+          "Déclencheurs planifiés & webhooks",
+          "Gestion d'erreurs et alertes"
+        ]
       },
       "web": {
         "title": "Ingénierie web & logicielle",
         "description": "Des applications rapides, accessibles et typées sous Next.js — du site vitrine bien référencé à l'outil interne que votre équipe utilise avec plaisir.",
-        "features": ["Next.js & React", "TypeScript de bout en bout", "Budget Core Web Vitals", "Responsive & accessible"]
+        "features": [
+          "Next.js (App Router)",
+          "Tailwind CSS & Framer Motion",
+          "Budget Core Web Vitals",
+          "Responsive & accessible"
+        ]
       },
       "api": {
         "title": "Intégration d'API & de systèmes",
         "description": "Faire dialoguer de façon fiable deux systèmes qui n'étaient pas prévus pour, avec une validation à chaque frontière.",
-        "features": ["Intégration REST", "APIs Shopify & e-commerce", "Modélisation de données & ETL", "PostgreSQL / Supabase"]
+        "features": [
+          "Intégration REST",
+          "APIs Shopify & e-commerce",
+          "Modélisation & synchronisation des données",
+          "PostgreSQL / Supabase"
+        ]
       },
       "audit": {
         "title": "Audits techniques",
-        "description": "Un diagnostic honnête de l'existant : où le modèle de données fuit, ce que vaut réellement la posture de sécurité, et par quoi commencer.",
-        "features": ["Revue d'intégrité des données", "Audit de performance", "Revue sécurité & WAF", "Plan d'action priorisé"]
+        "description": "Un diagnostic honnête de l'existant : où le modèle de données fuit, où se cache le travail manuel, et par quoi commencer.",
+        "features": [
+          "Revue d'intégrité des données",
+          "Audit de performance",
+          "Revue des automatisations & flux de données",
+          "Plan d'action priorisé"
+        ]
       }
     }
   },
@@ -240,7 +250,7 @@
   "booking": {
     "title": "Discutons-en",
     "eyebrow": "Planifier",
-    "subtitle": "Trente minutes, sans argumentaire commercial. Venez avec le problème, on verra ensemble si je suis la bonne personne.",
+    "subtitle": "Un appel court, sans argumentaire. Amenez le problème et nous verrons si je suis la bonne personne.",
     "cta": "Choisir un créneau",
     "loading": "Chargement du calendrier…",
     "fallback": "Le calendrier ne se charge pas ? Écrivez-moi directement."
@@ -248,7 +258,7 @@
   "contact": {
     "title": "Me contacter",
     "eyebrow": "Contact",
-    "subtitle": "Dites-moi ce que vous cherchez à construire. Je réponds sous 24 heures.",
+    "subtitle": "Dites-moi ce que vous cherchez à construire. Je lis chaque message moi-même.",
     "fields": {
       "name": "Votre nom",
       "namePlaceholder": "Amina Belkacem",
@@ -272,7 +282,7 @@
     "submit": "Envoyer le message",
     "sending": "Envoi en cours…",
     "successTitle": "Message envoyé",
-    "successBody": "Merci — c'est bien arrivé. Je reviens vers vous sous 24 heures.",
+    "successBody": "Merci — c'est bien reçu. Je vous réponds dès que possible.",
     "sendAnother": "Envoyer un autre message",
     "errorTitle": "L'envoi a échoué",
     "errors": {
@@ -330,7 +340,7 @@
   "footer": {
     "tagline": "Conçu à Sétif. Déployé partout.",
     "rights": "© {year} Chiraz Lina Kannoufi. Tous droits réservés.",
-    "builtWith": "Next.js, TypeScript et Tailwind CSS",
+    "builtWith": "Next.js et Tailwind CSS",
     "sourceCode": "Code source",
     "backToTop": "Retour en haut"
   },
