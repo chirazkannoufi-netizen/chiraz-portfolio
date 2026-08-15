@@ -1,6 +1,7 @@
 import { contactSchema } from '@/lib/schemas';
 import { verifyTurnstile } from '@/lib/turnstile';
 import { getClientIp, rateLimit } from '@/lib/rate-limit';
+import { sendContactFallback } from '@/lib/mailer';
 
 /**
  * ============================================================================
@@ -13,7 +14,7 @@ import { getClientIp, rateLimit } from '@/lib/rate-limit';
  *    2. Honeypot      — hidden `website` field must be empty (free)
  *    3. Zod           — shape, length, type (free)
  *    4. Turnstile     — one network round-trip to Cloudflare (~100 ms)
- *    5. n8n webhook   — fan-out to Telegram + email + Supabase
+ *    5. Delivery      — n8n webhook, with a direct-email fallback beneath it
  *
  *  The response is intentionally uniform: a caller cannot distinguish
  *  "captcha failed" from "you're rate limited" by timing or message, which
@@ -73,46 +74,77 @@ export async function POST(req: Request) {
     return Response.json({ ok: false, error: 'captcha_failed' }, { status: 403 });
   }
 
-  // ── 5. Fan-out via n8n ───────────────────────────────────────────
+  // ── 5. Deliver ───────────────────────────────────────────────────
+  // Primary path is the n8n webhook; SMTP is the safety net beneath it. The
+  // lead is the product, so "nowhere to send it" must never mean "lose it".
+  const submittedAt = new Date().toISOString();
   const webhookUrl = process.env.N8N_WEBHOOK_URL;
-  if (!webhookUrl) {
-    console.error('[contact] N8N_WEBHOOK_URL is not set — lead was dropped');
-    return Response.json({ ok: false, error: 'delivery_unavailable' }, { status: 503 });
-  }
 
-  try {
-    const res = await fetch(webhookUrl, {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        // Shared secret — verify inside the n8n workflow so the webhook URL
-        // leaking doesn't let anyone inject fake leads into Telegram.
-        'x-portfolio-signature': process.env.N8N_WEBHOOK_SECRET ?? '',
-      },
-      body: JSON.stringify({
-        name: data.name,
-        email: data.email,
-        company: data.company || null,
-        budget: data.budget ?? null,
-        message: data.message,
-        locale: data.locale,
-        meta: {
-          ip,
-          userAgent: req.headers.get('user-agent') ?? 'unknown',
-          referer: req.headers.get('referer') ?? null,
-          receivedAt: new Date().toISOString(),
+  if (webhookUrl) {
+    try {
+      const res = await fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          // The raw shared secret, sent as-is — NOT an HMAC of the body. The
+          // n8n workflow compares this header against the same secret and
+          // stops if it differs, so leaking the webhook URL alone doesn't let
+          // anyone inject fake leads.
+          'x-portfolio-signature': process.env.N8N_WEBHOOK_SECRET ?? '',
         },
-      }),
-      signal: AbortSignal.timeout(10_000),
-    });
+        // Contract: name / email / message / locale / submitted_at are the
+        // agreed fields. company, budget and meta are extras the form also
+        // collects — n8n can read or ignore them, but dropping them here
+        // would silently lose data the visitor actually filled in.
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          message: data.message,
+          locale: data.locale,
+          submitted_at: submittedAt,
+          company: data.company || null,
+          budget: data.budget ?? null,
+          meta: {
+            ip,
+            userAgent: req.headers.get('user-agent') ?? 'unknown',
+            referer: req.headers.get('referer') ?? null,
+          },
+        }),
+        // Short on purpose. The webhook is expected to acknowledge
+        // immediately and fan out to Telegram/email/Supabase on its own time;
+        // the visitor should never sit watching a spinner for that.
+        signal: AbortSignal.timeout(5_000),
+      });
 
-    if (!res.ok) throw new Error(`n8n responded ${res.status}`);
-  } catch (error) {
-    // The lead is the product. Log loudly so a failed delivery is visible in
-    // observability rather than silently swallowed.
-    console.error('[contact] webhook delivery failed', error);
-    return Response.json({ ok: false, error: 'delivery_failed' }, { status: 502 });
+      // Any 2xx is the acknowledgement we asked for — done.
+      if (res.ok) {
+        return Response.json({ ok: true }, { status: 200 });
+      }
+      console.error(`[contact] n8n responded ${res.status} — falling back to email`);
+    } catch (error) {
+      console.error('[contact] webhook unreachable or timed out — falling back to email', error);
+    }
+  } else {
+    console.warn('[contact] N8N_WEBHOOK_URL is not set — using the email fallback');
   }
 
-  return Response.json({ ok: true }, { status: 200 });
+  const fallback = await sendContactFallback(data, {
+    reason: webhookUrl ? 'webhook_failed' : 'webhook_not_configured',
+    submittedAt,
+    ip,
+  });
+
+  if (fallback.ok) {
+    return Response.json({ ok: true }, { status: 200 });
+  }
+
+  // Both channels are down. Say so honestly rather than showing a success
+  // screen for a message that went nowhere — the form's error copy points
+  // the visitor at the email and WhatsApp links, which always work.
+  console.error(`[contact] lead could not be delivered (${fallback.reason})`, {
+    name: data.name,
+    email: data.email,
+    submittedAt,
+  });
+  return Response.json({ ok: false, error: 'delivery_unavailable' }, { status: 503 });
 }
