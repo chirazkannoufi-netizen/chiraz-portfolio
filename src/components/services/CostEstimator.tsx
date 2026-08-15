@@ -153,7 +153,7 @@ export function CostEstimator() {
           </div>
 
           <a
-            href="#booking"
+            href="#contact"
             className="group mt-5 flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-[var(--accent)] px-4 text-sm font-semibold text-[var(--accent-contrast)] transition-transform hover:scale-[1.02]"
           >
             {t('cta')}

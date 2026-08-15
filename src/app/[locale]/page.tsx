@@ -8,7 +8,6 @@ import { Section } from '@/components/ui/Section';
 import { ProjectShowcase } from '@/components/projects/ProjectShowcase';
 import { ServicesGrid } from '@/components/services/ServicesGrid';
 import { CostEstimator } from '@/components/services/CostEstimator';
-import { BookingEmbed } from '@/components/services/BookingEmbed';
 import { ContactForm } from '@/components/contact/ContactForm';
 import { profile } from '@/content/profile';
 
@@ -17,7 +16,7 @@ import { profile } from '@/content/profile';
  *
  * Section order is a funnel: prove capability (work) → name the offer
  * (services) → let them price it themselves (estimator) → remove the friction
- * of asking (booking, contact). Credentials sit near the bottom because a
+ * of asking (contact). Credentials sit near the bottom because a
  * client cares what you've shipped before they care where you studied.
  */
 export default function HomePage({ params }: { params: Promise<{ locale: string }> }) {
@@ -103,14 +102,6 @@ export default function HomePage({ params }: { params: Promise<{ locale: string 
         <About />
       </Section>
 
-      <Section
-        id="booking"
-        eyebrow={t('booking.eyebrow')}
-        title={t('booking.title')}
-        subtitle={t('booking.subtitle')}
-      >
-        <BookingEmbed />
-      </Section>
 
       <Section
         id="contact"

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import { Menu, X, Calendar } from 'lucide-react';
+import { Menu, X, Mail } from 'lucide-react';
 
 import { Link } from '@/i18n/navigation';
 import { LanguageSwitcher } from '@/components/i18n/LanguageSwitcher';
@@ -127,7 +127,7 @@ export function Navbar() {
             title={t('contact')}
             className="hidden size-9 items-center justify-center rounded-lg border border-[var(--border-subtle)] bg-[var(--surface-raised)] text-[var(--text-secondary)] transition-all hover:border-[var(--circuit-strong)] hover:text-[var(--accent)] hover:shadow-[0_0_12px_var(--circuit)] active:scale-[0.96] sm:inline-flex"
           >
-            <Calendar className="size-4" aria-hidden="true" />
+            <Mail className="size-4" aria-hidden="true" />
           </a>
 
           <button

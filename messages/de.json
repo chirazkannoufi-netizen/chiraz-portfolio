@@ -43,9 +43,9 @@
     "bio": "Ich habe Informatik an der Université Ferhat Abbas — Sétif 1 mit Schwerpunkt Computersysteme abgeschlossen. Seitdem arbeite ich an der Nahtstelle zwischen Betrieb und Technik: dort, wo ein Unternehmen mit Tabellen, Copy-and-paste und Hoffnung läuft und jemand das durch etwas ersetzen muss, das hält. Meine Arbeit umfasst Automatisierungs-Workflows, E-Commerce-Integrationen und die Weboberflächen, die darauf aufsetzen.",
     "educationTitle": "Ausbildung",
     "certificatesTitle": "Zertifikate",
+    "viewCertificate": "Zertifikat ansehen",
     "experienceTitle": "Berufserfahrung",
     "skillsTitle": "Technische Kenntnisse",
-    "present": "Heute",
     "skillGroups": {
       "languages": "Programmiersprachen",
       "frameworks": "Frameworks & Web",
@@ -243,17 +243,9 @@
     "timeline": "Geschätzte Dauer",
     "days": "{count, plural, =1 {1 Arbeitstag} other {# Arbeitstage}}",
     "selected": "{count, plural, =0 {Nichts ausgewählt} =1 {1 Element ausgewählt} other {# Elemente ausgewählt}}",
-    "cta": "Termin vereinbaren und Umfang klären",
+    "cta": "Diesen Umfang besprechen",
     "reset": "Zurücksetzen",
     "disclaimer": "Eine Richtspanne auf Basis typischer Projektumfänge, kein Angebot. Die endgültige Zahl folgt einem kurzen Gespräch über Ihren tatsächlichen Bedarf."
-  },
-  "booking": {
-    "title": "Lassen Sie uns sprechen",
-    "eyebrow": "Terminplanung",
-    "subtitle": "Ein kurzes Gespräch, kein Pitch. Bringen Sie das Problem mit, und wir klären, ob ich die Richtige dafür bin.",
-    "cta": "Zeit auswählen",
-    "loading": "Kalender wird geladen…",
-    "fallback": "Kalender lädt nicht? Schreiben Sie mir direkt."
   },
   "contact": {
     "title": "Kontakt aufnehmen",

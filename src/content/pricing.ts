@@ -16,7 +16,7 @@ import type { EstimatorGroup, Quote } from '@/types';
 export const CURRENCY = 'USD';
 
 /** Every project carries this floor regardless of options selected. */
-export const BASE_FEE = 400;
+export const BASE_FEE = 280;
 
 /**
  * Estimates are shown as a ±band, never a single number. A hard number invites
@@ -30,32 +30,32 @@ export const estimatorGroups: readonly EstimatorGroup[] = [
     type: 'radio',
     defaults: ['type-automation'],
     options: [
-      { id: 'type-automation', price: 500, days: 5, exclusive: true },
-      { id: 'type-website', price: 900, days: 10, exclusive: true },
-      { id: 'type-webapp', price: 1800, days: 18, exclusive: true },
-      { id: 'type-audit', price: 350, days: 3, exclusive: true },
+      { id: 'type-automation', price: 350, days: 5, exclusive: true },
+      { id: 'type-website', price: 630, days: 10, exclusive: true },
+      { id: 'type-webapp', price: 1260, days: 18, exclusive: true },
+      { id: 'type-audit', price: 245, days: 3, exclusive: true },
     ],
   },
   {
     id: 'integrations',
     type: 'checkbox',
     options: [
-      { id: 'int-shopify', price: 320, days: 3 },
-      { id: 'int-sheets', price: 180, days: 2 },
-      { id: 'int-n8n', price: 400, days: 4 },
-      { id: 'int-payments', price: 450, days: 4 },
-      { id: 'int-crm', price: 300, days: 3 },
+      { id: 'int-shopify', price: 225, days: 3 },
+      { id: 'int-sheets', price: 125, days: 2 },
+      { id: 'int-n8n', price: 280, days: 4 },
+      { id: 'int-payments', price: 315, days: 4 },
+      { id: 'int-crm', price: 210, days: 3 },
     ],
   },
   {
     id: 'features',
     type: 'checkbox',
     options: [
-      { id: 'feat-ai', price: 650, days: 5 },
-      { id: 'feat-dashboard', price: 550, days: 5 },
-      { id: 'feat-auth', price: 380, days: 3 },
-      { id: 'feat-i18n', price: 420, days: 4 },
-      { id: 'feat-cms', price: 350, days: 3 },
+      { id: 'feat-ai', price: 455, days: 5 },
+      { id: 'feat-dashboard', price: 385, days: 5 },
+      { id: 'feat-auth', price: 265, days: 3 },
+      { id: 'feat-i18n', price: 295, days: 4 },
+      { id: 'feat-cms', price: 245, days: 3 },
     ],
   },
   {
@@ -64,8 +64,8 @@ export const estimatorGroups: readonly EstimatorGroup[] = [
     defaults: ['support-none'],
     options: [
       { id: 'support-none', price: 0, days: 0, exclusive: true },
-      { id: 'support-1m', price: 250, days: 0, exclusive: true },
-      { id: 'support-3m', price: 650, days: 0, exclusive: true },
+      { id: 'support-1m', price: 175, days: 0, exclusive: true },
+      { id: 'support-3m', price: 455, days: 0, exclusive: true },
     ],
   },
 ];

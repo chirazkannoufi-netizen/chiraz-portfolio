@@ -50,6 +50,17 @@ export function Footer() {
           <p>{t('rights', { year })}</p>
           <p>{t('builtWith')}</p>
         </div>
+
+        {/* Signature line. Left untranslated on purpose — it reads as a
+            personal mark rather than UI copy, and stays identical in all
+            four locales. `dir="ltr"` keeps the name and heart in order
+            inside the Arabic RTL layout. */}
+        <p
+          dir="ltr"
+          className="border-t border-[var(--border-subtle)] px-5 py-4 text-center text-xs text-[var(--text-muted)] sm:px-8"
+        >
+          Made with <span className="text-[var(--accent)]">♡</span> by Chiraz
+        </p>
       </div>
     </footer>
   );

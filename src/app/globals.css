@@ -88,8 +88,12 @@
     --secondary-accent: var(--color-brass-light);
     --glow: color-mix(in srgb, #b06b8f 26%, transparent);
 
-    /* Full neon in dark mode — cyan circuit traces against the ink surface. */
-    --circuit: color-mix(in srgb, #00f3ff 45%, transparent);
+    /* Full neon in dark mode — cyan circuit traces against the ink surface.
+       Raised from 45% to 70%: the ask was "more visible", and on a #1b191f
+       surface visibility is lightness contrast, so a *darker* tone would have
+       moved the wrong way (1.64:1 vs the current 3.47:1). More opacity gets
+       6.72:1 — see the changelog. */
+    --circuit: color-mix(in srgb, #00f3ff 70%, transparent);
     --circuit-strong: #00f3ff;
   }
 

@@ -1,10 +1,12 @@
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
-import { GraduationCap, Award, Briefcase } from 'lucide-react';
+import { useTranslations, useLocale } from 'next-intl';
+import { GraduationCap, Award, Briefcase, ExternalLink } from 'lucide-react';
 
 import { profile } from '@/content/profile';
 import { Reveal } from '@/components/ui/Reveal';
 import { SkillsFlowCanvas } from '@/components/about/SkillsFlowCanvas';
+import { ResumeDownload } from '@/components/hero/ResumeDownload';
+import type { Locale } from '@/i18n/routing';
 
 /**
  * About — a single vertical sequence: Experience, Technical Skills,
@@ -16,6 +18,10 @@ import { SkillsFlowCanvas } from '@/components/about/SkillsFlowCanvas';
  */
 export function About() {
   const t = useTranslations('about');
+  // The CV button reuses the hero's labels so there is one wording for
+  // "Download CV" rather than two that can drift apart.
+  const tHero = useTranslations('hero');
+  const locale = useLocale() as Locale;
 
   return (
     <div className="space-y-16">
@@ -45,6 +51,16 @@ export function About() {
             <p className="mt-4 max-w-3xl leading-relaxed text-[var(--text-secondary)]">
               {t('bio')}
             </p>
+
+            {/* Serves the CV in whichever language the visitor is reading —
+                the file is picked from the active locale, not a fixed one. */}
+            <div className="mt-6">
+              <ResumeDownload
+                locale={locale}
+                label={tHero('downloadCv')}
+                aria={tHero('downloadCvAria')}
+              />
+            </div>
           </div>
         </div>
       </Reveal>
@@ -72,12 +88,14 @@ export function About() {
 
                 <div className="flex flex-wrap items-baseline gap-x-3">
                   <h4 className="font-semibold">{t(`${item}.role`)}</h4>
-                  {/* A single-month engagement collapses to one date rather
-                      than rendering "2025-08 — 2025-08". */}
+                  {/* Only a genuinely closed, multi-month engagement shows a
+                      range. A current role (end === null) and a single-month
+                      one both collapse to just the start date — no "Present"
+                      suffix, no "2025-08 — 2025-08". */}
                   <span className="numeric text-xs font-medium text-[var(--accent)]">
-                    {role.end === role.start
-                      ? role.start
-                      : `${role.start} — ${role.end ?? t('present')}`}
+                    {role.end && role.end !== role.start
+                      ? `${role.start} — ${role.end}`
+                      : role.start}
                   </span>
                 </div>
 
@@ -157,13 +175,44 @@ export function About() {
         <ul className="mt-4 grid max-w-3xl gap-4 sm:grid-cols-2">
           {profile.certificates.map((entry) => (
             <li key={entry.id} className="surface-card rounded-xl p-4">
-              <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <h4 className="text-sm font-semibold">{entry.degree}</h4>
-                <span className="numeric shrink-0 text-xs text-[var(--accent)]">
-                  {entry.start === entry.end ? entry.start : `${entry.start}–${entry.end}`}
-                </span>
+              {/* The scan makes this a credential you can check rather than a
+                  claim you have to take on trust. */}
+              <div className="flex gap-4">
+                <a
+                  href={entry.image}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative shrink-0 rounded-md ring-1 ring-[var(--border-subtle)] transition-shadow hover:ring-[var(--accent)] hover:shadow-[0_0_14px_var(--glow)]"
+                  aria-label={`${entry.degree} — ${t('viewCertificate')}`}
+                >
+                  <Image
+                    src={entry.thumb}
+                    alt=""
+                    width={72}
+                    height={102}
+                    className="rounded-md object-cover"
+                  />
+                </a>
+
+                <div className="min-w-0">
+                  <div className="flex flex-wrap items-baseline justify-between gap-2">
+                    <h4 className="text-sm font-semibold">{entry.degree}</h4>
+                    <span className="numeric shrink-0 text-xs text-[var(--accent)]">
+                      {entry.start === entry.end ? entry.start : `${entry.start}–${entry.end}`}
+                    </span>
+                  </div>
+                  <p className="mt-1 text-xs text-[var(--text-muted)]">{entry.institution}</p>
+                  <a
+                    href={entry.image}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-flex items-center gap-1.5 text-xs font-medium text-[var(--accent)] hover:underline"
+                  >
+                    <ExternalLink className="size-3.5 rtl:-scale-x-100" aria-hidden="true" />
+                    {t('viewCertificate')}
+                  </a>
+                </div>
               </div>
-              <p className="mt-1 text-xs text-[var(--text-muted)]">{entry.institution}</p>
             </li>
           ))}
         </ul>

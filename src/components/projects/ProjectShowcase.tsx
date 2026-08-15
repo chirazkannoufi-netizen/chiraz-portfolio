@@ -68,7 +68,15 @@ export function ProjectShowcase() {
       </p>
 
       <LayoutGroup>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {/* `items-start` is load-bearing, not cosmetic.
+            A CSS grid stretches every item in a row to the tallest one, and
+            the card body is `h-full`. So expanding ONE card grew the whole
+            row, and its two row-siblings visibly grew with it — which reads
+            exactly like "clicking one card opened the others". The per-card
+            state was always correct; the row stretch was the illusion.
+            Sizing each card to its own content confines expansion to the
+            card that was actually clicked. */}
+        <div className="grid items-start gap-5 sm:grid-cols-2 lg:grid-cols-3">
           <AnimatePresence mode="popLayout">
             {filtered.map((project, index) => (
               <ProjectCard key={project.slug} project={project} index={index} />

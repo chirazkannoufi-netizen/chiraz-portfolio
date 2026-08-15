@@ -43,9 +43,9 @@
     "bio": "I graduated in Computer Science from Université Ferhat Abbas — Sétif 1, specialising in Computer Systems. Since then I have worked at the seam between operations and engineering: the place where a business runs on spreadsheets, copy-paste and hope, and someone needs to replace that with something that holds. My work spans automation workflows, e-commerce integrations, and the web interfaces that sit on top of them.",
     "educationTitle": "Education",
     "certificatesTitle": "Certificates",
+    "viewCertificate": "View certificate",
     "experienceTitle": "Experience",
     "skillsTitle": "Technical skills",
-    "present": "Present",
     "skillGroups": {
       "languages": "Programming languages",
       "frameworks": "Frameworks & web",
@@ -243,17 +243,9 @@
     "timeline": "Estimated timeline",
     "days": "{count, plural, =1 {1 working day} other {# working days}}",
     "selected": "{count, plural, =0 {Nothing selected} =1 {1 item selected} other {# items selected}}",
-    "cta": "Schedule a call to confirm scope",
+    "cta": "Discuss this scope",
     "reset": "Reset",
     "disclaimer": "This is an indicative range based on typical scope, not a quote. The final figure follows a short conversation about what you actually need."
-  },
-  "booking": {
-    "title": "Let's talk it through",
-    "eyebrow": "Schedule",
-    "subtitle": "A short call, no pitch. Bring the problem and we will work out whether I am the right person for it.",
-    "cta": "Pick a time",
-    "loading": "Loading calendar…",
-    "fallback": "Calendar not loading? Email me directly."
   },
   "contact": {
     "title": "Get in touch",

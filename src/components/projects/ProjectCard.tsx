@@ -7,6 +7,7 @@ import { ArrowUpRight, Github, Play } from 'lucide-react';
 
 import type { Project } from '@/types';
 import { cn } from '@/lib/utils';
+import { ProjectMotif } from './ProjectMotif';
 
 /**
  * ============================================================================
@@ -82,15 +83,16 @@ export function ProjectCard({
           />
         )}
 
-        {/* Generated cover art — a gradient plus the year. No image request,
-            no layout shift, and it can never 404. */}
+        {/* Generated cover art — the project's own motif over its gradient.
+            No image request, no layout shift, and it can never 404. */}
         <div
           className={cn(
-            'relative flex h-32 items-end justify-between bg-gradient-to-br p-4',
+            'relative flex h-32 items-end justify-between overflow-hidden bg-gradient-to-br p-4',
             project.accent[0],
             project.accent[1],
           )}
         >
+          <ProjectMotif slug={project.slug} />
           {/* Only projects that state their own year carry a date badge —
               `ms-auto` keeps the status badges right-aligned without it. */}
           {project.year && (
@@ -202,17 +204,21 @@ export function ProjectCard({
             ))}
           </ul>
 
-          {/* Links sit above the card-wide click target via z-index. */}
-          {(project.githubUrl || project.liveUrl) && expanded && (
-            <div className="relative z-10 mt-5 flex gap-2">
+          {/* Links sit above the card-wide click target via z-index.
+              They are no longer gated on `expanded`: the whole point of a code
+              link is that it's findable, and hiding it behind a disclosure made
+              it the least visible thing on a card about shipped code. Costs one
+              extra tab stop per card, which is a fair trade. */}
+          {(project.githubUrl || project.liveUrl) && (
+            <div className="relative z-10 mt-5 flex flex-wrap gap-2">
               {project.githubUrl && (
                 <a
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-lg border border-[var(--border-subtle)] px-3 py-1.5 text-xs font-medium transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                  className="inline-flex h-10 items-center gap-2 rounded-xl border border-[var(--accent)] bg-[var(--surface-sunken)] px-4 text-sm font-semibold text-[var(--accent)] transition-all hover:bg-[var(--accent)] hover:text-[var(--accent-contrast)] hover:shadow-[0_0_14px_var(--glow)] active:scale-[0.97]"
                 >
-                  <Github className="size-3.5" aria-hidden="true" />
+                  <Github className="size-4" aria-hidden="true" />
                   {t('viewCode')}
                 </a>
               )}
@@ -221,10 +227,10 @@ export function ProjectCard({
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-lg bg-[var(--accent)] px-3 py-1.5 text-xs font-semibold text-[var(--accent-contrast)]"
+                  className="inline-flex h-10 items-center gap-2 rounded-xl bg-[var(--accent)] px-4 text-sm font-semibold text-[var(--accent-contrast)] transition-all hover:shadow-[0_0_14px_var(--glow)] active:scale-[0.97]"
                 >
                   {t('viewLive')}
-                  <ArrowUpRight className="size-3.5 rtl:-scale-x-100" aria-hidden="true" />
+                  <ArrowUpRight className="size-4 rtl:-scale-x-100" aria-hidden="true" />
                 </a>
               )}
             </div>

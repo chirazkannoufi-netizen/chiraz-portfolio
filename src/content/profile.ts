@@ -84,7 +84,11 @@ export const profile = {
     },
   ],
 
-  /** Professional certificates — distinct from the academic `education` above. */
+  /**
+   * Professional certificates — distinct from the academic `education` above.
+   * `image` is the scan of the actual certificate, so the credential is
+   * verifiable rather than just asserted; `thumb` is the inline preview.
+   */
   certificates: [
     {
       id: 'huawei-ai',
@@ -93,6 +97,8 @@ export const profile = {
       start: '2025',
       end: '2025',
       coursework: [],
+      image: '/certificates/huawei-search-ai.jpg',
+      thumb: '/certificates/huawei-search-ai-thumb.jpg',
     },
   ],
 

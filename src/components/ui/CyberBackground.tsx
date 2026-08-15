@@ -4,12 +4,12 @@ import { useEffect, useRef } from 'react';
 
 type Node = { x: number; y: number; vx: number; vy: number };
 
-const LINK_DISTANCE = 150;
+const LINK_DISTANCE = 160;
 const MOUSE_RADIUS = 180;
 const NODE_SPEED = 0.15;
-const DENSITY = 18000; // px² per node
-const MIN_NODES = 20;
-const MAX_NODES = 80;
+const DENSITY = 10000; // px² per node
+const MIN_NODES = 32;
+const MAX_NODES = 140;
 
 /**
  * Fixed, site-wide ambient backdrop: a field of drifting nodes that link to
@@ -71,6 +71,11 @@ export function CyberBackground() {
       canvas.style.height = `${height}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       seedNodes();
+      // Repaint immediately. Resizing a canvas clears it, and the only other
+      // painter is the rAF loop — which never runs under prefers-reduced-motion
+      // and is paused in a background tab. Without this, those users get a
+      // permanently blank backdrop after the first resize.
+      draw(false);
     }
 
     function onPointerMove(e: PointerEvent) {
@@ -106,7 +111,7 @@ export function CyberBackground() {
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist >= LINK_DISTANCE) continue;
 
-          ctx.globalAlpha = (1 - dist / LINK_DISTANCE) * 0.5;
+          ctx.globalAlpha = (1 - dist / LINK_DISTANCE) * 0.62;
           ctx.strokeStyle = lineColor;
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
@@ -131,11 +136,11 @@ export function CyberBackground() {
         }
       }
 
-      ctx.globalAlpha = 0.85;
+      ctx.globalAlpha = 0.95;
       ctx.fillStyle = nodeColor;
       for (const n of nodes) {
         ctx.beginPath();
-        ctx.arc(n.x, n.y, 1.6, 0, Math.PI * 2);
+        ctx.arc(n.x, n.y, 1.8, 0, Math.PI * 2);
         ctx.fill();
       }
       ctx.globalAlpha = 1;

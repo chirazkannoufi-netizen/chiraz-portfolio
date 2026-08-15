@@ -1,7 +1,7 @@
 # Architecture & System Setup
 
 **Project:** Interactive Digital Portfolio & AI Engine
-**For:** Chiraz Lina Kannoufi — Software Engineer & Automation Specialist
+**For:** Chiraz Lina Kannoufi — Web & Automation Developer
 **Stack:** Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS v4 · next-intl v4 · Vercel AI SDK v7
 
 ---
@@ -70,7 +70,7 @@ chiraz-portfolio/
         ├── hero/      Hero · RoleTyper · ResumeDownload
         ├── about/     About
         ├── projects/  ProjectShowcase · ProjectCard
-        ├── services/  ServicesGrid · CostEstimator · BookingEmbed
+        ├── services/  ServicesGrid · CostEstimator
         ├── contact/   ContactForm · Turnstile
         └── chat/      ChatWidget · OpenChatButton · chat-store
 ```
@@ -186,7 +186,6 @@ Two decisions worth calling out:
 | Scroll reveals use IntersectionObserver + CSS, not Framer Motion | The compositor handles it off the main thread; the library is reserved for the card and modal work it's actually good at |
 | Hero background is pure CSS | Zero image requests, zero CLS, can never 404 |
 | Project covers are generated gradients | Same reasoning — no image pipeline, no broken thumbnails |
-| Cal.com loads on click | Its bundle is heavier than the rest of the page combined, and most visitors never scroll that far |
 | Typewriter has a fixed `min-height` | Otherwise each role change reflows the page — a classic CLS source |
 
 ---
@@ -210,7 +209,6 @@ The site runs with **no keys at all** — the chat returns a clean 503, and the 
 | `AI_MODEL` | AI chatbot | Defaults to `gpt-4o-mini` |
 | `NEXT_PUBLIC_TURNSTILE_SITE_KEY` / `TURNSTILE_SECRET_KEY` | Contact form | Both required — form rejects without them |
 | `N8N_WEBHOOK_URL` / `N8N_WEBHOOK_SECRET` | Lead delivery | Verify the signature inside n8n |
-| `NEXT_PUBLIC_CAL_LINK` | Booking | e.g. `chiraz/30min` |
 | `NEXT_PUBLIC_SITE_URL` | SEO | Canonical + sitemap base |
 
 ### Before first deploy
@@ -258,4 +256,4 @@ Stated plainly so nobody discovers them later:
 
 1. **Rate limiting is per-instance.** Serverless instances don't share memory, so the effective limit is `limit × instances`. Acceptable for a portfolio. Swap the body of `rateLimit()` for `@upstash/ratelimit` if traffic ever justifies it — the signature is deliberately identical.
 2. **Chat history is per-session.** No persistence layer. Add Supabase if you want analytics on what recruiters actually ask — which would be genuinely useful signal.
-3. **The estimator prices client-side for display.** `calculateQuote()` is a pure function precisely so the server can re-price before a quote is ever attached to a booking. Do that if you wire quotes into Cal.com.
+3. **The estimator prices client-side for display.** `calculateQuote()` is a pure function precisely so the server can re-price before a quote is ever acted on. Do that if quotes ever leave the browser.
