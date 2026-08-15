@@ -9,7 +9,12 @@
 # prerendered locale pages statically.
 
 [build]
-  command = "npm run build"
+  # `--webpack` rather than the Next 16 default (Turbopack) on purpose.
+  # Turbopack emits the middleware chunk as `./chunks/[turbopack]_runtime.js`,
+  # which Netlify's edge-function bundler cannot resolve — the deploy fails at
+  # "Failed to compile CJS module: .next/server/middleware.js". The webpack
+  # output bundles cleanly. Revisit once the Next.js runtime supports it.
+  command = "npx next build --webpack"
   publish = ".next"
 
 [[plugins]]
