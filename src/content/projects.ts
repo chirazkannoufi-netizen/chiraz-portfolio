@@ -51,6 +51,8 @@ export const projects: readonly Project[] = [
     stack: ['Flutter', 'Dart'],
     metrics: [],
     githubUrl: 'https://github.com/chirazkannoufi-netizen/GoTrek',
+    // The app's real logo, taken from the repo's own assets/images/.
+    logo: '/projects/gotrek-logo.png',
     featured: false,
     // The only project that dates itself: the README states 2025.
     year: 2025,

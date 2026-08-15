@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useLocale, useTranslations } from 'next-intl';
-import { AlertCircle, CheckCircle2, Loader2, Send } from 'lucide-react';
+import { AlertCircle, CheckCircle2, Loader2, MessageCircle, Send } from 'lucide-react';
 
 import { contactFormSchema, type ContactFormValues } from '@/lib/schemas';
 import { profile } from '@/content/profile';
@@ -257,13 +257,27 @@ export function ContactForm() {
           )}
         </button>
 
-        <a
-          href={`mailto:${profile.contact.email}`}
-          dir="ltr"
-          className="text-sm text-[var(--text-muted)] underline-offset-4 hover:text-[var(--accent)] hover:underline"
-        >
-          {profile.contact.email}
-        </a>
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+          <a
+            href={`mailto:${profile.contact.email}`}
+            dir="ltr"
+            className="text-sm text-[var(--text-muted)] underline-offset-4 hover:text-[var(--accent)] hover:underline"
+          >
+            {profile.contact.email}
+          </a>
+
+          {/* Second, lower-friction channel for anyone who would rather not
+              fill in a form. Opens WhatsApp directly. */}
+          <a
+            href={profile.contact.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--text-muted)] underline-offset-4 transition-colors hover:text-[var(--accent)] hover:underline"
+          >
+            <MessageCircle className="size-4" aria-hidden="true" />
+            {t('whatsapp')}
+          </a>
+        </div>
       </div>
     </form>
   );

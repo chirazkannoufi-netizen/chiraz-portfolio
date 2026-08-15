@@ -35,11 +35,35 @@ import { closeChat, toggleChat, useChatOpen } from './chat-store';
 
 const SUGGESTION_KEYS = ['experience', 'automation', 'stack', 'hire'] as const;
 
+/**
+ * Free questions per visitor before the widget stops calling the API.
+ *
+ * This is the *UX* half of the cap: it stops the request being made at all,
+ * so the common case never costs anything. It is deliberately paired with a
+ * server-side quota in /api/chat, because localStorage is trivially cleared
+ * and this number alone guarantees nothing.
+ */
+const QUESTION_LIMIT = 2;
+const ASKED_STORAGE_KEY = 'chiraz.chat.asked';
+
 export function ChatWidget({ locale }: { locale: Locale }) {
   const t = useTranslations('chat');
   const open = useChatOpen();
 
   const [input, setInput] = useState('');
+  const [asked, setAsked] = useState(0);
+
+  // Read after mount: localStorage isn't available during SSR, and reading it
+  // in the initial state would desync the server and client render.
+  useEffect(() => {
+    try {
+      setAsked(Number(window.localStorage.getItem(ASKED_STORAGE_KEY)) || 0);
+    } catch {
+      // Private mode / storage disabled — fall back to the server quota.
+    }
+  }, []);
+
+  const limitReached = asked >= QUESTION_LIMIT;
 
   const panelRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -104,7 +128,16 @@ export function ChatWidget({ locale }: { locale: Locale }) {
 
   function submit(text: string) {
     const trimmed = text.trim();
-    if (!trimmed || isBusy) return;
+    if (!trimmed || isBusy || limitReached) return;
+
+    const next = asked + 1;
+    setAsked(next);
+    try {
+      window.localStorage.setItem(ASKED_STORAGE_KEY, String(next));
+    } catch {
+      // Non-fatal: the server-side quota still applies.
+    }
+
     sendMessage({ text: trimmed });
     setInput('');
   }
@@ -193,7 +226,7 @@ export function ChatWidget({ locale }: { locale: Locale }) {
                   <div className="rounded-2xl rounded-es-sm bg-[var(--surface-sunken)] px-4 py-3 text-sm leading-relaxed">
                     {greetings[locale]}
                   </div>
-                  <div className="flex flex-wrap gap-2">
+                  <div className={cn('flex flex-wrap gap-2', limitReached && 'hidden')}>
                     {SUGGESTION_KEYS.map((key) => (
                       <button
                         key={key}
@@ -255,7 +288,24 @@ export function ChatWidget({ locale }: { locale: Locale }) {
               )}
             </div>
 
-            {/* Composer */}
+            {/* Once the free questions are spent the composer is replaced —
+                not just disabled — so the next step is obvious rather than a
+                dead input the visitor keeps trying. */}
+            {limitReached ? (
+              <div className="border-t border-[var(--border-subtle)] p-4 text-center">
+                <p className="text-sm font-medium">{t('limitReached')}</p>
+                <p className="mt-1 text-xs leading-relaxed text-[var(--text-muted)]">
+                  {t('limitHelp')}
+                </p>
+                <a
+                  href="#contact"
+                  onClick={closeChat}
+                  className="mt-3 inline-flex h-10 items-center justify-center rounded-xl bg-[var(--accent)] px-4 text-sm font-semibold text-[var(--accent-contrast)] transition-transform hover:scale-[1.03]"
+                >
+                  {t('limitCta')}
+                </a>
+              </div>
+            ) : (
             <form
               onSubmit={(event) => {
                 event.preventDefault();
@@ -298,6 +348,7 @@ export function ChatWidget({ locale }: { locale: Locale }) {
                 {t('disclaimer')}
               </p>
             </form>
+            )}
           </motion.div>
         )}
       </AnimatePresence>

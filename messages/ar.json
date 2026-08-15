@@ -44,6 +44,22 @@
     "educationTitle": "التعليم",
     "certificatesTitle": "الشهادات",
     "viewCertificate": "عرض الشهادة",
+    "educationItems": {
+      "licence-cs": {
+        "degree": "ليسانس في الإعلام الآلي — تخصص أنظمة معلوماتية",
+        "institution": "جامعة فرحات عباس — سطيف 1"
+      },
+      "bac": {
+        "degree": "بكالوريا — علوم تجريبية (بتقدير حسن، في الدورتين)",
+        "institution": "الجزائر"
+      }
+    },
+    "certificateItems": {
+      "huawei-ai": {
+        "degree": "شهادة Huawei Talent — البحث والذكاء الاصطناعي",
+        "institution": "هواوي — برنامج CRA"
+      }
+    },
     "experienceTitle": "الخبرة",
     "skillsTitle": "المهارات التقنية",
     "skillGroups": {
@@ -199,8 +215,10 @@
       "projectType": {
         "title": "ما الذي سنبنيه؟",
         "options": {
-          "type-automation": "نظام أتمتة / سير عمل",
-          "type-website": "موقع تسويقي",
+          "type-automation": "مسار أتمتة (n8n / Apps Script)",
+          "type-store": "إنشاء متجر إلكتروني (Shopify / Payhip)",
+          "type-chatbot": "روبوت محادثة / مساعد خدمة عملاء",
+          "type-website": "موقع تعريفي",
           "type-webapp": "تطبيق ويب متكامل",
           "type-audit": "تدقيق تقني فقط"
         }
@@ -208,21 +226,21 @@
       "integrations": {
         "title": "التكاملات",
         "options": {
-          "int-shopify": "Shopify / منصة تجارة إلكترونية",
+          "int-shopify": "متجر Shopify / Payhip",
           "int-sheets": "Google Sheets / Workspace",
-          "int-n8n": "محرك سير العمل n8n",
-          "int-payments": "المدفوعات (Stripe)",
+          "int-n8n": "محرك مسارات n8n",
+          "int-telegram": "بوت Telegram",
+          "int-email": "أتمتة البريد / SMTP",
           "int-crm": "إدارة علاقات العملاء أو الدعم"
         }
       },
       "features": {
         "title": "الميزات",
         "options": {
-          "feat-ai": "مساعد ذكاء اصطناعي / تكامل نموذج لغوي",
+          "feat-ai": "مساعد ذكاء اصطناعي (OpenAI / Claude)",
           "feat-dashboard": "لوحة تحليلات",
-          "feat-auth": "المصادقة وحسابات المستخدمين",
-          "feat-i18n": "تعدد اللغات (مع دعم RTL)",
-          "feat-cms": "إدارة المحتوى"
+          "feat-auth": "حسابات المستخدمين (Supabase)",
+          "feat-i18n": "متعدد اللغات (مع RTL)"
         }
       },
       "support": {
@@ -294,6 +312,7 @@
       "captchaRequired": "يرجى إكمال فحص مكافحة الروبوتات."
     },
     "directEmail": "أو راسلني مباشرةً",
+    "whatsapp": "واتساب",
     "protectedBy": "محمي بواسطة Cloudflare Turnstile"
   },
   "chat": {
@@ -314,6 +333,9 @@
     },
     "error": "حدث خطأ ما. يرجى المحاولة مجدداً.",
     "rateLimited": "أسئلة كثيرة دفعةً واحدة — انتظر دقيقة ثم أعد المحاولة.",
+    "limitReached": "لقد استخدمت سؤاليك المجانيين مع المساعد.",
+    "limitHelp": "لأي شيء آخر، أرسل رسالة إلى شيراز — ترد بنفسها.",
+    "limitCta": "الانتقال إلى التواصل",
     "retry": "إعادة المحاولة",
     "disclaimer": "مولّد بالذكاء الاصطناعي من سيرة شيراز الموثّقة. سيخبرك عندما لا يعرف.",
     "poweredBy": "مقيَّد بملف تعريف موثّق"

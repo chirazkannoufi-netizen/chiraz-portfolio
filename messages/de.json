@@ -44,6 +44,22 @@
     "educationTitle": "Ausbildung",
     "certificatesTitle": "Zertifikate",
     "viewCertificate": "Zertifikat ansehen",
+    "educationItems": {
+      "licence-cs": {
+        "degree": "Bachelor Informatik — Schwerpunkt Computersysteme",
+        "institution": "Université Ferhat Abbas — Sétif 1"
+      },
+      "bac": {
+        "degree": "Baccalauréat — Naturwissenschaften (Mention Bien, beide Sitzungen)",
+        "institution": "Algerien"
+      }
+    },
+    "certificateItems": {
+      "huawei-ai": {
+        "degree": "Huawei-Talent-Zertifikat — Search & Künstliche Intelligenz",
+        "institution": "Huawei — CRA-Trainingsprogramm"
+      }
+    },
     "experienceTitle": "Berufserfahrung",
     "skillsTitle": "Technische Kenntnisse",
     "skillGroups": {
@@ -199,7 +215,9 @@
       "projectType": {
         "title": "Was bauen wir?",
         "options": {
-          "type-automation": "Automatisierung / Workflow-System",
+          "type-automation": "Automatisierungs-Workflow (n8n / Apps Script)",
+          "type-store": "E-Commerce-Shop einrichten (Shopify / Payhip)",
+          "type-chatbot": "Chatbot / Kundenservice-Assistent",
           "type-website": "Marketing-Website",
           "type-webapp": "Vollständige Webanwendung",
           "type-audit": "Nur technisches Audit"
@@ -208,21 +226,21 @@
       "integrations": {
         "title": "Integrationen",
         "options": {
-          "int-shopify": "Shopify / E-Commerce-Plattform",
+          "int-shopify": "Shopify- / Payhip-Shop",
           "int-sheets": "Google Sheets / Workspace",
           "int-n8n": "n8n-Workflow-Engine",
-          "int-payments": "Zahlungen (Stripe)",
+          "int-telegram": "Telegram-Bot",
+          "int-email": "E-Mail- / SMTP-Automatisierung",
           "int-crm": "CRM oder Helpdesk"
         }
       },
       "features": {
         "title": "Funktionen",
         "options": {
-          "feat-ai": "KI-Assistent / LLM-Integration",
+          "feat-ai": "KI-Assistent (OpenAI / Claude)",
           "feat-dashboard": "Analyse-Dashboard",
-          "feat-auth": "Authentifizierung & Benutzerkonten",
-          "feat-i18n": "Mehrsprachig (mit RTL)",
-          "feat-cms": "Content-Management"
+          "feat-auth": "Benutzerkonten (Supabase)",
+          "feat-i18n": "Mehrsprachig (mit RTL)"
         }
       },
       "support": {
@@ -294,6 +312,7 @@
       "captchaRequired": "Bitte die Bot-Prüfung abschließen."
     },
     "directEmail": "Oder direkt per E-Mail",
+    "whatsapp": "WhatsApp",
     "protectedBy": "Geschützt durch Cloudflare Turnstile"
   },
   "chat": {
@@ -314,6 +333,9 @@
     },
     "error": "Etwas ist schiefgegangen. Bitte erneut versuchen.",
     "rateLimited": "Das sind viele Fragen auf einmal — bitte eine Minute warten und erneut versuchen.",
+    "limitReached": "Das waren Ihre 2 kostenlosen Fragen an den Assistenten.",
+    "limitHelp": "Für alles Weitere schreiben Sie Chiraz — sie antwortet persönlich.",
+    "limitCta": "Zum Kontakt",
     "retry": "Erneut versuchen",
     "disclaimer": "KI-generiert aus Chiraz' geprüftem Lebenslauf. Der Assistent sagt es, wenn er etwas nicht weiß.",
     "poweredBy": "Auf ein geprüftes Profil gestützt"

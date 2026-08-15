@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useState } from 'react';
+import Image from 'next/image';
 import { motion, useReducedMotion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { ArrowUpRight, Github, Play } from 'lucide-react';
@@ -45,6 +46,15 @@ export function ProjectCard({
   const item = `items.${project.slug}` as const;
   const panelId = `project-panel-${project.slug}`;
 
+  /**
+   * Collapsed cards show a capped stack so a six-chip project doesn't stand
+   * a row taller than a two-chip one. The rest appear on expand — this is a
+   * presentation cap, never a claim that the stack is shorter than it is.
+   */
+  const COLLAPSED_STACK = 4;
+  const visibleStack = expanded ? project.stack : project.stack.slice(0, COLLAPSED_STACK);
+  const hiddenStackCount = project.stack.length - visibleStack.length;
+
   /** Cursor-following glow. Cheap: one style write, no layout read per frame. */
   function onPointerMove(event: React.PointerEvent<HTMLDivElement>) {
     if (reduceMotion) return;
@@ -67,7 +77,12 @@ export function ProjectCard({
         onPointerMove={onPointerMove}
         onPointerLeave={() => setSpotlight(null)}
         className={cn(
-          'surface-card relative h-full overflow-hidden rounded-2xl transition-all duration-300',
+          // `min-h` — NOT `align-items: stretch` — is what lines the collapsed
+          // cards up. Stretch caused the Round 2 bug: it tied every card in a
+          // row to the tallest, so expanding one grew its neighbours. A floor on
+          // the card itself gives the same tidy grid while leaving each card's
+          // height its own, so expansion still affects nobody else.
+          'surface-card relative flex min-h-[27.5rem] flex-col overflow-hidden rounded-2xl transition-all duration-300',
           'hover:-translate-y-1 hover:border-[var(--accent)] hover:shadow-xl hover:shadow-[var(--glow)]',
           expanded && 'border-[var(--accent)]',
         )}
@@ -92,7 +107,19 @@ export function ProjectCard({
             project.accent[1],
           )}
         >
-          <ProjectMotif slug={project.slug} />
+          {project.logo ? (
+            <span className="pointer-events-none absolute inset-0 grid place-items-center p-6">
+              <Image
+                src={project.logo}
+                alt=""
+                width={260}
+                height={150}
+                className="max-h-16 w-auto object-contain"
+              />
+            </span>
+          ) : (
+            <ProjectMotif slug={project.slug} />
+          )}
           {/* Only projects that state their own year carry a date badge —
               `ms-auto` keeps the status badges right-aligned without it. */}
           {project.year && (
@@ -115,7 +142,7 @@ export function ProjectCard({
           </div>
         </div>
 
-        <div className="relative p-5">
+        <div className="relative flex flex-1 flex-col p-5">
           {/* Disclosure trigger. The ::after pseudo-element makes the entire
               card clickable while keeping the accessible name on the heading
               text alone. */}
@@ -191,7 +218,7 @@ export function ProjectCard({
 
           {/* Stack chips */}
           <ul className="mt-5 flex flex-wrap gap-1.5">
-            {project.stack.map((tech) => (
+            {visibleStack.map((tech) => (
               <li
                 key={tech}
                 // Stack names are proper nouns — force LTR so "Next.js" and
@@ -202,6 +229,14 @@ export function ProjectCard({
                 {tech}
               </li>
             ))}
+            {hiddenStackCount > 0 && (
+              <li
+                dir="ltr"
+                className="rounded-md border border-dashed border-[var(--border-subtle)] px-2 py-0.5 font-mono text-[11px] text-[var(--text-muted)]"
+              >
+                +{hiddenStackCount}
+              </li>
+            )}
           </ul>
 
           {/* Links sit above the card-wide click target via z-index.
@@ -210,7 +245,7 @@ export function ProjectCard({
               it the least visible thing on a card about shipped code. Costs one
               extra tab stop per card, which is a fair trade. */}
           {(project.githubUrl || project.liveUrl) && (
-            <div className="relative z-10 mt-5 flex flex-wrap gap-2">
+            <div className="relative z-10 mt-auto flex flex-wrap gap-2 pt-5">
               {project.githubUrl && (
                 <a
                   href={project.githubUrl}

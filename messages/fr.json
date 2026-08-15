@@ -44,6 +44,22 @@
     "educationTitle": "Formation",
     "certificatesTitle": "Certifications",
     "viewCertificate": "Voir le certificat",
+    "educationItems": {
+      "licence-cs": {
+        "degree": "Licence en Informatique — spécialité Systèmes Informatiques",
+        "institution": "Université Ferhat Abbas — Sétif 1"
+      },
+      "bac": {
+        "degree": "Baccalauréat — Sciences Expérimentales (Mention Bien, deux sessions)",
+        "institution": "Algérie"
+      }
+    },
+    "certificateItems": {
+      "huawei-ai": {
+        "degree": "Certificat Huawei Talent — Search & Intelligence Artificielle",
+        "institution": "Huawei — programme CRA"
+      }
+    },
     "experienceTitle": "Expérience",
     "skillsTitle": "Compétences techniques",
     "skillGroups": {
@@ -199,30 +215,32 @@
       "projectType": {
         "title": "Qu'est-ce qu'on construit ?",
         "options": {
-          "type-automation": "Système d'automatisation / workflow",
+          "type-automation": "Workflow d'automatisation (n8n / Apps Script)",
+          "type-store": "Création de boutique e-commerce (Shopify / Payhip)",
+          "type-chatbot": "Chatbot / assistant service client",
           "type-website": "Site vitrine",
           "type-webapp": "Application web complète",
-          "type-audit": "Audit technique seul"
+          "type-audit": "Audit technique uniquement"
         }
       },
       "integrations": {
         "title": "Intégrations",
         "options": {
-          "int-shopify": "Shopify / plateforme e-commerce",
+          "int-shopify": "Boutique Shopify / Payhip",
           "int-sheets": "Google Sheets / Workspace",
           "int-n8n": "Moteur de workflows n8n",
-          "int-payments": "Paiements (Stripe)",
+          "int-telegram": "Bot Telegram",
+          "int-email": "Automatisation e-mail / SMTP",
           "int-crm": "CRM ou service client"
         }
       },
       "features": {
         "title": "Fonctionnalités",
         "options": {
-          "feat-ai": "Assistant IA / intégration LLM",
+          "feat-ai": "Assistant IA (OpenAI / Claude)",
           "feat-dashboard": "Tableau de bord analytique",
-          "feat-auth": "Authentification & comptes",
-          "feat-i18n": "Multilingue (avec RTL)",
-          "feat-cms": "Gestion de contenu"
+          "feat-auth": "Comptes utilisateurs (Supabase)",
+          "feat-i18n": "Multilingue (avec RTL)"
         }
       },
       "support": {
@@ -294,6 +312,7 @@
       "captchaRequired": "Merci de compléter la vérification anti-robot."
     },
     "directEmail": "Ou écrivez-moi directement",
+    "whatsapp": "WhatsApp",
     "protectedBy": "Protégé par Cloudflare Turnstile"
   },
   "chat": {
@@ -314,6 +333,9 @@
     },
     "error": "Une erreur est survenue. Merci de réessayer.",
     "rateLimited": "Beaucoup de questions d'un coup — patientez une minute et réessayez.",
+    "limitReached": "Vous avez utilisé vos 2 questions gratuites avec l'assistant.",
+    "limitHelp": "Pour le reste, écrivez à Chiraz — elle répond personnellement.",
+    "limitCta": "Aller au contact",
     "retry": "Réessayer",
     "disclaimer": "Généré par IA à partir du CV vérifié de Chiraz. Il vous dira quand il ne sait pas.",
     "poweredBy": "Ancré dans un profil vérifié"

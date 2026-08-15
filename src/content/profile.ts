@@ -42,6 +42,8 @@ export const profile = {
 
   contact: {
     email: 'Chirazkannoufi@gmail.com',
+    /** wa.me form: country code, no +, no spaces, no leading zero. */
+    whatsapp: 'https://wa.me/213796314563',
     github: 'https://github.com/chirazkannoufi-netizen',
     linkedin: 'https://www.linkedin.com/in/chiraz-kanoufi',
     /** Her own automation brand — the only brand name allowed on the site. */

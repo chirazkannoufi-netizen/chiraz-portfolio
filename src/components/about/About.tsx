@@ -154,12 +154,16 @@ export function About() {
           {profile.education.map((entry) => (
             <li key={entry.id} className="surface-card rounded-xl p-4">
               <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <h4 className="text-sm font-semibold">{entry.degree}</h4>
+                <h4 className="text-sm font-semibold">
+                  {t(`educationItems.${entry.id}.degree`)}
+                </h4>
                 <span className="numeric shrink-0 text-xs text-[var(--accent)]">
                   {entry.start === entry.end ? entry.start : `${entry.start}–${entry.end}`}
                 </span>
               </div>
-              <p className="mt-1 text-xs text-[var(--text-muted)]">{entry.institution}</p>
+              <p className="mt-1 text-xs text-[var(--text-muted)]">
+                {t(`educationItems.${entry.id}.institution`)}
+              </p>
             </li>
           ))}
         </ul>
@@ -183,7 +187,7 @@ export function About() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group relative shrink-0 rounded-md ring-1 ring-[var(--border-subtle)] transition-shadow hover:ring-[var(--accent)] hover:shadow-[0_0_14px_var(--glow)]"
-                  aria-label={`${entry.degree} — ${t('viewCertificate')}`}
+                  aria-label={`${t(`certificateItems.${entry.id}.degree`)} — ${t('viewCertificate')}`}
                 >
                   <Image
                     src={entry.thumb}
@@ -196,12 +200,16 @@ export function About() {
 
                 <div className="min-w-0">
                   <div className="flex flex-wrap items-baseline justify-between gap-2">
-                    <h4 className="text-sm font-semibold">{entry.degree}</h4>
+                    <h4 className="text-sm font-semibold">
+                      {t(`certificateItems.${entry.id}.degree`)}
+                    </h4>
                     <span className="numeric shrink-0 text-xs text-[var(--accent)]">
                       {entry.start === entry.end ? entry.start : `${entry.start}–${entry.end}`}
                     </span>
                   </div>
-                  <p className="mt-1 text-xs text-[var(--text-muted)]">{entry.institution}</p>
+                  <p className="mt-1 text-xs text-[var(--text-muted)]">
+                    {t(`certificateItems.${entry.id}.institution`)}
+                  </p>
                   <a
                     href={entry.image}
                     target="_blank"

@@ -30,9 +30,27 @@ import { routing, type Locale } from '@/i18n/routing';
 
 export const maxDuration = 30;
 
-/** Hard ceiling per IP per minute. Generous for a human, hostile to a script. */
+/** Burst ceiling per IP per minute. Generous for a human, hostile to a script. */
 const CHAT_LIMIT = 12;
 const CHAT_WINDOW_MS = 60_000;
+
+/**
+ * Free questions per visitor, enforced server-side.
+ *
+ * The widget also counts in localStorage so the common case never reaches the
+ * network — but that is UX, not enforcement. This is the half that actually
+ * protects the API key, and its guarantee is deliberately modest:
+ *
+ *  • The bucket store is in-process, so on serverless each instance keeps its
+ *    own tally and a cold start hands out a fresh quota.
+ *  • It is keyed by IP, so visitors behind one NAT share a quota, and anyone
+ *    changing network gets a new one.
+ *
+ * It is a cost dampener, not a paywall. The per-minute limit above is what
+ * bounds the damage in the worst case.
+ */
+const QUESTION_QUOTA = 2;
+const QUOTA_WINDOW_MS = 24 * 60 * 60 * 1000;
 
 export async function POST(req: Request) {
   // ── 1. Rate limit ────────────────────────────────────────────────
@@ -43,6 +61,16 @@ export async function POST(req: Request) {
     return Response.json(
       { error: 'rate_limited', retryAfter: limit.retryAfter },
       { status: 429, headers: { 'Retry-After': String(limit.retryAfter) } },
+    );
+  }
+
+  // ── 1b. Free-question quota ──────────────────────────────────────
+  const quota = rateLimit(`chat-quota:${ip}`, QUESTION_QUOTA, QUOTA_WINDOW_MS);
+
+  if (!quota.success) {
+    return Response.json(
+      { error: 'quota_exceeded', retryAfter: quota.retryAfter },
+      { status: 429, headers: { 'Retry-After': String(quota.retryAfter) } },
     );
   }
 

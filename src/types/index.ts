@@ -33,6 +33,12 @@ export interface Project {
   metrics: readonly ProjectMetric[];
   githubUrl?: string;
   liveUrl?: string;
+  /**
+   * Real app logo for the banner, where one exists. Projects without a
+   * shipped logo fall back to their generated motif rather than to an
+   * invented mark.
+   */
+  logo?: string;
   /** Renders the "Live demo" affordance instead of a static screenshot. */
   hasLiveDemo?: boolean;
   featured: boolean;
