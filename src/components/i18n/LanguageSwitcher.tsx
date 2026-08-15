@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState, useTransition } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
-import { useParams } from 'next/navigation';
 import { Check, Globe, Loader2 } from 'lucide-react';
 
 import { usePathname, useRouter } from '@/i18n/navigation';
@@ -37,7 +36,6 @@ export function LanguageSwitcher({ className }: { className?: string }) {
 
   const router = useRouter();
   const pathname = usePathname();
-  const params = useParams();
 
   const [open, setOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
@@ -82,9 +80,12 @@ export function LanguageSwitcher({ className }: { className?: string }) {
     if (next === activeLocale) return;
 
     startTransition(() => {
-      // `params` is spread back in so dynamic segments (e.g. /[locale]/work/
-      // [slug]) survive the switch instead of resolving to a literal ":slug".
-      router.replace({ pathname, params }, { locale: next });
+      // `[locale]` is the only dynamic segment in the app, and next-intl
+      // substitutes it from the `locale` option — so there are no params to
+      // carry over. If a route like /[locale]/work/[slug] is ever added,
+      // reintroduce them via next-intl's typed pathnames rather than a bare
+      // `params` object, which its router types reject.
+      router.replace({ pathname }, { locale: next });
     });
   }
 
