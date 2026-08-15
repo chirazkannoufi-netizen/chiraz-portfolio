@@ -1,0 +1,20 @@
+# Netlify build configuration.
+#
+# Netlify's free tier is used here deliberately: unlike Vercel's Hobby plan it
+# permits commercial-use content, which a freelance portfolio that quotes for
+# paid work needs.
+#
+# The Next.js runtime turns the App Router build into Netlify Functions for the
+# dynamic routes (/api/chat, /api/contact, the locale proxy) and serves the
+# prerendered locale pages statically.
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[build.environment]
+  # Match the local toolchain rather than whatever the image defaults to.
+  NODE_VERSION = "22"
