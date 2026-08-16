@@ -271,7 +271,7 @@
     "subtitle": "Tell me what you are trying to build. I read every message myself.",
     "fields": {
       "name": "Your name",
-      "namePlaceholder": "Amina Belkacem",
+      "namePlaceholder": "Assinet kannoufi",
       "email": "Email",
       "emailPlaceholder": "you@company.com",
       "company": "Company",
