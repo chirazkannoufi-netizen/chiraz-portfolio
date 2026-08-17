@@ -9,7 +9,7 @@ import type { ContactPayload } from '@/types';
  * ============================================================================
  *
  *  The n8n workflow is the primary delivery path: it fans a lead out to
- *  Telegram, email and Supabase. This module exists for the moments it can't
+ *  Telegram and Google Sheets. This module exists for the moments it can't
  *  run — no `N8N_WEBHOOK_URL` configured yet, the instance is down, or the
  *  call times out — because a dropped lead is the one failure this form
  *  cannot afford. It is deliberately *not* a second fan-out: one email,

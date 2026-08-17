@@ -227,26 +227,37 @@ This targets **Next.js 16**, where `middleware.ts` was renamed to `proxy.ts`. On
 
 ## 8. n8n workflow for the contact form
 
-The route POSTs this shape to `N8N_WEBHOOK_URL`:
+The route POSTs this shape to `N8N_WEBHOOK_URL`, with the raw shared secret
+(not an HMAC) in `x-portfolio-signature`:
 
 ```json
 {
-  "name": "...", "email": "...", "company": null,
-  "budget": "1500-5000", "message": "...", "locale": "fr",
-  "meta": { "ip": "...", "userAgent": "...", "referer": null, "receivedAt": "ISO-8601" }
+  "name": "...", "email": "...", "message": "...",
+  "locale": "fr", "submitted_at": "2026-08-17T14:00:00.000Z",
+  "company": null, "budget": "1500-5000",
+  "meta": { "ip": "...", "userAgent": "...", "referer": null }
 }
 ```
 
-Suggested workflow:
+`name` / `email` / `message` / `locale` / `submitted_at` are the agreed
+contract fields; `company`, `budget` and `meta` are extras the form also
+collects and the workflow is free to ignore.
+
+Current workflow (built in n8n, not this repo):
 
 ```
 Webhook (POST)
   → IF  $request.headers['x-portfolio-signature'] === $env.PORTFOLIO_SECRET
-      → Supabase: insert row into `leads`
       → Telegram: sendMessage  (name · budget · first 200 chars)
-      → Gmail/SMTP: templated acknowledgement in {{locale}}
-  → ELSE  respond 401
+      → Google Sheets: append row
+  → ELSE  respond 200 with an empty body (fails closed without leaking why)
 ```
+
+The route only waits 5s for n8n's initial 2xx acknowledgement — it does not
+wait for the Telegram/Sheets fan-out to finish. If the webhook is unset,
+errors, or times out, `src/lib/mailer.ts` sends a single fallback email
+straight to Chiraz instead of dropping the lead (see `.env.example` for the
+optional `SMTP_*` variables it needs).
 
 ---
 

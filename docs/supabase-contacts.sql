@@ -2,6 +2,12 @@
 --  contacts — schema + lockdown for the portfolio contact form
 -- ============================================================================
 --
+--  SUPERSEDED: the n8n workflow moved from Supabase to Google Sheets for its
+--  data-storage branch. If that migration is confirmed, run
+--  `supabase-contacts-drop.sql` instead of this file — dropping the table
+--  removes the standing risk outright rather than asking RLS to hold forever.
+--  Kept here only as a record of the schema this table had while it was live.
+--
 --  Run this whole file once in the Supabase SQL Editor (Run / Ctrl+Enter).
 --  It is idempotent: running it twice changes nothing the second time, and it
 --  never drops a column or deletes a row.

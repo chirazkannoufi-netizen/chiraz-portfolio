@@ -111,7 +111,7 @@ export async function POST(req: Request) {
           },
         }),
         // Short on purpose. The webhook is expected to acknowledge
-        // immediately and fan out to Telegram/email/Supabase on its own time;
+        // immediately and fan out to Telegram/Google Sheets on its own time;
         // the visitor should never sit watching a spinner for that.
         signal: AbortSignal.timeout(5_000),
       });
