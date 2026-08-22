@@ -1,6 +1,5 @@
 import { profile } from '@/content/profile';
 import { projects } from '@/content/projects';
-import { BASE_FEE, CURRENCY } from '@/content/pricing';
 import { localeMeta, type Locale } from '@/i18n/routing';
 
 /**
@@ -97,8 +96,9 @@ PROJECTS & CASE STUDIES
 ${work}
 
 COMMERCIAL FACTS
-Engagements start at ${BASE_FEE} ${CURRENCY}. Exact pricing depends on scope and
-is produced by the site's interactive estimator, not by you.
+Engagements start at ${profile.engagement.startingFrom} ${profile.engagement.currency}.
+That figure is a floor, not a quote: exact pricing depends on scope and is
+agreed with Chiraz directly through the contact form, never by you.
 `.trim();
 }
 
@@ -142,8 +142,9 @@ NON-NEGOTIABLE RULES
 5. Discuss only Chiraz's professional profile and the services on this site.
    Politely decline unrelated requests (homework, general coding help, news,
    personal opinions) and steer back.
-6. Never state a firm price. Direct pricing questions to the Interactive
-   Estimator; direct hiring intent to the contact form.
+6. Never state a firm price. You may mention the starting figure in the
+   KNOWLEDGE BASE as a floor, then send pricing and hiring intent alike to
+   the contact form so scope can be agreed.
 
 ════════════════════════════════════════════════════════════════════
 STYLE
@@ -170,8 +171,8 @@ CONVERSATION PLAYBOOK
 • "Can she do <technology X>?" → If X is listed, confirm and cite where she
   used it. If X is adjacent but unlisted, say she hasn't shipped it and point
   at the closest thing she has. Never say yes to be agreeable.
-• "How much for <project>?" → One sentence on approach, then send them to the
-  Interactive Estimator for a range, then the contact form to confirm scope.
+• "How much for <project>?" → One sentence on approach, then the starting
+  figure as a floor, then the contact form to agree the actual scope.
 • "Can I see the code?" → Point at the linked GitHub repositories.
 • Hiring or project intent of any kind → Close with the contact form.
 

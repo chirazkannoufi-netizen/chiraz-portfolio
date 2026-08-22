@@ -207,64 +207,6 @@
       }
     }
   },
-  "estimator": {
-    "title": "Estimate your project",
-    "eyebrow": "Interactive calculator",
-    "subtitle": "Pick what you need. The estimate updates as you go — no email required.",
-    "groups": {
-      "projectType": {
-        "title": "What are we building?",
-        "options": {
-          "type-automation": "Automation workflow (n8n / Apps Script)",
-          "type-store": "E-commerce store setup (Shopify / Payhip)",
-          "type-chatbot": "Chatbot / customer-service assistant",
-          "type-website": "Marketing website",
-          "type-webapp": "Full web application",
-          "type-audit": "Technical audit only"
-        }
-      },
-      "integrations": {
-        "title": "Integrations",
-        "options": {
-          "int-shopify": "Shopify / Payhip store",
-          "int-sheets": "Google Sheets / Workspace",
-          "int-n8n": "n8n workflow engine",
-          "int-telegram": "Telegram bot",
-          "int-email": "Email / SMTP automation",
-          "int-crm": "CRM or helpdesk"
-        }
-      },
-      "features": {
-        "title": "Features",
-        "options": {
-          "feat-ai": "AI assistant (OpenAI / Claude)",
-          "feat-dashboard": "Analytics dashboard",
-          "feat-auth": "User accounts (Supabase)",
-          "feat-i18n": "Multilingual (with RTL)"
-        }
-      },
-      "support": {
-        "title": "Post-launch support",
-        "options": {
-          "support-none": "None — hand over and go",
-          "support-1m": "1 month",
-          "support-3m": "3 months"
-        }
-      }
-    },
-    "rush": {
-      "label": "Rush delivery",
-      "hint": "Compressed timeline, priority scheduling"
-    },
-    "summary": "Your estimate",
-    "estimatedRange": "Estimated range",
-    "timeline": "Estimated timeline",
-    "days": "{count, plural, =1 {1 working day} other {# working days}}",
-    "selected": "{count, plural, =0 {Nothing selected} =1 {1 item selected} other {# items selected}}",
-    "cta": "Discuss this scope",
-    "reset": "Reset",
-    "disclaimer": "This is an indicative range based on typical scope, not a quote. The final figure follows a short conversation about what you actually need."
-  },
   "contact": {
     "title": "Get in touch",
     "eyebrow": "Contact",
@@ -329,7 +271,8 @@
       "experience": "What has she actually built?",
       "automation": "Tell me about her automation work",
       "stack": "What's her technical stack?",
-      "hire": "Is she available for a project?"
+      "hire": "Is she available for a project?",
+      "pricing": "What does a project cost?"
     },
     "error": "Something went wrong. Please try again.",
     "rateLimited": "That's a lot of questions at once — give it a minute and try again.",

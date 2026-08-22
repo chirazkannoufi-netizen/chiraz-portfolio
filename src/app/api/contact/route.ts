@@ -11,8 +11,11 @@ import { sendContactFallback } from '@/lib/mailer';
  *  Defence in depth, cheapest filter first:
  *
  *    1. Rate limit    — 5 submissions / IP / 10 min (free, instant)
- *    2. Honeypot      — hidden `website` field must be empty (free)
- *    3. Zod           — shape, length, type (free)
+ *    2. Zod           — shape, length, type (free)
+ *    3. Honeypot      — hidden `website` field must be empty (free). Checked
+ *                       after Zod, and Zod deliberately tolerates a filled
+ *                       one: rejecting it there would name the field in the
+ *                       422 and teach the bot what to drop next time.
  *    4. Turnstile     — one network round-trip to Cloudflare (~100 ms)
  *    5. Delivery      — n8n webhook, with a direct-email fallback beneath it
  *
@@ -103,7 +106,9 @@ export async function POST(req: Request) {
           locale: data.locale,
           submitted_at: submittedAt,
           company: data.company || null,
-          budget: data.budget ?? null,
+          // `|| null`, not `?? null`: an untouched dropdown submits `''`,
+          // which is "no answer", not an answer of empty string.
+          budget: data.budget || null,
           meta: {
             ip,
             userAgent: req.headers.get('user-agent') ?? 'unknown',

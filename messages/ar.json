@@ -207,64 +207,6 @@
       }
     }
   },
-  "estimator": {
-    "title": "قدّر تكلفة مشروعك",
-    "eyebrow": "حاسبة تفاعلية",
-    "subtitle": "اختر ما تحتاجه. يتحدّث التقدير مباشرةً — دون الحاجة إلى بريد إلكتروني.",
-    "groups": {
-      "projectType": {
-        "title": "ما الذي سنبنيه؟",
-        "options": {
-          "type-automation": "مسار أتمتة (n8n / Apps Script)",
-          "type-store": "إنشاء متجر إلكتروني (Shopify / Payhip)",
-          "type-chatbot": "روبوت محادثة / مساعد خدمة عملاء",
-          "type-website": "موقع تعريفي",
-          "type-webapp": "تطبيق ويب متكامل",
-          "type-audit": "تدقيق تقني فقط"
-        }
-      },
-      "integrations": {
-        "title": "التكاملات",
-        "options": {
-          "int-shopify": "متجر Shopify / Payhip",
-          "int-sheets": "Google Sheets / Workspace",
-          "int-n8n": "محرك مسارات n8n",
-          "int-telegram": "بوت Telegram",
-          "int-email": "أتمتة البريد / SMTP",
-          "int-crm": "إدارة علاقات العملاء أو الدعم"
-        }
-      },
-      "features": {
-        "title": "الميزات",
-        "options": {
-          "feat-ai": "مساعد ذكاء اصطناعي (OpenAI / Claude)",
-          "feat-dashboard": "لوحة تحليلات",
-          "feat-auth": "حسابات المستخدمين (Supabase)",
-          "feat-i18n": "متعدد اللغات (مع RTL)"
-        }
-      },
-      "support": {
-        "title": "الدعم بعد الإطلاق",
-        "options": {
-          "support-none": "بدون — تسليم وانتهاء",
-          "support-1m": "شهر واحد",
-          "support-3m": "ثلاثة أشهر"
-        }
-      }
-    },
-    "rush": {
-      "label": "تسليم عاجل",
-      "hint": "جدول زمني مضغوط وأولوية في الترتيب"
-    },
-    "summary": "تقديرك",
-    "estimatedRange": "النطاق المقدّر",
-    "timeline": "المدة المقدّرة",
-    "days": "{count, plural, =1 {يوم عمل واحد} =2 {يوما عمل} few {# أيام عمل} many {# يوم عمل} other {# يوم عمل}}",
-    "selected": "{count, plural, =0 {لم يتم اختيار شيء} =1 {عنصر واحد مختار} =2 {عنصران مختاران} few {# عناصر مختارة} many {# عنصراً مختاراً} other {# عنصر مختار}}",
-    "cta": "ناقش هذا النطاق",
-    "reset": "إعادة تعيين",
-    "disclaimer": "هذا نطاق استرشادي مبني على نطاقات عمل معتادة، وليس عرض سعر. يأتي الرقم النهائي بعد حديث قصير حول ما تحتاجه فعلاً."
-  },
   "contact": {
     "title": "تواصل معي",
     "eyebrow": "تواصل",
@@ -329,7 +271,8 @@
       "experience": "ما الذي بنته فعلياً؟",
       "automation": "حدثني عن أعمال الأتمتة",
       "stack": "ما هي تقنياتها؟",
-      "hire": "هل هي متاحة لمشروع؟"
+      "hire": "هل هي متاحة لمشروع؟",
+      "pricing": "كم تكلفة المشروع؟"
     },
     "error": "حدث خطأ ما. يرجى المحاولة مجدداً.",
     "rateLimited": "أسئلة كثيرة دفعةً واحدة — انتظر دقيقة ثم أعد المحاولة.",

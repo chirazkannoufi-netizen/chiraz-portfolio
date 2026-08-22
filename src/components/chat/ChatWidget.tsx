@@ -33,7 +33,7 @@ import { closeChat, toggleChat, useChatOpen } from './chat-store';
  *    traps sighted users only is not a modal.
  */
 
-const SUGGESTION_KEYS = ['experience', 'automation', 'stack', 'hire'] as const;
+const SUGGESTION_KEYS = ['experience', 'automation', 'stack', 'hire', 'pricing'] as const;
 
 /**
  * Free questions per visitor before the widget stops calling the API.
@@ -57,6 +57,9 @@ export function ChatWidget({ locale }: { locale: Locale }) {
   // in the initial state would desync the server and client render.
   useEffect(() => {
     try {
+      // localStorage does not exist during SSR, so this counter can only be
+      // adopted after mount — one extra render, once per visit.
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- SSR-safe read
       setAsked(Number(window.localStorage.getItem(ASKED_STORAGE_KEY)) || 0);
     } catch {
       // Private mode / storage disabled — fall back to the server quota.
@@ -321,7 +324,11 @@ export function ChatWidget({ locale }: { locale: Locale }) {
                   placeholder={t('placeholder')}
                   aria-label={t('placeholder')}
                   maxLength={500}
-                  className="min-w-0 flex-1 rounded-xl bg-[var(--surface-sunken)] px-3.5 py-2.5 text-sm outline-none placeholder:text-[var(--text-muted)]"
+                  // 16px on mobile for the same reason as the contact form:
+                  // under 16px, iOS Safari zooms the viewport on focus, which
+                  // in a fixed-position chat panel shoves the composer off
+                  // screen mid-sentence.
+                  className="min-w-0 flex-1 rounded-xl bg-[var(--surface-sunken)] px-3.5 py-2.5 text-base outline-none placeholder:text-[var(--text-muted)] sm:text-sm"
                 />
                 {isBusy ? (
                   <button

@@ -48,6 +48,13 @@
    ========================================================================== */
 @layer base {
   :root {
+    /* Declared on the same selectors as the tokens — NOT via the
+       `color-scheme` meta tag — so it follows the theme toggle rather than the
+       OS. Without it the phone paints its own widgets from the OS setting:
+       in dark mode the budget <select>'s native dropdown opened white on a
+       dark page, and autofilled inputs came back with a light background. */
+    color-scheme: light;
+
     /* Light Background */
     --surface: #fcfcfd;
     --surface-raised: #ffffff;
@@ -57,13 +64,17 @@
     /* Text Colors */
     --text-primary: #1b191f;
     --text-secondary: #524f5a;
-    --text-muted: #787582;
-    
+    /* Darkened from #787582 (4.10:1 on --surface-sunken — below AA). */
+    --text-muted: #6e6b78;
+
     /* Mauve Accent & Gold Secondary */
-    --accent: #a76385;
+    /* Darkened from #a76385. In light mode one value has to serve both
+       directions — as label text (was 4.01:1 on sunken) and as a button fill
+       under white text (was 4.41:1) — and darkening improves both at once. */
+    --accent: #96547a;
     --accent-contrast: #ffffff;
     --secondary-accent: var(--color-brass);
-    --glow: color-mix(in srgb, #a76385 22%, transparent);
+    --glow: color-mix(in srgb, #96547a 22%, transparent);
 
     /* Circuit/neon motif — soft in light mode, full neon in dark (below). */
     --circuit: color-mix(in srgb, var(--accent) 30%, transparent);
@@ -71,6 +82,8 @@
   }
 
   .dark {
+    color-scheme: dark;
+
     /* Ink Dark Background */
     --surface: #1b191f;
     --surface-raised: #242129;
@@ -83,10 +96,16 @@
     --text-muted: #8e8a96;
     
     /* Mauve Accent in Dark Mode */
-    --accent: #b06b8f;
-    --accent-contrast: #ffffff;
+    /* Lightened from #b06b8f, which failed AA in both directions at once and
+       could not be fixed by moving in one: as eyebrow/date text it was
+       4.04:1 on --surface-raised, and darkening it to rescue the white button
+       label would have pushed that lower still. So the accent goes lighter
+       (4.90:1 as text) and the label on top goes to ink instead of white —
+       3.93:1 white-on-mauve becomes 5.33:1 ink-on-mauve. */
+    --accent: #bd7a9c;
+    --accent-contrast: #1b191f;
     --secondary-accent: var(--color-brass-light);
-    --glow: color-mix(in srgb, #b06b8f 26%, transparent);
+    --glow: color-mix(in srgb, #bd7a9c 26%, transparent);
 
     /* Full neon in dark mode — cyan circuit traces against the ink surface.
        Raised from 45% to 70%: the ask was "more visible", and on a #1b191f

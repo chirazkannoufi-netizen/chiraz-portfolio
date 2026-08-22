@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
@@ -6,6 +6,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { routing, getDirection, locales, type Locale } from '@/i18n/routing';
 import { profile } from '@/content/profile';
 import { ThemeProvider } from '@/components/theme/ThemeProvider';
+import { ThemeColorSync } from '@/components/theme/ThemeColorSync';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { ChatWidget } from '@/components/chat/ChatWidget';
@@ -22,6 +23,22 @@ import '../globals.css';
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
+
+/**
+ * No `themeColor` here on purpose.
+ *
+ * Media-scoped theme-color tags answer to `prefers-color-scheme`, so they go
+ * wrong the moment a visitor overrides the OS with the theme toggle — an ink
+ * page under a white address bar. `ThemeColorSync` owns that tag instead and
+ * follows the resolved theme; it can only do so safely if React renders no
+ * competing tag for it to fight over.
+ */
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  // Deliberately no `maximum-scale` / `user-scalable: no` — capping zoom locks
+  // out anyone who needs to magnify the page, and iOS ignores it anyway.
+};
 
 export async function generateMetadata({
   params,
@@ -99,6 +116,7 @@ export default async function LocaleLayout({
       <body className="min-h-dvh antialiased">
         <CyberBackground />
         <ThemeProvider>
+          <ThemeColorSync />
           <NextIntlClientProvider>
             {/* Keyboard users land here first. */}
             <a

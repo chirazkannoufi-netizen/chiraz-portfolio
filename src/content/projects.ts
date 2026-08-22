@@ -16,6 +16,19 @@ import type { Project } from '@/types';
  */
 export const projects: readonly Project[] = [
   {
+    slug: 'gotrek',
+    category: 'web',
+    stack: ['Flutter', 'Dart'],
+    metrics: [],
+    githubUrl: 'https://github.com/chirazkannoufi-netizen/GoTrek',
+    // The app's real logo, taken from the repo's own assets/images/.
+    logo: '/projects/gotrek-logo.png',
+    featured: false,
+    // The only project that dates itself: the README states 2025.
+    year: 2025,
+    accent: ['from-emerald-400', 'to-teal-300'],
+  },
+  {
     slug: 'multi-agent-monitor',
     category: 'ai-data',
     stack: ['Python', 'FastAPI', 'SQLite', 'pytest', 'Anthropic Claude API', 'n8n'],
@@ -44,19 +57,6 @@ export const projects: readonly Project[] = [
     liveUrl: 'https://payhip.com/FlowTechAutomation',
     featured: false,
     accent: ['from-amber-400', 'to-orange-300'],
-  },
-  {
-    slug: 'gotrek',
-    category: 'web',
-    stack: ['Flutter', 'Dart'],
-    metrics: [],
-    githubUrl: 'https://github.com/chirazkannoufi-netizen/GoTrek',
-    // The app's real logo, taken from the repo's own assets/images/.
-    logo: '/projects/gotrek-logo.png',
-    featured: false,
-    // The only project that dates itself: the README states 2025.
-    year: 2025,
-    accent: ['from-emerald-400', 'to-teal-300'],
   },
 ] as const;
 

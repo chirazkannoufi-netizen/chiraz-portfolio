@@ -51,39 +51,6 @@ export interface Project {
   accent: readonly [string, string];
 }
 
-/** ── Cost estimator ─────────────────────────────────────────────── */
-
-export type EstimatorOptionId = string;
-
-export interface EstimatorOption {
-  id: EstimatorOptionId;
-  /** Price delta in USD. Flat adders. */
-  price: number;
-  /** Working days this option adds to the timeline. */
-  days: number;
-  /** Mutually exclusive within its group (radio) vs additive (checkbox). */
-  exclusive?: boolean;
-}
-
-export interface EstimatorGroup {
-  id: string;
-  type: 'radio' | 'checkbox';
-  options: readonly EstimatorOption[];
-  /** Pre-selected option ids on first render. */
-  defaults?: readonly EstimatorOptionId[];
-}
-
-export interface Quote {
-  subtotal: number;
-  /** Rush surcharge, discounts, etc. */
-  adjustments: number;
-  total: number;
-  /** Estimates are ranges, never a single number — protects the margin. */
-  low: number;
-  high: number;
-  days: number;
-}
-
 /** ── Contact ────────────────────────────────────────────────────── */
 
 export interface ContactPayload {

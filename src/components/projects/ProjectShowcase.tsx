@@ -14,7 +14,7 @@ type Filter = ProjectCategory | 'all';
 /**
  * Filterable case-study grid.
  *
- * Filtering is client-side because the whole dataset is six items — a server
+ * Filtering is client-side because the whole dataset is four items — a server
  * round-trip per chip click would be slower and worse. `LayoutGroup` +
  * `layout` on the cards means filtering animates positions instead of
  * snapping, which is what makes it read as a product rather than a list.

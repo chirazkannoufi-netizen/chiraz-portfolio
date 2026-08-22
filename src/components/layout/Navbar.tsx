@@ -87,7 +87,7 @@ export function Navbar() {
           aria-label="Chiraz Lina Kannoufi — home"
         >
           <Image
-            src="/ME.png"
+            src="/ME.jpg"
             alt=""
             width={32}
             height={32}

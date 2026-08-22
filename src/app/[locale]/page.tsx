@@ -7,7 +7,6 @@ import { About } from '@/components/about/About';
 import { Section } from '@/components/ui/Section';
 import { ProjectShowcase } from '@/components/projects/ProjectShowcase';
 import { ServicesGrid } from '@/components/services/ServicesGrid';
-import { CostEstimator } from '@/components/services/CostEstimator';
 import { ContactForm } from '@/components/contact/ContactForm';
 import { profile } from '@/content/profile';
 
@@ -15,9 +14,9 @@ import { profile } from '@/content/profile';
  * Single-page composition.
  *
  * Section order is a funnel: prove capability (work) → name the offer
- * (services) → let them price it themselves (estimator) → remove the friction
- * of asking (contact). Credentials sit near the bottom because a
- * client cares what you've shipped before they care where you studied.
+ * (services) → remove the friction of asking (contact). Credentials sit near
+ * the bottom because a client cares what you've shipped before they care
+ * where you studied.
  */
 export default function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   // `params` is a Promise in the App Router. `use()` unwraps it inside a sync
@@ -84,24 +83,9 @@ export default function HomePage({ params }: { params: Promise<{ locale: string 
         <ServicesGrid />
       </Section>
 
-      <Section
-        id="estimator"
-        eyebrow={t('estimator.eyebrow')}
-        title={t('estimator.title')}
-        subtitle={t('estimator.subtitle')}
-      >
-        <CostEstimator />
-      </Section>
-
-      <Section
-        id="about"
-        eyebrow={t('about.eyebrow')}
-        title={t('about.title')}
-        className="bg-[var(--surface-sunken)]"
-      >
+      <Section id="about" eyebrow={t('about.eyebrow')} title={t('about.title')}>
         <About />
       </Section>
-
 
       <Section
         id="contact"

@@ -20,8 +20,14 @@ const nextConfig: NextConfig = {
   },
 
   /**
-   * Baseline hardening. The CSP is intentionally declared in `proxy.ts`
-   * instead (it needs a per-request nonce), so we only set static headers here.
+   * Baseline hardening.
+   *
+   * ⚠️  There is NO Content-Security-Policy yet, here or in `proxy.ts`.
+   * A real one needs a per-request nonce (Next injects inline bootstrap
+   * scripts) plus allowances for challenges.cloudflare.com (Turnstile's
+   * script and its challenge frame) — so it belongs in the proxy, where the
+   * nonce can be generated and forwarded. Until that exists, do not read the
+   * headers below as a complete policy.
    */
   async headers() {
     return [

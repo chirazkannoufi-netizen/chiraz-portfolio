@@ -23,8 +23,19 @@ export const contactSchema = z.object({
 
   company: z.string().trim().max(120).optional().or(z.literal('')),
 
+  /**
+   * Optional — and it has to behave that way.
+   *
+   * The <select> renders a disabled placeholder as its first option, so an
+   * untouched dropdown submits `''`, which a bare `.optional()` enum rejects.
+   * That failure had nowhere to surface (the budget field renders no error
+   * slot), so the submit button silently did nothing for every visitor who
+   * left this alone. The placeholder is therefore a legal value here; the
+   * route turns it into `null` before the lead is delivered.
+   */
   budget: z
     .enum(['under-500', '500-1500', '1500-5000', '5000-plus', 'not-sure'])
+    .or(z.literal(''))
     .optional(),
 
   message: z
@@ -35,9 +46,16 @@ export const contactSchema = z.object({
 
   /**
    * Honeypot. Real users never see this field; bots fill every input they
-   * find. Must be empty — cheap first line of defence before Turnstile.
+   * find.
+   *
+   * Deliberately permissive: `z.literal('')` would reject a filled honeypot
+   * here, and the 422 that follows names `website` in its issue list — which
+   * hands a bot the exact field to drop on its next attempt. The route lets
+   * a filled honeypot through validation and answers 200 instead, so the bot
+   * records a success and never learns it was caught. The bound only stops
+   * someone using the field to push a megabyte through the parser.
    */
-  website: z.literal('').optional(),
+  website: z.string().max(200).optional(),
 
   locale: z.enum(locales),
 
@@ -65,10 +83,4 @@ export type ContactFormValues = z.infer<typeof contactFormSchema>;
 export const chatRequestSchema = z.object({
   messages: z.array(z.unknown()).min(1).max(30),
   locale: z.enum(locales).optional(),
-});
-
-/** Quote payload attached to a booking, re-priced server-side. */
-export const quoteRequestSchema = z.object({
-  options: z.array(z.string().max(60)).max(30),
-  rush: z.boolean().default(false),
 });

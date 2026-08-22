@@ -41,8 +41,7 @@ chiraz-portfolio/
     │   └── request.ts            # per-request locale + lazy dictionary load
     ├── content/                  # ── SOURCE OF TRUTH ──
     │   ├── profile.ts            # verified CV facts
-    │   ├── projects.ts           # case-study registry (structure only)
-    │   └── pricing.ts            # pure pricing engine, no React
+    │   └── projects.ts           # case-study registry (structure only)
     ├── lib/
     │   ├── ai/system-prompt.ts   # generated from profile.ts
     │   ├── schemas.ts            # Zod — shared client + server
@@ -70,7 +69,7 @@ chiraz-portfolio/
         ├── hero/      Hero · RoleTyper · ResumeDownload
         ├── about/     About
         ├── projects/  ProjectShowcase · ProjectCard
-        ├── services/  ServicesGrid · CostEstimator
+        ├── services/  ServicesGrid
         ├── contact/   ContactForm · Turnstile
         └── chat/      ChatWidget · OpenChatButton · chat-store
 ```
@@ -137,7 +136,7 @@ Translation parity check passed.
 **Grounded prompt, not RAG.** The complete verified profile is a few thousand tokens. A vector store would add infrastructure, latency and a retrieval-miss failure mode to solve a problem that doesn't exist at this scale.
 
 ```
-content/profile.ts + projects.ts + pricing.ts
+content/profile.ts + projects.ts
             ↓  serialised at build
      lib/ai/system-prompt.ts
             ↓  per request, localised
@@ -217,7 +216,7 @@ The site runs with **no keys at all** — the chat returns a clean 503, and the 
 2. Add `public/og.png` (1200×630)
 3. Replace the placeholder GitHub/LinkedIn URLs in `src/content/profile.ts`
 4. Add real `githubUrl` / `liveUrl` values in `src/content/projects.ts`
-5. Review the numbers in `src/content/pricing.ts` — they are a starting point, not a recommendation
+5. Review `engagement.startingFrom` in `src/content/profile.ts` — the only price the AI agent may quote, and only as a floor
 
 ### Next.js version note
 
@@ -267,4 +266,4 @@ Stated plainly so nobody discovers them later:
 
 1. **Rate limiting is per-instance.** Serverless instances don't share memory, so the effective limit is `limit × instances`. Acceptable for a portfolio. Swap the body of `rateLimit()` for `@upstash/ratelimit` if traffic ever justifies it — the signature is deliberately identical.
 2. **Chat history is per-session.** No persistence layer. Add Supabase if you want analytics on what recruiters actually ask — which would be genuinely useful signal.
-3. **The estimator prices client-side for display.** `calculateQuote()` is a pure function precisely so the server can re-price before a quote is ever acted on. Do that if quotes ever leave the browser.
+3. **No self-service pricing.** The interactive estimator was removed; the agent quotes a starting figure only, and every real number is agreed through the contact form. If a calculator ever comes back, price it server-side before the quote is acted on.

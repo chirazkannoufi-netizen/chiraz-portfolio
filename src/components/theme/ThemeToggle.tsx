@@ -18,6 +18,10 @@ export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
+  // The single post-hydration render is the entire point here: the server
+  // cannot know the resolved theme, so the real icon must not be rendered
+  // until after mount.
+  // eslint-disable-next-line react-hooks/set-state-in-effect -- hydration gate
   useEffect(() => setMounted(true), []);
 
   const isDark = resolvedTheme === 'dark';

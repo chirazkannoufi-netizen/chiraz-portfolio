@@ -114,14 +114,25 @@ export function ContactForm() {
   }
 
   const fieldClass =
-    'w-full rounded-xl border bg-[var(--surface-raised)] px-4 py-2.5 text-sm outline-none transition-colors placeholder:text-[var(--text-muted)] focus:border-[var(--accent)]';
+    // `text-base` below the `sm` breakpoint is not a style choice: Safari on
+    // iOS zooms the whole viewport when a focused field is under 16px, so a
+    // 14px input made the page lurch the moment someone tapped "your name".
+    // Desktop keeps the tighter 14px, where no such rule applies. The larger
+    // mobile type also lifts the field to a 46px tap target.
+    'w-full rounded-xl border bg-[var(--surface-raised)] px-4 py-2.5 text-base outline-none transition-colors placeholder:text-[var(--text-muted)] focus:border-[var(--accent)] sm:text-sm';
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate className="surface-card rounded-2xl p-6">
       {/* Honeypot. `tabIndex={-1}` and aria-hidden keep it away from humans
           and assistive tech; a bot filling every field trips it. Not display:
-          none — some bots skip hidden inputs specifically. */}
-      <div className="absolute -left-[9999px] top-0" aria-hidden="true">
+          none — some bots skip hidden inputs specifically.
+
+          `-start-`, not `-left-`: a physical `left: -9999px` overflows past
+          the inline-END edge in RTL, which browsers make scrollable — Arabic
+          pages picked up 10,000px of empty horizontal scroll. The logical
+          property pushes it past the inline-START edge in both directions,
+          where the overflow is clipped and unreachable. */}
+      <div className="absolute -start-[9999px] top-0" aria-hidden="true">
         <label htmlFor="website">Website</label>
         <input id="website" type="text" tabIndex={-1} autoComplete="off" {...register('website')} />
       </div>

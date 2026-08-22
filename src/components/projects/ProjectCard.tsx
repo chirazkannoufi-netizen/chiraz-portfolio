@@ -123,13 +123,13 @@ export function ProjectCard({
           {/* Only projects that state their own year carry a date badge —
               `ms-auto` keeps the status badges right-aligned without it. */}
           {project.year && (
-            <span className="rounded-lg bg-black/20 px-2 py-1 text-xs font-semibold text-white backdrop-blur-sm">
+            <span className="rounded-lg bg-black/50 px-2 py-1 text-xs font-semibold text-white backdrop-blur-sm">
               <span className="numeric">{project.year}</span>
             </span>
           )}
           <div className="flex gap-1.5 ms-auto">
             {project.hasLiveDemo && (
-              <span className="inline-flex items-center gap-1 rounded-lg bg-black/20 px-2 py-1 text-xs font-semibold text-white backdrop-blur-sm">
+              <span className="inline-flex items-center gap-1 rounded-lg bg-black/50 px-2 py-1 text-xs font-semibold text-white backdrop-blur-sm">
                 <Play className="size-3" aria-hidden="true" />
                 {t('liveDemoBadge')}
               </span>

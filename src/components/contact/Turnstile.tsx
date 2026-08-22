@@ -54,10 +54,20 @@ export function Turnstile({
   // Latest-callback refs: the widget is rendered once, but the parent's
   // handlers are re-created each render. Without this the widget would call a
   // stale closure after the first verification.
+  //
+  // The sync happens in an effect, not during render: a render can be
+  // discarded under concurrent rendering, and mutating a ref there would
+  // either be lost or leak a value from a render that never committed. The
+  // initial values come from `useRef` itself, so the widget is never wired to
+  // an undefined handler, and Turnstile only invokes these callbacks after a
+  // user interaction or a network round-trip — long after commit.
   const onVerifyRef = useRef(onVerify);
   const onExpireRef = useRef(onExpire);
-  onVerifyRef.current = onVerify;
-  onExpireRef.current = onExpire;
+
+  useEffect(() => {
+    onVerifyRef.current = onVerify;
+    onExpireRef.current = onExpire;
+  });
 
   useEffect(() => {
     const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;

@@ -183,6 +183,16 @@ export const profile = {
   availability: {
     status: 'open' as const,
   },
+
+  /**
+   * Commercial floor, not a CV fact. Its only consumer is the AI agent's
+   * knowledge base, which is instructed to quote it as a starting point and
+   * never as a firm price — scope is agreed through the contact form.
+   */
+  engagement: {
+    startingFrom: 120,
+    currency: 'USD',
+  },
 } as const;
 
 export type Profile = typeof profile;

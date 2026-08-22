@@ -10,10 +10,12 @@
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
+    "moduleDetection": "force",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    // Next 16 requires the automatic runtime; `preserve` is rewritten on build.
+    "jsx": "react-jsx",
     "incremental": true,
     "plugins": [{ "name": "next" }],
     "paths": {
@@ -21,6 +23,12 @@
       "@/messages/*": ["./messages/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
+  ],
   "exclude": ["node_modules"]
 }

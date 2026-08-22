@@ -2,8 +2,7 @@
 
 A four-language (EN · FR · AR · DE, with full RTL) portfolio that behaves like a
 product: a grounded AI agent that answers recruiter questions from a verified CV,
-filterable engineering case studies, an interactive cost estimator, and a
-hardened contact pipeline.
+filterable engineering case studies, and a hardened contact pipeline.
 
 **Read [`ARCHITECTURE.md`](./ARCHITECTURE.md) first** — it explains why the code is
 shaped the way it is.
@@ -35,7 +34,6 @@ Runs with zero API keys. Each feature switches on as you add its key.
 | A CV fact (job, degree, skill) | `src/content/profile.ts` — the AI updates with it |
 | Any visible text | `messages/{en,fr,ar,de}.json` |
 | A project / case study | `src/content/projects.ts` + the four `projects.items.*` blocks |
-| Prices or timelines | `src/content/pricing.ts` |
 | Colours, spacing, motion | `src/app/globals.css` (`@theme` block) |
 | How the AI behaves | `src/lib/ai/system-prompt.ts` |
 

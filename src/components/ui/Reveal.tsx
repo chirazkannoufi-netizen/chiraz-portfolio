@@ -33,6 +33,10 @@ export function Reveal({
     // No IntersectionObserver (very old browser, some test runners): show the
     // content rather than leaving it invisible forever.
     if (typeof IntersectionObserver === 'undefined') {
+      // Legacy fallback only. Seeding this into initial state instead would
+      // flip the server render to visible and break hydration on every modern
+      // browser, so the extra render is the lesser evil.
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- legacy fallback
       setVisible(true);
       return;
     }

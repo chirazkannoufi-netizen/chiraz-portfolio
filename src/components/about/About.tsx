@@ -36,7 +36,7 @@ export function About() {
               className="absolute -inset-2 rounded-[1.75rem] bg-gradient-to-br from-[var(--circuit-strong)] via-[var(--accent)] to-[var(--circuit-strong)] opacity-70 blur-lg"
             />
             <Image
-              src="/ME.png"
+              src="/ME.jpg"
               alt={profile.name}
               width={128}
               height={128}
