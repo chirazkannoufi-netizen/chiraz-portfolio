@@ -12,7 +12,19 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
+          # Matches netlify.toml. The old pin to 20 also tripped EBADENGINE,
+          # because @ai-sdk/provider-utils declares >=22.
           node-version: 22
-          cache: npm
-      - run: npm ci
-      - run: npm run i18n:check
+
+      # No install step, and no `cache: npm` to feed one.
+      #
+      # scripts/check-i18n.mjs imports nothing but node:fs, node:path and
+      # node:url, so `npm ci` was pure overhead here — and it was failing,
+      # which meant this job had not actually compared the four locales since
+      # at least 2026-08-17. It rejected the lock file over @swc/helpers:
+      # `next` pins 0.5.15 while the @swc/core nested under `next-intl` wants
+      # >=0.5.17, and the tree npm resolves on Linux needs a nested copy that
+      # a lock generated on Windows does not carry. Regenerating the lock is
+      # the real fix for anyone running `npm ci`, but it has to be done on
+      # Linux; this job never needed the dependencies to begin with.
+      - run: node scripts/check-i18n.mjs
